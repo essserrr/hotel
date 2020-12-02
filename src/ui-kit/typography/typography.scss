@@ -15,6 +15,8 @@
 @include font("Montserrat", "Montserrat-Regular");
 
 h1 {
+    margin: 0;
+
     font-weight: bold;
 
     font-size: 24px;
@@ -24,6 +26,8 @@ h1 {
 }
 
 h2 {
+    margin: 0;
+
     font-weight: bold;
 
     font-size: 19px;
@@ -33,6 +37,8 @@ h2 {
 }
 
 h3 {
+    margin: 0;
+
     font-weight: bold;
 
     font-size: 12px;
