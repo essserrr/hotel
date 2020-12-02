@@ -1,0 +1,7 @@
+include typography-entry/typography-entry.pug
+- var typographies = [{description: 'This one is the sub-section or widget title', variant: "H1"}, {description: "Next one is the item title inside widgets", variant: "H2"}, {description: 'This is a label or CTA text', variant: "H3"}, {description: "This is the body text which is used for most of the design, like paragraphs, lists, etc.", variant: "Body"}];
+
+ul.typography-list
+    each singleTypographyVariant in typographies
+        li.typography-list__entry
+            +typography-entry(singleTypographyVariant.description, singleTypographyVariant.variant)

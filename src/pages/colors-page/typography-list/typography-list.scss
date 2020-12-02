@@ -1,0 +1,14 @@
+.typography-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    max-width: 436px;
+
+    &__entry:first-of-type {
+        margin-top: 0px;
+    }
+    &__entry {
+        margin-top: 51px;
+    }
+}
