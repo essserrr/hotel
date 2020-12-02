@@ -1,8 +1,9 @@
-extends ../../components/main-layout/main-layout.pug
+extends ../../components/ui-kit-demostartion-layout/ui-kit-demostartion-layout.pug
 
 block meta
     title Цвета и типография
-block navigation
-    include ../../components/ui-kit-nav/ui-kit-nav.pug
 block content
-    include color-list/color-list.pug
+    .colors-page-layout.colors-page-layout--padding
+        .colors-page-layout__column
+            include color-list/color-list.pug
+        .colors-page-layout__column
