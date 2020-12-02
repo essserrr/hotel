@@ -7,7 +7,18 @@ require("dotenv").config();
 
 module.exports = {
     entry: {
-        common: path.resolve(__dirname, "src/main-layout/main-layout.js"),
+        mainLayout: path.resolve(
+            __dirname,
+            "src/components/main-layout/main-layout.js"
+        ),
+        demoLayout: path.resolve(
+            __dirname,
+            "src/components/ui-kit-demostartion-layout/ui-kit-demostartion-layout.js"
+        ),
+        colorsPage: path.resolve(
+            __dirname,
+            "src/pages/colors-page/colors-page.js"
+        ),
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -89,15 +100,15 @@ module.exports = {
             cleanAfterEveryBuildPatterns: ["dist"],
         }),
         new HtmlWebpackPlugin({
-            filename: "ui-kit/colors/index.html",
-            template: "./src/ui-kit/colors/colors.pug",
-            chunks: ["common"],
+            filename: "pages/colors/index.html",
+            template: "./src/pages/colors-page/colors-page.pug",
+            chunks: ["mainLayout", "demoLayout", "colorsPage"],
         }),
-        new HtmlWebpackPlugin({
+        /*new HtmlWebpackPlugin({
             filename: "ui-kit/form-elements/index.html",
             template: "./src/ui-kit/form-elements/form-elements.pug",
             chunks: ["common"],
-        }),
+        }),*/
         new webpack.DefinePlugin({
             // plugin to define global constants
             API_KEY: JSON.stringify(process.env.API_KEY),
