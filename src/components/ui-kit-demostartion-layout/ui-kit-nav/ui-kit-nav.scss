@@ -1,0 +1,16 @@
+.ui-kit-nav {
+    display: -ms-flexbox;
+    display: flex;
+
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    padding: 30px 30px 0px 30px;
+}
+
+.ui-kit-nav__logo {
+    display: block;
+    width: 48px;
+    height: 48px;
+    background-image: url("./ui-kit-nav__logo.svg");
+}
