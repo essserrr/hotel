@@ -1,0 +1,8 @@
+mixin color-entry(title, description, variant)
+    .color-entry
+        div(
+            class='color-entry__icon color-entry__icon--margin color-entry__icon--' + variant
+        )
+        .color-entry__text-col
+            .color-entry__text.color-entry__text--title #{title}
+            .color-entry__text.color-entry__text--description #{description}

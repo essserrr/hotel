@@ -1,0 +1,69 @@
+.color-entry {
+    display: -ms-flexbox;
+    display: flex;
+
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    &__icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 6px;
+
+        &--margin {
+            margin-right: 40px;
+        }
+
+        &--dark100 {
+            background-color: $color-dark-shade100;
+        }
+
+        &--dark75 {
+            background-color: $color-dark-shade75;
+        }
+
+        &--dark50 {
+            background-color: $color-dark-shade50;
+        }
+
+        &--dark25 {
+            background-color: $color-dark-shade25;
+        }
+
+        &--dark5 {
+            background-color: $color-dark-shade5;
+        }
+
+        &--purple {
+            background-color: $color-purple;
+        }
+
+        &--green {
+            background-color: $color-green;
+        }
+    }
+
+    &__text-col {
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        max-width: 100%;
+    }
+
+    &__text {
+        font-size: 19px;
+        line-height: 28px;
+
+        color: $color-dark-shade100;
+
+        &--title {
+            font-weight: bold;
+        }
+        &--description {
+            font-weight: normal;
+        }
+    }
+}
