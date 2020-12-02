@@ -1,0 +1,29 @@
+.typography-entry {
+    display: -ms-flexbox;
+    display: flex;
+
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    &__label {
+        min-width: 37px;
+        text-align: right;
+
+        &--margin {
+            margin-right: 30px;
+        }
+
+        &:first-child {
+            font-weight: normal !important;
+            color: rgba(31, 32, 65, 0.25) !important;
+        }
+    }
+
+    &__text-col {
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        max-width: 100%;
+    }
+}

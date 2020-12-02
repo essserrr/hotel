@@ -1,0 +1,18 @@
+mixin typography-entry(description, variant)
+    .typography-entry
+        case variant
+            when "H1"
+                h1.typography-entry__label.typography-entry__label--margin  #{variant}
+                .typography-entry__text-col 
+                    h1 #{description}
+            when "H2"
+                h2.typography-entry__label.typography-entry__label--margin #{variant}
+                .typography-entry__text-col 
+                    h2 #{description}
+            when "H3"
+                h3.typography-entry__label.typography-entry__label--margin #{variant}
+                .typography-entry__text-col 
+                    h3 #{description}
+            default
+                .typography-entry__label.typography-entry__label--margin #{variant}
+                .typography-entry__text-col #{description}
