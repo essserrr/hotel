@@ -19,6 +19,10 @@ module.exports = {
             __dirname,
             "src/pages/colors-page/colors-page.js"
         ),
+        formsPage: path.resolve(
+            __dirname,
+            "src/pages/form-elements-page/form-elements-page.js"
+        ),
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -104,14 +108,10 @@ module.exports = {
             template: "./src/pages/colors-page/colors-page.pug",
             chunks: ["mainLayout", "demoLayout", "colorsPage"],
         }),
-        /*new HtmlWebpackPlugin({
-            filename: "ui-kit/form-elements/index.html",
-            template: "./src/ui-kit/form-elements/form-elements.pug",
-            chunks: ["common"],
-        }),*/
-        new webpack.DefinePlugin({
-            // plugin to define global constants
-            API_KEY: JSON.stringify(process.env.API_KEY),
+        new HtmlWebpackPlugin({
+            filename: "pages/form/index.html",
+            template: "./src/pages/form-elements-page/form-elements-page.pug",
+            chunks: ["mainLayout", "demoLayout", "formsPage"],
         }),
     ],
     devServer: {
