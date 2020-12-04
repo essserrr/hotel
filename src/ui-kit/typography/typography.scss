@@ -3,16 +3,27 @@
         font-family: $font-family;
         font-weight: normal;
         font-style: normal;
-        src: url("/src/ui-kit/typography/" + $font-file + ".woff")
+        src: url("/src/ui-kit/typography/" + $font-file + "-Regular.woff")
                 format("woff"),
-            url("/src/ui-kit/typography/" + $font-file + ".ttf")
+            url("/src/ui-kit/typography/" + $font-file + "-Regular.ttf")
                 format("truetype"),
-            url("/src/ui-kit/typography/" + $font-file + ".svg#" + $font-file)
+            url("/src/ui-kit/typography/" + $font-file + "-Regular.svg#" + $font-file)
+                format("svg");
+    }
+    @font-face {
+        font-family: $font-family;
+        font-weight: bold;
+        font-style: normal;
+        src: url("/src/ui-kit/typography/" + $font-file + "-Bold.woff")
+                format("woff"),
+            url("/src/ui-kit/typography/" + $font-file + "-Bold.ttf")
+                format("truetype"),
+            url("/src/ui-kit/typography/" + $font-file + "-Bold.svg#" + $font-file)
                 format("svg");
     }
 }
 
-@include font("Montserrat", "Montserrat-Regular");
+@include font("Montserrat", "Montserrat");
 
 h1 {
     margin: 0;
