@@ -1,0 +1,26 @@
+.ui-input {
+    width: 100%;
+    max-width: 320px;
+
+    padding: 12px 15px 8px 15px;
+
+    background: #ffffff;
+    border: 1px solid $color-dark-shade25;
+    box-sizing: border-box;
+    border-radius: 4px;
+
+    font-size: 14px;
+    line-height: 18px;
+    color: $color-dark-shade75;
+
+    &::placeholder {
+        color: $color-dark-shade25;
+    }
+
+    &:hover {
+        border: 1px solid $color-dark-shade50;
+    }
+    &:focus {
+        border: 1px solid $color-dark-shade50;
+    }
+}
