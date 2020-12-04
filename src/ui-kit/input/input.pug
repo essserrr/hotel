@@ -1,0 +1,18 @@
+mixin input(placeholder='', labelLeft='', labelRight='', value='',mask='', forceHover=false)
+    .ui-text-input-row
+        .ui-text-input-row__column100
+            .ui-text-input-row.ui-text-input-label
+                .ui-text-input-row__column
+                    h3 #{labelLeft}
+                .ui-text-input-row__column-auto
+                    h3.ui-text-input-label__left #{labelRight}
+
+        .ui-text-input-row__column100
+            input(
+                class='ui-text-input' + (forceHover === true ? ' ui-text-input--force-hover' : ''),
+                type="text",
+                placeholder=placeholder,
+                value=value,
+                data-masktype=mask,
+                focus
+            )

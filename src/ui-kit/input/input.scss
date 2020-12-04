@@ -1,19 +1,66 @@
-.ui-input {
+.ui-text-input-row {
     width: 100%;
     max-width: 320px;
 
-    padding: 12px 15px 8px 15px;
+    display: -ms-flexbox;
+    display: flex;
+
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    &__column100 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    &__column-auto {
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
+    }
+
+    &__column {
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        max-width: 100%;
+    }
+}
+
+.ui-text-input-label {
+    margin-bottom: 5px;
+    &__left {
+        color: $color-dark-shade50;
+        font-weight: normal;
+    }
+}
+
+.ui-text-input {
+    width: 100%;
+    max-height: 44px;
+
+    padding: 13px 15px 13px 15px;
 
     background: #ffffff;
     border: 1px solid $color-dark-shade25;
     box-sizing: border-box;
     border-radius: 4px;
 
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
     font-size: 14px;
     line-height: 18px;
     color: $color-dark-shade75;
 
+    transition: border 0.2s linear;
+
     &::placeholder {
+        font-size: 14px;
+        line-height: 18px;
         color: $color-dark-shade25;
     }
 
@@ -21,6 +68,11 @@
         border: 1px solid $color-dark-shade50;
     }
     &:focus {
+        border: 1px solid $color-dark-shade50;
+        outline: none;
+    }
+
+    &--force-hover {
         border: 1px solid $color-dark-shade50;
     }
 }

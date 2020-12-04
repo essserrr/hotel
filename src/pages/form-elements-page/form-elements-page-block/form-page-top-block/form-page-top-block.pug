@@ -1,8 +1,12 @@
 extends ../form-page-block-layout/form-page-block-layout.pug
+include ../../../../ui-kit/input/input.pug
+
 block col1
     .form-page-top-block
-        .form-page-top-block__column inputs
-        .form-page-top-block__column 1
+        .form-page-top-block__column 
+            +input("Email", "Text Field", "Default")
+        .form-page-top-block__column.form-page-top-block--margin-top-sm
+            +input("Email", "Text Field", "Hover / Focus", "This is pretty awesome", "", true)
         .form-page-top-block__column 2
 block col2
     .form-page-top-block
