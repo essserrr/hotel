@@ -10,6 +10,10 @@
         flex: 0 0 100%;
         max-width: 100%;
     }
+
+    &--width-lg {
+        max-width: 320px;
+    }
     &--margin-top-sm {
         margin-top: 20px;
     }

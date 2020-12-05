@@ -1,14 +1,19 @@
 extends ../form-page-block-layout/form-page-block-layout.pug
 include ../../../../ui-kit/input/input.pug
+include ../../../../ui-kit/dropdown/dropdown.pug
 
 block col1
     .form-page-top-block
-        .form-page-top-block__column 
-            +input("Email", "Text Field", "Default")
-        .form-page-top-block__column.form-page-top-block--margin-top-sm
-            +input("Email", "Text Field", "Hover / Focus", "This is pretty awesome", "", true)
-        .form-page-top-block__column
-            include ../../../../ui-kit/dropdown/dropdown.pug
+        .form-page-top-block__column.form-page-top-block--width-lg
+            .form-page-top-block__column 
+                +input("Email", "Text Field", "Default")
+            .form-page-top-block__column.form-page-top-block--margin-top-sm
+                +input("Email", "Text Field", "Hover / Focus", "This is pretty awesome", "", true)
+            .form-page-top-block__column.form-page-top-block--margin-top-sm
+                +dropdown("Dropdown", "")
+                    a(href="#", name="test1") test11
+                    a(href="#", name="test2") test3
+                    a(href="#", name="test3") test2
 block col2
     .form-page-top-block
         .form-page-top-block__column boxes
