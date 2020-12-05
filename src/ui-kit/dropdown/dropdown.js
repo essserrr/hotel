@@ -15,8 +15,9 @@ $(document).ready(function () {
         }
 
         getDropdownNodes() {
-            this.parent = $(this.nodeClicked).parent(".ui-dropdown");
+            this.parent = $(this.nodeClicked).parent().closest(".ui-dropdown");
             this.label = this.parent.find(".js-dropdown__label");
+            this.input = this.parent.find(".js-dropdown__input");
             this.container = this.parent.find(".js-dropdown__container");
             this.element = this.parent.find(".ui-dropdown__element");
         }
@@ -71,15 +72,14 @@ $(document).ready(function () {
         }
 
         setHandlers() {
-            $(".js-dropdown__label, .js-dropdown__icon").on(
-                "click",
-                this.showDropHandler
-            );
+            $(
+                ".js-dropdown__label, .js-dropdown__icon, .js-dropdown__input"
+            ).on("click", this.showDropHandler);
             $(".js-dropdown__container").on("click", this.closeDropHandler);
         }
 
         setValue(value) {
-            this.label.val(value);
+            this.input.val(value);
         }
     }
 

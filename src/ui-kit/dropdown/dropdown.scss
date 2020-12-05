@@ -1,6 +1,29 @@
 .ui-dropdown {
-    position: relative;
     width: 100%;
+
+    &__label {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+
+        position: relative;
+        width: 100%;
+        max-height: 44px;
+
+        justify-content: space-between;
+        align-items: center;
+
+        box-sizing: border-box;
+
+        padding: 13px 18px 13px 15px;
+
+        background: #ffffff;
+        border: 1px solid $color-dark-shade25;
+        border-radius: 4px;
+
+        cursor: pointer;
+    }
 
     &[data-drop-opened] {
         .ui-dropdown__icon {
@@ -18,9 +41,6 @@
     }
 
     &__icon {
-        position: absolute;
-        top: 15.5px;
-        right: 20px;
         display: block;
 
         width: 6.5px;
@@ -32,23 +52,25 @@
 
         cursor: pointer;
 
-        transform-origin: 75% 75%;
+        transform-origin: 75% 64%;
         transition: all 0.15s linear;
     }
 
-    &__label {
-        width: 100%;
-        max-height: 44px;
+    &__input {
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        max-width: 160px;
 
-        box-sizing: border-box;
+        padding: 0;
+        margin-right: 15px;
 
-        padding: 13px 87px 13px 15px;
         overflow: hidden;
         text-overflow: ellipsis;
 
         background: #ffffff;
-        border: 1px solid $color-dark-shade25;
-        border-radius: 4px;
+        border: none;
 
         font-family: Montserrat;
         font-style: normal;
@@ -57,7 +79,6 @@
         line-height: 18px;
         color: $color-dark-shade75;
 
-        transition: border 0.2s linear;
         cursor: pointer;
 
         &::placeholder {

@@ -3,11 +3,12 @@ mixin dropdown(labelLeft='', labelRight='', placeholder='', value='',mask='')
 
     +with-label(labelLeft, labelRight)
         .ui-dropdown
-            i.ui-dropdown__icon.js-dropdown__icon
-            input.ui-dropdown__label.js-dropdown__label(
-                placeholder=placeholder,
-                readonly
-            )
+            .ui-dropdown__label.js-dropdown__label
+                input.ui-dropdown__input.js-dropdown__input(
+                    placeholder=placeholder,
+                    readonly
+                )
+                i.ui-dropdown__icon.js-dropdown__icon
 
             .ui-dropdown__container.js-dropdown__container
                 .ui-dropdown__element
