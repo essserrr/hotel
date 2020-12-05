@@ -1,11 +1,13 @@
-.ui-dropdown.ui-dropdown--variant-md
-    input.ui-dropdown__label.js-dropdown__label(
-        placeholder="2 спальни, 2 кровати, 2 ванные",
-        readonly
-    )
+mixin dropdown(labelLeft='', labelRight='', placeholder='', value='',mask='')
+    include ../with-label/with-label.pug
 
-    .ui-dropdown__container.js-dropdown__container
-        .ui-dropdown__element
-            a(href="#", name="test1") test1
-            a(href="#", name="test2") test3
-            a(href="#", name="test3") test2
+    +with-label(labelLeft, labelRight)
+        .ui-dropdown.ui-dropdown--variant-md
+            input.ui-dropdown__label.js-dropdown__label(
+                placeholder=placeholder,
+                readonly
+            )
+
+            .ui-dropdown__container.js-dropdown__container
+                .ui-dropdown__element
+                    block

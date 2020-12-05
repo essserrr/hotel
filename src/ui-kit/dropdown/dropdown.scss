@@ -1,13 +1,9 @@
 .ui-dropdown {
     width: 100%;
-    max-width: 320px;
-
-    &.ui-dropdown--variant-md {
-        max-width: 266px;
-    }
 
     &[data-drop-opened] {
         .ui-dropdown__label {
+            border-radius: 4px 4px 0px 0px;
             border: 1px solid $color-dark-shade50;
             filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.05));
         }
@@ -28,7 +24,7 @@
 
         background: #ffffff;
         border: 1px solid $color-dark-shade25;
-        border-radius: 2px 2px 0px 0px;
+        border-radius: 4px;
 
         font-family: Montserrat;
         font-style: normal;
