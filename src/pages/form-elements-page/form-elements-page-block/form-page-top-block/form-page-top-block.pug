@@ -7,7 +7,8 @@ block col1
             +input("Email", "Text Field", "Default")
         .form-page-top-block__column.form-page-top-block--margin-top-sm
             +input("Email", "Text Field", "Hover / Focus", "This is pretty awesome", "", true)
-        .form-page-top-block__column 2
+        .form-page-top-block__column
+            include ../../../../ui-kit/dropdown/dropdown.pug
 block col2
     .form-page-top-block
         .form-page-top-block__column boxes
