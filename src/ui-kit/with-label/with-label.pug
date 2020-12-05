@@ -1,0 +1,10 @@
+mixin with-label(labelLeft='', labelRight='')
+    .ui-with-label__row
+        .ui-with-label__column100
+            .ui-with-label__row.ui-with-label__label
+                .ui-with-label__column
+                    h3 #{labelLeft}
+                .ui-with-label__column-auto
+                    h3.ui-with-label__label--right #{labelRight}
+        .ui-with-label__column100
+            block
