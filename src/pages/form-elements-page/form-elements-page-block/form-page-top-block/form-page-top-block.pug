@@ -10,10 +10,9 @@ block col1
             .form-page-top-block__column.form-page-top-block--margin-top-sm
                 +input("Email", "Text Field", "Hover / Focus", "This is pretty awesome", "", true)
             .form-page-top-block__column.form-page-top-block--margin-top-sm
-                +dropdown("Dropdown", "")
-                    a(href="#", name="test1") test11
-                    a(href="#", name="test2") test3
-                    a(href="#", name="test3") test2
+                +dropdown("Dropdown", "", "Сколько гостей")
+            .form-page-top-block__column.form-page-top-block--margin-top-sm
+                +input("", "masked text field", "", "", "date")
 block col2
     .form-page-top-block
         .form-page-top-block__column boxes

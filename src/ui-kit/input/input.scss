@@ -14,9 +14,18 @@
     font-weight: normal;
     font-size: 14px;
     line-height: 18px;
-    color: $color-dark-shade75;
 
     transition: border 0.2s linear;
+
+    color: $color-dark-shade75;
+
+    &--default-color {
+        color: $color-dark-shade75 !important;
+    }
+
+    &[data-masktype="date"] {
+        color: $color-dark-shade25;
+    }
 
     &::placeholder {
         font-size: 14px;
