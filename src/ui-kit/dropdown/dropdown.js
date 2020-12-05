@@ -4,10 +4,14 @@ $(document).ready(function () {
             this.getDropdownNodes = this.getDropdownNodes.bind(this);
             this.getCoordinates = this.getCoordinates.bind(this);
             this.setElementPosition = this.setElementPosition.bind(this);
+
             this.show = this.show.bind(this);
             this.close = this.close.bind(this);
+
             this.showDropHandler = this.showDropHandler.bind(this);
             this.closeDropHandler = this.closeDropHandler.bind(this);
+
+            this.setValue = this.setValue.bind(this);
         }
 
         getDropdownNodes() {
@@ -67,8 +71,15 @@ $(document).ready(function () {
         }
 
         setHandlers() {
-            $(".js-dropdown__label").on("click", this.showDropHandler);
+            $(".js-dropdown__label, .js-dropdown__icon").on(
+                "click",
+                this.showDropHandler
+            );
             $(".js-dropdown__container").on("click", this.closeDropHandler);
+        }
+
+        setValue(value) {
+            this.label.val(value);
         }
     }
 

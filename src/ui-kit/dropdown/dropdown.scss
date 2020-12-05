@@ -1,15 +1,39 @@
 .ui-dropdown {
+    position: relative;
     width: 100%;
 
     &[data-drop-opened] {
+        .ui-dropdown__icon {
+            transform: rotate(-135deg);
+        }
         .ui-dropdown__label {
             border-radius: 4px 4px 0px 0px;
             border: 1px solid $color-dark-shade50;
-            filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.05));
+            box-shadow: 0px 10px 20px $color-dark-shade5;
         }
         .ui-dropdown__element {
-            filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.05));
+            box-shadow: 0px 10px 20px $color-dark-shade5;
+            clip-path: inset(0px -25px -35px -25px);
         }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 15.5px;
+        right: 20px;
+        display: block;
+
+        width: 6.5px;
+        height: 6.5px;
+        border-right: 2px solid $color-dark-shade50;
+        border-bottom: 2px solid $color-dark-shade50;
+
+        transform: rotate(45deg);
+
+        cursor: pointer;
+
+        transform-origin: 75% 75%;
+        transition: all 0.15s linear;
     }
 
     &__label {
@@ -70,7 +94,7 @@
         padding: 13px 7px 7px 15px;
 
         background: #ffffff;
-        border: 1px solid rgba(31, 32, 65, 0.5);
+        border: 1px solid $color-dark-shade50;
         border-radius: 0px 0px 2px 2px;
 
         box-sizing: border-box;
