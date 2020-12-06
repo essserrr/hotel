@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    const dateNodes = $("[type=date]");
+    const dateNodes = $("[data-label-type=date]");
 
     dateNodes.daterangepicker(
         {
