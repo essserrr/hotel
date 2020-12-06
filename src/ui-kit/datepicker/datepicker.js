@@ -1,69 +1,106 @@
 $(document).ready(function () {
-    const dateNodes = $("[data-label-type=date]");
+    const leftNodes = $("[data-label-type=date]:not([data-opens=right])");
+    const rightNodes = $("[data-label-type=date][data-opens=right]");
 
-    dateNodes.daterangepicker({
-        locale: {
-            cancelLabel: "Clear",
-            format: "dd/mm/yyyy",
-            separator: " - ",
-            applyLabel: "Применить",
-            cancelLabel: "Очистить",
-            fromLabel: "С",
-            toLabel: "До",
-            customRangeLabel: "Кастомный",
-            weekLabel: "Н",
-            daysOfWeek: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
-            monthNames: [
-                "Январь",
-                "Февраль",
-                "Март",
-                "Апрель",
-                "Май",
-                "Июнь",
-                "Июль",
-                "Август",
-                "Сентябрь",
-                "Октябрь",
-                "Ноябрь",
-                "Декабрь",
-            ],
-            firstDay: 1,
-        },
+    const rangeNodes = $("[data-label-type=date-range]");
 
-        singleDatePicker: true,
-        linkedCalendars: false,
-        showCustomRangeLabel: false,
-    });
-
-    const formatMonth = function () {
-        const activePicker = $("div.daterangepicker").filter(function () {
-            return this.style.cssText.includes("display: block");
-        })[0];
-
-        if (!activePicker) return;
-
-        const month = $(activePicker).find("table thead th.month[colspan=5]");
-        const monthAndYear = month.html().split(" ");
-        month.html(monthAndYear[0] + "<br>" + monthAndYear[1]);
+    const locale = {
+        cancelLabel: "Clear",
+        format: "dd/mm/yyyy",
+        separator: " - ",
+        applyLabel: "Применить",
+        cancelLabel: "Очистить",
+        fromLabel: "С",
+        toLabel: "До",
+        customRangeLabel: "Кастомный",
+        weekLabel: "Н",
+        daysOfWeek: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+        monthNames: [
+            "Январь",
+            "Февраль",
+            "Март",
+            "Апрель",
+            "Май",
+            "Июнь",
+            "Июль",
+            "Август",
+            "Сентябрь",
+            "Октябрь",
+            "Ноябрь",
+            "Декабрь",
+        ],
+        firstDay: 1,
     };
 
-    const closeDropdown = function () {
+    const findActivePicker = function () {
+        return $("div.daterangepicker").filter(function () {
+            return this.style.cssText.includes("display: block");
+        })[0];
+    };
+
+    const hideSecondCalendar = function (activePicker) {
+        $(activePicker).find(".drp-calendar.right").css("display", "none");
+    };
+
+    const showHandler = function () {
+        const activePicker = findActivePicker();
+        if (!activePicker) return;
+        hideSecondCalendar(activePicker);
+    };
+
+    const hideHandler = function () {
         $.uiDropdown.close();
     };
 
-    const applyDate = function (ev, picker) {
+    const applyDateHanler = function (ev, picker) {
         $.uiDropdown.setValue(picker.startDate.format("DD.MM.YYYY"));
     };
 
-    const removeDate = function () {
+    const applyRangeHanler = function (ev, picker) {
+        $.uiDropdown.setValue(
+            picker.startDate.format("DD.MM") +
+                " - " +
+                picker.endDate.format("DD.MM")
+        );
+    };
+
+    const cancelHandler = function () {
         $.uiDropdown.setValue("");
     };
 
-    dateNodes.on("apply.daterangepicker", applyDate);
-    dateNodes.on("cancel.daterangepicker", removeDate);
+    const initDatepicker = function (nodes, opens) {
+        nodes.daterangepicker({
+            opens: opens,
+            singleDatePicker: true,
+            linkedCalendars: false,
+            showCustomRangeLabel: false,
+            locale,
+        });
 
-    dateNodes.on("show.daterangepicker", formatMonth);
-    dateNodes.on("hide.daterangepicker", closeDropdown);
+        nodes.on("apply.daterangepicker", applyDateHanler);
+        nodes.on("cancel.daterangepicker", cancelHandler);
 
-    dateNodes.on("showCalendar.daterangepicker", formatMonth);
+        nodes.on("show.daterangepicker", showHandler);
+        nodes.on("hide.daterangepicker", hideHandler);
+    };
+
+    const initDatepickerRange = function (nodes, opens) {
+        nodes.daterangepicker({
+            opens: opens,
+            linkedCalendars: false,
+            showCustomRangeLabel: true,
+            alwaysShowCalendars: true,
+            locale,
+        });
+
+        nodes.on("apply.daterangepicker", applyRangeHanler);
+        nodes.on("cancel.daterangepicker", cancelHandler);
+
+        nodes.on("show.daterangepicker", showHandler);
+        nodes.on("hide.daterangepicker", hideHandler);
+    };
+
+    initDatepicker(leftNodes, "left");
+    initDatepicker(rightNodes, "right");
+    initDatepickerRange(rangeNodes, "left");
 });
