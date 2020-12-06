@@ -3,7 +3,24 @@ extends ../../components/ui-kit-demostartion-layout/ui-kit-demostartion-layout.p
 block meta
     title Элементы форм
 block scripts
-    script(src="/libs/mask/jquery.inputmask.js")
+    script(
+        type="text/javascript",
+        src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+    )
+    script(
+        type="text/javascript",
+        src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+    )
+
+    script(type="text/javascript", src="/libs/mask/jquery.inputmask.js")
+
+block styles
+    link(
+        rel="stylesheet",
+        type="text/css",
+        href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+    )
+
 block content
     .form-page-layout.form-page-layout--padding
         .form-page-layout__column 
