@@ -237,7 +237,7 @@
         display: flex !important;
         justify-content: space-between;
 
-        .btn {
+        .btn.btn-sm {
             border: none;
             background-color: transparent;
             padding: 0;
@@ -251,6 +251,10 @@
             text-transform: uppercase;
 
             color: $color-purple;
+
+            cursor: pointer;
+
+            outline: none !important;
         }
     }
 }
