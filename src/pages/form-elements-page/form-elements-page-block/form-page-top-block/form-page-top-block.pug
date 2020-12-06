@@ -4,28 +4,28 @@ include ../../../../ui-kit/dropdown/dropdown.pug
 
 block col1
     .form-page-top-block.form-page-top-block__row
-        .form-page-top-block__column.form-page-top-block--width-lg
-            .form-page-top-block__column 
+        .form-page-top-block__column100.form-page-top-block--width-lg
+            .form-page-top-block__column100 
                 +input({placeholder:"Email", labelLeft:"Text Field", labelRight:"Default"})
-            .form-page-top-block__column.form-page-top-block--margin-top-sm
+            .form-page-top-block__column100.form-page-top-block--margin-top-sm
                 +input({value: "This is pretty awesome", labelLeft:"Text Field", labelRight:"Hover / Focus", forceHover: true})
-            .form-page-top-block__column.form-page-top-block--margin-top-sm
+            .form-page-top-block__column100.form-page-top-block--margin-top-sm
                 +dropdown({ placeholder:"Сколько гостей", labelLeft: "Dropdown"})
-            .form-page-top-block__column.form-page-top-block--margin-top-sm
+            .form-page-top-block__column100.form-page-top-block--margin-top-sm
                 +input({mask:"date", labelLeft:"masked text field"})
-            .form-page-top-block__column.form-page-top-block--margin-top-md
-                .form-page-top-block__row
+            .form-page-top-block__column100.form-page-top-block--margin-top-md
+                .form-page-top-block__row.form-page-top-block--spacing
                     .form-page-top-block__column50
-                        +dropdown({ placeholder:"Сколько гостей", labelLeft: "Dropdown"})
+                        +dropdown({ placeholder:"Сколько гостей", labelLeft: "date Dropdown", type: "date"})
                     .form-page-top-block__column50
-                        +dropdown({ placeholder:"Сколько гостей", labelLeft: "Dropdown"})
+                        +dropdown({ placeholder:"Сколько гостей", labelLeft: "date Dropdown", type: "date"})
 block col2
     .form-page-top-block
-        .form-page-top-block__column boxes
-        .form-page-top-block__column 1
-        .form-page-top-block__column 2
+        .form-page-top-block__column100 boxes
+        .form-page-top-block__column100 1
+        .form-page-top-block__column100 2
 block col3
     .form-page-top-block
-        .form-page-top-block__column buttons
-        .form-page-top-block__column 1
-        .form-page-top-block__column 2
+        .form-page-top-block__column100 buttons
+        .form-page-top-block__column100 1
+        .form-page-top-block__column100 2

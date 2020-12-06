@@ -7,7 +7,18 @@
         flex-wrap: wrap;
     }
 
-    &__column {
+    &--spacing {
+        margin-left: -10px;
+        margin-right: -10px;
+        .form-page-top-block__column100,
+        .form-page-top-block__column50 {
+            box-sizing: border-box;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+
+    &__column100 {
         -ms-flex: 0 0 100%;
         flex: 0 0 100%;
         max-width: 100%;
