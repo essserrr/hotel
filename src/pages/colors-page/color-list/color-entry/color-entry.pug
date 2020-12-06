@@ -1,4 +1,5 @@
-mixin color-entry(title, description, variant)
+mixin color-entry(props)
+    - const { title, description, variant } = props;
     .color-entry
         div(
             class='color-entry__icon color-entry__icon--margin color-entry__icon--' + variant

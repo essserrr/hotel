@@ -3,16 +3,22 @@ include ../../../../ui-kit/input/input.pug
 include ../../../../ui-kit/dropdown/dropdown.pug
 
 block col1
-    .form-page-top-block
+    .form-page-top-block.form-page-top-block__row
         .form-page-top-block__column.form-page-top-block--width-lg
             .form-page-top-block__column 
-                +input("Email", "Text Field", "Default")
+                +input({placeholder:"Email", labelLeft:"Text Field", labelRight:"Default"})
             .form-page-top-block__column.form-page-top-block--margin-top-sm
-                +input("Email", "Text Field", "Hover / Focus", "This is pretty awesome", "", true)
+                +input({value: "This is pretty awesome", labelLeft:"Text Field", labelRight:"Hover / Focus", forceHover: true})
             .form-page-top-block__column.form-page-top-block--margin-top-sm
-                +dropdown("Dropdown", "", "Сколько гостей")
+                +dropdown({ placeholder:"Сколько гостей", labelLeft: "Dropdown"})
             .form-page-top-block__column.form-page-top-block--margin-top-sm
-                +input("", "masked text field", "", "", "date")
+                +input({mask:"date", labelLeft:"masked text field"})
+            .form-page-top-block__column.form-page-top-block--margin-top-md
+                .form-page-top-block__row
+                    .form-page-top-block__column50
+                        +dropdown({ placeholder:"Сколько гостей", labelLeft: "Dropdown"})
+                    .form-page-top-block__column50
+                        +dropdown({ placeholder:"Сколько гостей", labelLeft: "Dropdown"})
 block col2
     .form-page-top-block
         .form-page-top-block__column boxes

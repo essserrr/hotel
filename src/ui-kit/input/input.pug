@@ -1,7 +1,8 @@
-mixin input(placeholder='', labelLeft='', labelRight='', value='',mask='', forceHover=false)
+mixin input(props)
+    - const { value, name, mask, placeholder, labelLeft, labelRight, forceHover } = props;
     include ../with-label/with-label.pug
 
-    +with-label(labelLeft, labelRight)
+    +with-label({labelLeft, labelRight})
         input(
             class='ui-text-input' + (forceHover === true ? ' ui-text-input--force-hover' : ''),
             type="text",

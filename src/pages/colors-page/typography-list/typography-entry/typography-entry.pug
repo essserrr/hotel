@@ -1,4 +1,5 @@
-mixin typography-entry(description, variant)
+mixin typography-entry(props)
+    - const { description, variant } = props;
     .typography-entry
         case variant
             when "H1"

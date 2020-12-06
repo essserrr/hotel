@@ -1,7 +1,8 @@
-mixin dropdown(labelLeft='', labelRight='', placeholder='', value='',mask='')
+mixin dropdown(props)
+    - const { value, name, mask, placeholder, labelLeft, labelRight } = props;
     include ../with-label/with-label.pug
 
-    +with-label(labelLeft, labelRight)
+    +with-label({labelLeft, labelRight})
         .ui-dropdown
             .ui-dropdown__label.js-dropdown__label
                 input.ui-dropdown__input.js-dropdown__input(

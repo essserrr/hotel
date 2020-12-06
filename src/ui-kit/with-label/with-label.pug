@@ -1,4 +1,5 @@
-mixin with-label(labelLeft='', labelRight='')
+mixin with-label(props)
+    - const { labelLeft, labelRight } = props;
     .ui-with-label__row
         .ui-with-label__column100
             .ui-with-label__row.ui-with-label__label
