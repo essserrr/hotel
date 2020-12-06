@@ -76,6 +76,11 @@ $(document).ready(function () {
                 ".js-dropdown__label, .js-dropdown__icon, .js-dropdown__input"
             ).on("click", this.showDropHandler);
             $(".js-dropdown__container").on("click", this.closeDropHandler);
+
+            $.uiDropdown = {
+                close: this.close,
+                setValue: this.setValue,
+            };
         }
 
         setValue(value) {
