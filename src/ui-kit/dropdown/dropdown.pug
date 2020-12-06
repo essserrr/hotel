@@ -1,9 +1,9 @@
 mixin dropdown(props)
-    - const { value, name, mask, type, placeholder, labelLeft, labelRight, readonly=true } = props;
+    - const { value, name, mask, type, opens, placeholder, labelLeft, labelRight, readonly=true } = props;
     include ../with-label/with-label.pug
 
     +with-label({labelLeft, labelRight})
-        .ui-dropdown(data-label-type=type)
+        .ui-dropdown(data-label-type=type, data-opens=opens)
             .ui-dropdown__label.js-dropdown__label
                 input.ui-dropdown__input.js-dropdown__input(
                     value=value,
@@ -11,7 +11,7 @@ mixin dropdown(props)
                     readonly=readonly
                 )
                 i.ui-dropdown__icon.js-dropdown__icon
-            if (type !== "date")
+            if (type === "text")
                 .ui-dropdown__container.js-dropdown__container
                     .ui-dropdown__element
                         block

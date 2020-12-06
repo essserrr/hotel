@@ -30,7 +30,7 @@
             transform: rotate(-135deg);
         }
 
-        &:not([data-label-type="date"]) {
+        &[data-label-type="text"] {
             .ui-dropdown__label {
                 border-radius: 4px 4px 0px 0px;
                 border: 1px solid $color-dark-shade50;
