@@ -36,6 +36,7 @@
         "@popperjs/core": "^2.4.4",
         "bxslider": "^4.2.14",
         "clean-webpack-plugin": "^3.0.0",
+        "daterangepicker": "^3.1.0",
         "inputmask": "^5.0.5",
         "jquery.mmenu": "^7.3.3"
     }
