@@ -6,6 +6,7 @@ mixin dropdown(props)
         .ui-dropdown(data-label-type=type)
             .ui-dropdown__label.js-dropdown__label
                 input.ui-dropdown__input.js-dropdown__input(
+                    value=value,
                     placeholder=placeholder,
                     readonly=readonly
                 )
