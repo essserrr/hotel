@@ -29,30 +29,6 @@
 
                 &:after {
                     display: block;
-                    left: 6px;
-                    top: 4px;
-
-                    width: 6px;
-                    height: 8px;
-                    background: linear-gradient(
-                        180deg,
-                        $color-purple 0%,
-                        #8ba4f9 100%
-                    );
-                    clip-path: polygon(
-                        0 75%,
-                        63% 75%,
-                        63% 0,
-                        100% 0,
-                        100% 100%,
-                        0 100%
-                    );
-
-                    transform-origin: center;
-
-                    -webkit-transform: rotate(45deg);
-                    -ms-transform: rotate(45deg);
-                    transform: rotate(45deg);
                 }
             }
         }
@@ -75,6 +51,27 @@
             content: "";
             position: absolute;
             display: none;
+
+            left: 6px;
+            top: 4px;
+
+            width: 6px;
+            height: 8px;
+            background: linear-gradient(180deg, $color-purple 0%, #8ba4f9 100%);
+            clip-path: polygon(
+                0 75%,
+                63% 75%,
+                63% 0,
+                100% 0,
+                100% 100%,
+                0 100%
+            );
+
+            transform-origin: center;
+
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
         }
     }
 }
