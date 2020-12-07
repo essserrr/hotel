@@ -1,0 +1,8 @@
+mixin radio(props)
+    - const {label, checked, name} = props;
+
+    label.ui-radio 
+        input.ui-radio__input(type="radio", name=name, checked=checked)
+        span.ui-radio__checkmark
+        span.ui-radio__label #{label}
+
