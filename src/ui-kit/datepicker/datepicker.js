@@ -102,5 +102,5 @@ $(document).ready(function () {
 
     initDatepicker(leftNodes, "left");
     initDatepicker(rightNodes, "right");
-    initDatepickerRange(rangeNodes, "left");
+    initDatepickerRange(rangeNodes, "right");
 });
