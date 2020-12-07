@@ -1,0 +1,22 @@
+.ui-radio-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    &--spacing {
+        .ui-radio-group__entry {
+            margin-right: 20px;
+            &:last-of-type {
+                margin-right: 0px;
+            }
+        }
+    }
+
+    &__entry {
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
+    }
+}

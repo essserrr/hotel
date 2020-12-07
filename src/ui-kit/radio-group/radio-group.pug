@@ -1,0 +1,10 @@
+include ./radio/radio.pug
+
+mixin radio-group(props)
+    - const {list} = props;
+
+    label.ui-radio-group.ui-radio-group--spacing
+        each value in list
+            .ui-radio-group__entry
+                    +radio(value)           
+
