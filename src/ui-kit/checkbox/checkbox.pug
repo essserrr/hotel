@@ -1,0 +1,6 @@
+mixin checkbox(props)
+    - const { name, mainLabel, subLabel, checked } = props;
+    
+    label.ui-checkbox #{mainLabel}
+        input.ui-checkbox__input(type="checkbox", checked=checked, name=name)
+        span.ui-checkbox__checkmark
