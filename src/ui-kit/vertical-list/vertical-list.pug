@@ -1,0 +1,15 @@
+include ../checkbox/checkbox.pug
+include ../with-label/with-label.pug
+
+mixin vertical-list(props)
+    - const { list = [], variant, labelLeft, labelRight, labelVariant } = props;
+    
+    +with-label({labelLeft, labelRight, variant: labelVariant})
+        ul.ui-vertical-list
+            each value in list
+                case variant
+                    when "checkbox"
+                        li.ui-vertical-list__entry
+                            +checkbox(value)
+                    default
+                        li #{value}        
