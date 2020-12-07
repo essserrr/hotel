@@ -11,10 +11,23 @@
         margin-left: -10px;
         margin-right: -10px;
         .form-page-top-block__column100,
-        .form-page-top-block__column50 {
+        .form-page-top-block__column50,
+        .form-page-top-block__column-auto {
             box-sizing: border-box;
             padding-left: 10px;
             padding-right: 10px;
+        }
+
+        &-sm {
+            margin-left: -5px;
+            margin-right: -5px;
+            .form-page-top-block__column100,
+            .form-page-top-block__column50,
+            .form-page-top-block__column-auto {
+                box-sizing: border-box;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
         }
     }
 
@@ -28,6 +41,13 @@
         -ms-flex: 0 0 50%;
         flex: 0 0 50%;
         max-width: 50%;
+    }
+
+    &__column-auto {
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
     }
 
     &--width-320 {
