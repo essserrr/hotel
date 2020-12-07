@@ -1,6 +1,7 @@
 extends ../form-page-block-layout/form-page-block-layout.pug
 include ../../../../ui-kit/input/input.pug
 include ../../../../ui-kit/dropdown/dropdown.pug
+include ../../../../ui-kit/icons/arrow-forward/arrow-forward.pug
 
 block col1
     .form-page-top-block.form-page-top-block__row
@@ -19,8 +20,12 @@ block col1
                         +dropdown({ placeholder:"ДД.ММ.ГГГГ", labelLeft: "date Dropdown", type: "date", opens: "right"})
                     .form-page-top-block__column50
                         +dropdown({ placeholder:"ДД.ММ.ГГГГ", value:"19.08.2019", labelLeft: "date Dropdown", type: "date"})
-            .form-page-top-block__column100.form-page-top-block--margin-top-md
+            .form-page-top-block__column100.form-page-top-block--margin-top-md.form-page-top-block--width-md
                 +dropdown({ placeholder:"ДД ММ - ДД ММ", labelLeft: "filter date dropdown", type: "date-range"})
+            .form-page-top-block__column100.form-page-top-block--margin-top-md.form-page-top-block--width-md
+                +input({placeholder:"Email", labelLeft:"subscription text field", submitable: true}) 
+                    +arrow-forward()
+
 block col2
     .form-page-top-block
         .form-page-top-block__column100 boxes
