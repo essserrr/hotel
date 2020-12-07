@@ -1,13 +1,18 @@
 mixin input(props)
-    - const { value, name, mask, placeholder, labelLeft, labelRight, forceHover } = props;
+    - const { value, name, mask, placeholder, labelLeft, labelRight, forceHover, submitable } = props;
     include ../with-label/with-label.pug
 
     +with-label({labelLeft, labelRight})
-        input(
-            class='ui-text-input' + (forceHover === true ? ' ui-text-input--force-hover' : ''),
-            type="text",
-            placeholder=placeholder,
-            value=value,
-            data-masktype=mask,
-            focus
-        )
+        div(class="ui-text-input" + (submitable === true ? ' ui-text-input--submitable' : ''))
+            input(
+                class='ui-text-input__input' + (forceHover === true ? ' ui-text-input__input--force-hover' : ''),
+                type="text",
+                placeholder=placeholder,
+                value=value,
+                data-masktype=mask,
+                focus
+            )
+            if (submitable === true)
+                button.ui-text-input__icon(type="submit")
+                    block
+
