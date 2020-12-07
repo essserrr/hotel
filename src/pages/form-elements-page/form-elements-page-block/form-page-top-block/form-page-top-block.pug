@@ -4,7 +4,8 @@ include ../../../../ui-kit/with-label/with-label.pug
 include ../../../../ui-kit/dropdown/dropdown.pug
 include ../../../../ui-kit/icons/arrow-forward/arrow-forward.pug
 include ../../../../ui-kit/vertical-list/vertical-list.pug
-include ../../../../ui-kit/radio-group/radio/radio.pug
+
+include ../../../../ui-kit/switch/switch.pug
 
 block col1
     .form-page-top-block.form-page-top-block__row
@@ -35,7 +36,9 @@ block col2
             +vertical-list({labelLeft: "Checkbox Buttons", labelVariant: "md", variant: "checkbox", list: [{mainLabel: "Можно курить"}, {checked:"checked", mainLabel: "Можно с питомцами"}, {checked:"checked", mainLabel: "Можно пригласить гостей (до 10 человек)"},]})
         .form-page-top-block__column100.form-page-top-block--margin-top-md
             +vertical-list({ labelLeft: "Radio Buttons", labelVariant: "md", variant: "radio", list: [[{label: "Мужчина", name: "radio"}, {label: "Женщина", name: "radio"}]] })
-        .form-page-top-block__column100.form-page-top-block--margin-top-mdx xxx
+        .form-page-top-block__column100.form-page-top-block--margin-top-md
+            +vertical-list({ labelLeft: "Toggle", labelVariant: "md", variant: "switch", list: [{label: "Получать спецпредложения", checked: "checked"}, {label: "Получать спецпредложения"}]})
+
 block col3
     .form-page-top-block
         .form-page-top-block__column100 buttons

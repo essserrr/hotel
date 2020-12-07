@@ -1,6 +1,7 @@
 include ../checkbox/checkbox.pug
 include ../with-label/with-label.pug
 include ../radio-group/radio-group.pug
+include ../switch/switch.pug
 
 mixin vertical-list(props)
     - const { list = [], variant, labelLeft, labelRight, labelVariant } = props;
@@ -16,5 +17,8 @@ mixin vertical-list(props)
                     when "radio"
                         li.ui-vertical-list__entry
                             +radio-group({list: value})
+                    when "switch"
+                        li.ui-vertical-list__entry
+                            +switch(value)
                     default
                         li #{value}        
