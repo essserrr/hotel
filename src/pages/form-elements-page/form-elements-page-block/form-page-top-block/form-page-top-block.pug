@@ -5,7 +5,7 @@ include ../../../../ui-kit/dropdown/dropdown.pug
 include ../../../../ui-kit/icons/arrow-forward/arrow-forward.pug
 include ../../../../ui-kit/vertical-list/vertical-list.pug
 
-include ../../../../ui-kit/switch/switch.pug
+include ../../../../ui-kit/buttons/like/like.pug
 
 block col1
     .form-page-top-block.form-page-top-block__row
@@ -38,6 +38,15 @@ block col2
             +vertical-list({ labelLeft: "Radio Buttons", labelVariant: "md", variant: "radio", list: [[{label: "Мужчина", name: "radio"}, {label: "Женщина", name: "radio"}]] })
         .form-page-top-block__column100.form-page-top-block--margin-top-md
             +vertical-list({ labelLeft: "Toggle", labelVariant: "md", variant: "switch", list: [{label: "Получать спецпредложения", checked: "checked"}, {label: "Получать спецпредложения"}]})
+        .form-page-top-block__column100.form-page-top-block--margin-top-md
+            +with-label({labelLeft: "like button", variant: "md"})
+                .form-page-top-block__row.form-page-top-block--spacing-sm
+                    .form-page-top-block__column-auto
+                        +like({value: 2})
+                    .form-page-top-block__column-auto
+                        +like({value: 12, checked: "checked"})
+            
+
 
 block col3
     .form-page-top-block
