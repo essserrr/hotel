@@ -6,7 +6,12 @@
     flex-wrap: wrap;
 
     &__label {
-        margin-bottom: 5px;
+        &--margin-sm {
+            margin-bottom: 5px;
+        }
+        &--margin-md {
+            margin-bottom: 16px;
+        }
         &--right {
             color: $color-dark-shade50;
             font-weight: normal;

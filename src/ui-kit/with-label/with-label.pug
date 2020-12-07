@@ -1,8 +1,10 @@
 mixin with-label(props)
-    - const { labelLeft, labelRight } = props;
+    - const { labelLeft, labelRight, variant="sm" } = props;
     .ui-with-label__row
-        .ui-with-label__column100
-            .ui-with-label__row.ui-with-label__label
+        div(
+            class='ui-with-label__column100 ui-with-label__label' + (" ui-with-label__label--margin-"+variant),
+            )
+            .ui-with-label__row
                 .ui-with-label__column
                     h3 #{labelLeft}
                 .ui-with-label__column-auto
