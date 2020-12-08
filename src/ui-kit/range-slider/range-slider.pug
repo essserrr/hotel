@@ -1,0 +1,7 @@
+mixin range-slider(props)
+    - const { name, labelLeft, labelRight, variant } = props;
+    include ../with-label/with-label.pug
+
+    +with-label({labelLeft, labelRight, variant})
+        .ui-range-slider
+            .js-range-slider

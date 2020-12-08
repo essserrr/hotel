@@ -6,6 +6,7 @@ include ../../../../ui-kit/icons/arrow-forward/arrow-forward.pug
 include ../../../../ui-kit/vertical-list/vertical-list.pug
 include ../../../../ui-kit/buttons/like/like.pug
 include ../../../../ui-kit/buttons/rate/rate.pug
+include ../../../../ui-kit/range-slider/range-slider.pug
 
 block col1
     .form-page-top-block.form-page-top-block__row
@@ -54,6 +55,8 @@ block col2
                         +rate({checkedStars: 5})
 block col3
     .form-page-top-block
-        .form-page-top-block__column100 buttons
+        .form-page-top-block__column100.form-page-top-block--width-266
+            +range-slider({labelLeft: "Range Slider", labelRight: "5 000₽ - 10 000₽", variant: "md"})
+
         .form-page-top-block__column100 1
         .form-page-top-block__column100 2

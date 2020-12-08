@@ -1,0 +1,45 @@
+.ui-range-slider {
+    height: 16px;
+    .irs {
+        width: 100%;
+
+        &-line {
+            margin: 0;
+            padding: 0;
+
+            top: 5px;
+
+            height: 6px;
+
+            border: 1px solid $color-dark-shade25;
+            background-color: white;
+            box-sizing: border-box;
+            border-radius: 3px;
+        }
+
+        &-bar {
+            margin: 0;
+            padding: 0;
+
+            top: 5px;
+
+            height: 6px;
+
+            background: linear-gradient(180deg, $color-green 0%, #66d2ea 100%);
+            border-radius: 3px;
+        }
+
+        &-handle.from,
+        &-handle.to {
+            top: 0px;
+
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(180deg, $color-green 0%, #66d2ea 100%);
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+
+            box-shadow: none;
+        }
+    }
+}
