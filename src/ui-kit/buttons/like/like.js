@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function () {
     const likeClickHandler = function () {
         const target = $(this);
         let value = target.val();

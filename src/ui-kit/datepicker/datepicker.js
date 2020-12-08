@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function () {
     const leftNodes = $("[data-label-type=date]:not([data-opens=right])");
     const rightNodes = $("[data-label-type=date][data-opens=right]");
 

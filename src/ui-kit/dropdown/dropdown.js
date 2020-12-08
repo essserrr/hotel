@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function () {
     class Dropdown {
         constructor() {
             this.getDropdownNodes = this.getDropdownNodes.bind(this);

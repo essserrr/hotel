@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function () {
     if (!$().inputmask) return;
     $("[data-masktype=date]").inputmask({
         alias: "datetime",
