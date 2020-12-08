@@ -38,6 +38,9 @@
         "clean-webpack-plugin": "^3.0.0",
         "daterangepicker": "^3.1.0",
         "inputmask": "^5.0.5",
-        "jquery.mmenu": "^7.3.3"
+        "ion-rangeslider": "^2.3.1",
+        "jquery-bar-rating": "^1.2.2",
+        "jquery.mmenu": "^7.3.3",
+        "jquery.rateit": "^1.1.3"
     }
 }

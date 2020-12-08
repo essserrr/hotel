@@ -1,0 +1,20 @@
+mixin rate(props)
+    - const { totalStar = 5, checkedStars = 0 } = props;
+
+    .ui-rating.ui-rating--spacing
+        - var filledRendered = 0;
+        - var emptydRendered = 0;
+
+        input.ui-rating__input(value=checkedStars)
+
+        while filledRendered < checkedStars
+            - filledRendered++;
+            i.ui-rating__star.ui-rating__star--checked.js-rating(
+                data-star-value=filledRendered
+            )
+
+        while emptydRendered < totalStar - checkedStars
+            - emptydRendered++;
+            i.ui-rating__star.js-rating(
+                data-star-value=filledRendered + emptydRendered
+            )

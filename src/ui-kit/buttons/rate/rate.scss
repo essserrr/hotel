@@ -1,0 +1,33 @@
+.ui-rating {
+    position: relative;
+    display: flex;
+    width: min-content;
+    height: min-content;
+
+    &--spacing {
+        .ui-rating__star {
+            margin: 2px;
+        }
+    }
+
+    &__input {
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &__star {
+        display: block;
+        width: 20px;
+        height: 19px;
+
+        background-image: url(../ui-kit/icons/star/star.svg);
+
+        cursor: pointer;
+
+        &--checked {
+            background-image: url(../ui-kit/icons/star/star-active.svg);
+        }
+    }
+}

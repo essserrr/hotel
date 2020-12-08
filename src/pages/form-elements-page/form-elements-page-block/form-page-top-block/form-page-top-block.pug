@@ -4,8 +4,8 @@ include ../../../../ui-kit/with-label/with-label.pug
 include ../../../../ui-kit/dropdown/dropdown.pug
 include ../../../../ui-kit/icons/arrow-forward/arrow-forward.pug
 include ../../../../ui-kit/vertical-list/vertical-list.pug
-
 include ../../../../ui-kit/buttons/like/like.pug
+include ../../../../ui-kit/buttons/rate/rate.pug
 
 block col1
     .form-page-top-block.form-page-top-block__row
@@ -28,7 +28,7 @@ block col1
                 +dropdown({ placeholder:"ДД ММ - ДД ММ", labelLeft: "filter date dropdown", type: "date-range"})
             .form-page-top-block__column100.form-page-top-block--margin-top-md.form-page-top-block--width-266
                 +input({placeholder:"Email", labelLeft:"subscription text field", submitable: true}) 
-                    +arrow-forward()
+                    +arrow-forward
 
 block col2
     .form-page-top-block
@@ -45,9 +45,13 @@ block col2
                         +like({value: 2})
                     .form-page-top-block__column-auto
                         +like({value: 12, checked: "checked"})
-            
-
-
+        .form-page-top-block__column100.form-page-top-block--margin-top-md
+            +with-label({labelLeft: "rate button", variant: "md"})
+                .form-page-top-block__row.form-page-top-block--spacing
+                    .form-page-top-block__column-auto
+                        +rate({checkedStars: 4})
+                    .form-page-top-block__column-auto
+                        +rate({checkedStars: 5})
 block col3
     .form-page-top-block
         .form-page-top-block__column100 buttons
