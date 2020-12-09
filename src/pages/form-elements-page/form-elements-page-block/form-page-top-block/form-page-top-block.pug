@@ -6,6 +6,7 @@ include ../../../../ui-kit/icons/arrow-forward/arrow-forward.pug
 include ../../../../ui-kit/vertical-list/vertical-list.pug
 include ../../../../ui-kit/buttons/like/like.pug
 include ../../../../ui-kit/buttons/rate/rate.pug
+include ../../../../ui-kit/buttons/button/button.pug
 include ../../../../ui-kit/range-slider/range-slider.pug
 
 block col1
@@ -19,15 +20,15 @@ block col1
                 +dropdown({ placeholder:"Сколько гостей", labelLeft: "Dropdown", type: "text"})
             .form-page-top-block__column100.form-page-top-block--margin-top-sm
                 +input({mask:"date", labelLeft:"masked text field"})
-            .form-page-top-block__column100.form-page-top-block--margin-top-md
+            .form-page-top-block__column100.form-page-top-block--margin-top-lg
                 .form-page-top-block__row.form-page-top-block--spacing
                     .form-page-top-block__column50
                         +dropdown({ placeholder:"ДД.ММ.ГГГГ", labelLeft: "date Dropdown", type: "date", opens: "right"})
                     .form-page-top-block__column50
                         +dropdown({ placeholder:"ДД.ММ.ГГГГ", value:"19.08.2019", labelLeft: "date Dropdown", type: "date"})
-            .form-page-top-block__column100.form-page-top-block--margin-top-md.form-page-top-block--width-266
-                +dropdown({ placeholder:"ДД ММ - ДД ММ", labelLeft: "filter date dropdown", type: "date-range"})
-            .form-page-top-block__column100.form-page-top-block--margin-top-md.form-page-top-block--width-266
+            .form-page-top-block__column100.form-page-top-block--margin-top-lg.form-page-top-block--width-266
+                +dropdown({ placeholder:"ДД ММ - ДД ММ", value: "19 авг - 23 авг", labelLeft: "filter date dropdown", type: "date-range"})
+            .form-page-top-block__column100.form-page-top-block--margin-top-lg.form-page-top-block--width-266
                 +input({placeholder:"Email", labelLeft:"subscription text field", submitable: true}) 
                     +arrow-forward
 
@@ -35,18 +36,18 @@ block col2
     .form-page-top-block
         .form-page-top-block__column100.form-page-top-block--width-222
             +vertical-list({labelLeft: "Checkbox Buttons", labelVariant: "md", variant: "checkbox", list: [{mainLabel: "Можно курить"}, {checked:"checked", mainLabel: "Можно с питомцами"}, {checked:"checked", mainLabel: "Можно пригласить гостей (до 10 человек)"},]})
-        .form-page-top-block__column100.form-page-top-block--margin-top-md
-            +vertical-list({ labelLeft: "Radio Buttons", labelVariant: "md", variant: "radio", list: [[{label: "Мужчина", name: "radio"}, {label: "Женщина", name: "radio"}]] })
-        .form-page-top-block__column100.form-page-top-block--margin-top-md
+        .form-page-top-block__column100.form-page-top-block--margin-top-lg
+            +vertical-list({ labelLeft: "Radio Buttons", labelVariant: "md", variant: "radio", list: [[{label: "Мужчина", name: "radio", checked: "checked"}, {label: "Женщина", name: "radio"}]] })
+        .form-page-top-block__column100.form-page-top-block--margin-top-lg
             +vertical-list({ labelLeft: "Toggle", labelVariant: "md", variant: "switch", list: [{label: "Получать спецпредложения", checked: "checked"}, {label: "Получать спецпредложения"}]})
-        .form-page-top-block__column100.form-page-top-block--margin-top-md
+        .form-page-top-block__column100.form-page-top-block--margin-top-lg
             +with-label({labelLeft: "like button", variant: "md"})
                 .form-page-top-block__row.form-page-top-block--spacing-sm
                     .form-page-top-block__column-auto
                         +like({value: 2})
                     .form-page-top-block__column-auto
                         +like({value: 12, checked: "checked"})
-        .form-page-top-block__column100.form-page-top-block--margin-top-md
+        .form-page-top-block__column100.form-page-top-block--margin-top-lg
             +with-label({labelLeft: "rate button", variant: "md"})
                 .form-page-top-block__row.form-page-top-block--spacing
                     .form-page-top-block__column-auto
@@ -56,7 +57,28 @@ block col2
 block col3
     .form-page-top-block
         .form-page-top-block__column100.form-page-top-block--width-266
-            +range-slider({labelLeft: "Range Slider", labelRight: "5 000₽ - 10 000₽", variant: "md"})
-
-        .form-page-top-block__column100 1
+            +range-slider({labelLeft: "Range Slider", labelRight: "5 000₽ - 10 000₽", variant: "lg"})
+        .form-page-top-block__column100.form-page-top-block--margin-top-lg
+            +with-label({labelLeft: "buttons", variant: "md"})
+                .form-page-top-block__column100
+                    .form-page-top-block__row.form-page-top-block--spacing
+                        .form-page-top-block__column-auto
+                            +button({label: "CLICK ME"})
+                        .form-page-top-block__column-auto
+                            +button({label: "CLICK ME", disabled: true})
+                .form-page-top-block__column100.form-page-top-block--margin-top-md
+                    .form-page-top-block__row.form-page-top-block--spacing
+                        .form-page-top-block__column-auto
+                            +button({label: "CLICK ME", variant: "outlined"})
+                        .form-page-top-block__column-auto
+                            +button({label: "CLICK ME", disabled: true, variant: "outlined"})
+                .form-page-top-block__column100.form-page-top-block--margin-top-md
+                    .form-page-top-block__row.form-page-top-block--spacing
+                        .form-page-top-block__column-auto
+                            +button({label: "CLICK ME", variant: "nofill"})
+                        .form-page-top-block__column-auto
+                            +button({label: "CLICK ME", disabled: true, variant: "nofill"})
+                .form-page-top-block__column100.form-page-top-block--margin-top-md
+                    +button({label: "перейти к оплате", variant: "long", icon: true})
+                        +arrow-forward 
         .form-page-top-block__column100 2
