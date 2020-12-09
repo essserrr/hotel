@@ -1,0 +1,11 @@
+include increase-form-element/increase-form-element.pug
+
+mixin increase-form(props)
+    - const { list, hasSubmit } = props;
+
+    .increase-form.increase-form--spacing(
+        data-increase-submittable=hasSubmit ? 'true' : 'false'
+    )
+        each value in list
+            .increase-form__column100
+                +increase-form-element(value)

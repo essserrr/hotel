@@ -1,0 +1,26 @@
+@import "./increase-form-element/increase-form-element.scss";
+
+.increase-form {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    padding: 6px 6px 7px 14px;
+
+    &--spacing {
+        .increase-form__column100 {
+            margin-top: 7px;
+
+            &:first-of-type {
+                margin-top: 0;
+            }
+        }
+    }
+
+    &__column100 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
