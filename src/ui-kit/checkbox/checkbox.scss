@@ -57,7 +57,7 @@
 
             width: 6px;
             height: 8px;
-            background: linear-gradient(180deg, $color-purple 0%, #8ba4f9 100%);
+            background: $color-gradient-purple;
             clip-path: polygon(
                 0 75%,
                 63% 75%,
