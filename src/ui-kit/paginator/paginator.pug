@@ -1,0 +1,19 @@
+mixin paginator(props)
+    - const { pages, label } = props;
+
+    .ui-paginator 
+        each page in pages
+            - const { type = 'default', value = '', active = false } = page;
+            case type
+                when "nav"
+                    button.ui-paginator__cell.ui-paginator__cell--navigation(
+                        data-paginator="next"
+                    ) #{value}
+                        include ../icons/arrow-forward/arrow-forward.pug
+                        +arrow-forward({})
+                when "dots"
+                    .ui-paginator__cell #{value}
+                default
+                    - var cellStyle = active ? ' ui-paginator__cell--active' : '';
+                    a(class='ui-paginator__cell' + cellStyle) #{value}
+        .ui.paginator__label.ui-paginator__label--margin #{label}

@@ -1,0 +1,55 @@
+.ui-paginator {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    &__label {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+
+        line-height: 24px;
+        color: $color-dark-shade75;
+
+        &--margin {
+            margin-top: 10.5px;
+            margin-left: 5px;
+        }
+    }
+
+    &__cell {
+        width: 40px;
+        height: 40px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        color: $color-dark-shade50;
+        text-decoration: none;
+
+        &--active {
+            font-weight: bold;
+            color: white;
+
+            background: $color-gradient-purple;
+            border-radius: 50%;
+        }
+
+        &--navigation {
+            background: $color-gradient-green;
+            border-radius: 50%;
+
+            border: none;
+            outline: none !important;
+            cursor: pointer;
+
+            svg {
+                path {
+                    fill: white;
+                }
+            }
+        }
+    }
+}

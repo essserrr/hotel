@@ -8,6 +8,7 @@ include ../../../../ui-kit/buttons/like/like.pug
 include ../../../../ui-kit/buttons/rate/rate.pug
 include ../../../../ui-kit/buttons/button/button.pug
 include ../../../../ui-kit/range-slider/range-slider.pug
+include ../../../../ui-kit/paginator/paginator.pug
 
 block col1
     .form-page-top-block.form-page-top-block__row
@@ -81,4 +82,6 @@ block col3
                 .form-page-top-block__column100.form-page-top-block--margin-top-md
                     +button({label: "перейти к оплате", variant: "long", icon: true})
                         +arrow-forward 
-        .form-page-top-block__column100 2
+        .form-page-top-block__column100.form-page-top-block--margin-top-md
+            +with-label({labelLeft: "pagination", variant: "md"})
+                +paginator({label: "1 – 12 из 100+ вариантов аренды", pages: [{value: "1", active: true}, {value: "2"}, {value: "3"}, {value: "...", type: "dots"}, {value: "15"}, {type: "nav"}]})
