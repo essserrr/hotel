@@ -1,6 +1,18 @@
 extends ../form-page-block-layout/form-page-block-layout.pug
+include ../../../../ui-kit/dropdown/dropdown.pug
+include ../../../../ui-kit/increase-form/increase-form.pug
+
 block col1
-    div 1y
+    .form-page-block.form-page-block__row
+        .form-page-block__column100.form-page-block--width-320
+            .form-page-block__column100.form-page-block--width-266
+                +dropdown({ placeholder:"Сколько гостей", value: "2 спальни, 2 кровати, 2 ванные комнаты", labelLeft: "Dropdown", labelRight: "Default", type: "text"})
+                    +increase-form({list: [{title: "спальни", value: 2}, {title: "кровати", value: 2}, {title: "ванные комнаты", value: 0}]})
+
+            .form-page-block__column100.form-page-block--width-266.form-page-block--margin-top-md
+                +dropdown({ placeholder:"Сколько гостей", value: "2 спальни, 2 кровати, 2 ванные комнаты", labelLeft: "Dropdown", labelRight: "expanded", type: "text"})
+                    +increase-form({list: [{title: "спальни", value: 2, minValue: 0, maxValue: 5, step: 1}, {title: "кровати", value: 2, minValue: 0, maxValue: 5, step: 1}, {title: "ванные комнаты", value: 0, minValue: 0, maxValue: 5, step: 1}]})
+
 block col2
     div 2y
 block col3
