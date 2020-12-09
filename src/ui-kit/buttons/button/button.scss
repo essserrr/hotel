@@ -1,0 +1,71 @@
+.ui-button {
+    position: relative;
+
+    padding: 14px 19px 15px 19px;
+
+    border: none;
+    border-radius: 22px;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    color: #ffffff;
+    text-transform: uppercase;
+
+    background: $color-gradient-purple;
+
+    cursor: pointer;
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: unset;
+    }
+    &:focus {
+        outline: none;
+    }
+
+    &--outlined {
+        padding: 12px 17px 13px 17px;
+        border: 2px solid transparent;
+
+        color: $color-purple;
+
+        background: linear-gradient(white, white) padding-box,
+            $color-gradient-purple;
+    }
+
+    &--nofill {
+        padding: 0;
+        color: $color-purple;
+        background: none;
+    }
+
+    &--long {
+        width: 100%;
+        max-width: 320px;
+
+        .ui-button__icon {
+            svg {
+                path {
+                    fill: white;
+                }
+            }
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        display: flex;
+
+        padding: 0px 14px 0px 14px;
+
+        height: 100%;
+
+        align-items: center;
+
+        right: 0;
+        top: 0;
+    }
+}
