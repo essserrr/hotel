@@ -11,77 +11,77 @@ include ../../../../ui-kit/range-slider/range-slider.pug
 include ../../../../ui-kit/paginator/paginator.pug
 
 block col1
-    .form-page-top-block.form-page-top-block__row
-        .form-page-top-block__column100.form-page-top-block--width-320
-            .form-page-top-block__column100 
+    .form-page-block.form-page-block__row
+        .form-page-block__column100.form-page-block--width-320
+            .form-page-block__column100 
                 +input({placeholder:"Email", labelLeft:"Text Field", labelRight:"Default"})
-            .form-page-top-block__column100.form-page-top-block--margin-top-sm
+            .form-page-block__column100.form-page-block--margin-top-sm
                 +input({value: "This is pretty awesome", labelLeft:"Text Field", labelRight:"Hover / Focus", forceHover: true})
-            .form-page-top-block__column100.form-page-top-block--margin-top-sm
+            .form-page-block__column100.form-page-block--margin-top-sm
                 +dropdown({ placeholder:"Сколько гостей", labelLeft: "Dropdown", type: "text"})
-            .form-page-top-block__column100.form-page-top-block--margin-top-sm
+            .form-page-block__column100.form-page-block--margin-top-sm
                 +input({mask:"date", labelLeft:"masked text field"})
-            .form-page-top-block__column100.form-page-top-block--margin-top-lg
-                .form-page-top-block__row.form-page-top-block--spacing
-                    .form-page-top-block__column50
+            .form-page-block__column100.form-page-block--margin-top-lg
+                .form-page-block__row.form-page-block--spacing
+                    .form-page-block__column50
                         +dropdown({ placeholder:"ДД.ММ.ГГГГ", labelLeft: "date Dropdown", type: "date", opens: "right"})
-                    .form-page-top-block__column50
+                    .form-page-block__column50
                         +dropdown({ placeholder:"ДД.ММ.ГГГГ", value:"19.08.2019", labelLeft: "date Dropdown", type: "date"})
-            .form-page-top-block__column100.form-page-top-block--margin-top-lg.form-page-top-block--width-266
+            .form-page-block__column100.form-page-block--margin-top-lg.form-page-block--width-266
                 +dropdown({ placeholder:"ДД ММ - ДД ММ", value: "19 авг - 23 авг", labelLeft: "filter date dropdown", type: "date-range"})
-            .form-page-top-block__column100.form-page-top-block--margin-top-lg.form-page-top-block--width-266
+            .form-page-block__column100.form-page-block--margin-top-lg.form-page-block--width-266
                 +input({placeholder:"Email", labelLeft:"subscription text field", submitable: true}) 
                     +arrow-forward
 
 block col2
-    .form-page-top-block
-        .form-page-top-block__column100.form-page-top-block--width-222
+    .form-page-block
+        .form-page-block__column100.form-page-block--width-222
             +vertical-list({labelLeft: "Checkbox Buttons", labelVariant: "md", variant: "checkbox", list: [{mainLabel: "Можно курить"}, {checked:"checked", mainLabel: "Можно с питомцами"}, {checked:"checked", mainLabel: "Можно пригласить гостей (до 10 человек)"},]})
-        .form-page-top-block__column100.form-page-top-block--margin-top-lg
+        .form-page-block__column100.form-page-block--margin-top-lg
             +vertical-list({ labelLeft: "Radio Buttons", labelVariant: "md", variant: "radio", list: [[{label: "Мужчина", name: "radio", checked: "checked"}, {label: "Женщина", name: "radio"}]] })
-        .form-page-top-block__column100.form-page-top-block--margin-top-lg
+        .form-page-block__column100.form-page-block--margin-top-lg
             +vertical-list({ labelLeft: "Toggle", labelVariant: "md", variant: "switch", list: [{label: "Получать спецпредложения", checked: "checked"}, {label: "Получать спецпредложения"}]})
-        .form-page-top-block__column100.form-page-top-block--margin-top-lg
+        .form-page-block__column100.form-page-block--margin-top-lg
             +with-label({labelLeft: "like button", variant: "md"})
-                .form-page-top-block__row.form-page-top-block--spacing-sm
-                    .form-page-top-block__column-auto
+                .form-page-block__row.form-page-block--spacing-sm
+                    .form-page-block__column-auto
                         +like({value: 2})
-                    .form-page-top-block__column-auto
+                    .form-page-block__column-auto
                         +like({value: 12, checked: "checked"})
-        .form-page-top-block__column100.form-page-top-block--margin-top-lg
+        .form-page-block__column100.form-page-block--margin-top-lg
             +with-label({labelLeft: "rate button", variant: "md"})
-                .form-page-top-block__row.form-page-top-block--spacing
-                    .form-page-top-block__column-auto
+                .form-page-block__row.form-page-block--spacing
+                    .form-page-block__column-auto
                         +rate({checkedStars: 4})
-                    .form-page-top-block__column-auto
+                    .form-page-block__column-auto
                         +rate({checkedStars: 5})
 block col3
-    .form-page-top-block
-        .form-page-top-block__column100.form-page-top-block--width-266
+    .form-page-block
+        .form-page-block__column100.form-page-block--width-266
             +range-slider({labelLeft: "Range Slider", labelRight: "5 000₽ - 10 000₽", variant: "lg"})
-        .form-page-top-block__column100.form-page-top-block--margin-top-lg
+        .form-page-block__column100.form-page-block--margin-top-lg
             +with-label({labelLeft: "buttons", variant: "md"})
-                .form-page-top-block__column100
-                    .form-page-top-block__row.form-page-top-block--spacing
-                        .form-page-top-block__column-auto
+                .form-page-block__column100
+                    .form-page-block__row.form-page-block--spacing
+                        .form-page-block__column-auto
                             +button({label: "CLICK ME"})
-                        .form-page-top-block__column-auto
+                        .form-page-block__column-auto
                             +button({label: "CLICK ME", disabled: true})
-                .form-page-top-block__column100.form-page-top-block--margin-top-md
-                    .form-page-top-block__row.form-page-top-block--spacing
-                        .form-page-top-block__column-auto
+                .form-page-block__column100.form-page-block--margin-top-md
+                    .form-page-block__row.form-page-block--spacing
+                        .form-page-block__column-auto
                             +button({label: "CLICK ME", variant: "outlined"})
-                        .form-page-top-block__column-auto
+                        .form-page-block__column-auto
                             +button({label: "CLICK ME", disabled: true, variant: "outlined"})
-                .form-page-top-block__column100.form-page-top-block--margin-top-md
-                    .form-page-top-block__row.form-page-top-block--spacing
-                        .form-page-top-block__column-auto
+                .form-page-block__column100.form-page-block--margin-top-md
+                    .form-page-block__row.form-page-block--spacing
+                        .form-page-block__column-auto
                             +button({label: "CLICK ME", variant: "nofill"})
-                        .form-page-top-block__column-auto
+                        .form-page-block__column-auto
                             +button({label: "CLICK ME", disabled: true, variant: "nofill"})
-                .form-page-top-block__column100.form-page-top-block--margin-top-md
+                .form-page-block__column100.form-page-block--margin-top-md
                     +button({label: "перейти к оплате", variant: "long", icon: true})
                         +arrow-forward 
-        .form-page-top-block__column100.form-page-top-block--margin-top-md
+        .form-page-block__column100.form-page-block--margin-top-md
             +with-label({labelLeft: "pagination", variant: "md"})
                 +paginator({label: "1 – 12 из 100+ вариантов аренды", pages: [{value: "1", active: true}, {value: "2"}, {value: "3"}, {value: "...", type: "dots"}, {value: "15"}, {type: "nav"}]})

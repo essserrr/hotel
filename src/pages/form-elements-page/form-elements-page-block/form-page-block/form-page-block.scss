@@ -1,4 +1,4 @@
-.form-page-top-block {
+.form-page-block {
     &__row {
         display: -ms-flexbox;
         display: flex;
@@ -10,9 +10,9 @@
     &--spacing {
         margin-left: -10px;
         margin-right: -10px;
-        .form-page-top-block__column100,
-        .form-page-top-block__column50,
-        .form-page-top-block__column-auto {
+        .form-page-block__column100,
+        .form-page-block__column50,
+        .form-page-block__column-auto {
             box-sizing: border-box;
             padding-left: 10px;
             padding-right: 10px;
@@ -21,9 +21,9 @@
         &-sm {
             margin-left: -5px;
             margin-right: -5px;
-            .form-page-top-block__column100,
-            .form-page-top-block__column50,
-            .form-page-top-block__column-auto {
+            .form-page-block__column100,
+            .form-page-block__column50,
+            .form-page-block__column-auto {
                 box-sizing: border-box;
                 padding-left: 5px;
                 padding-right: 5px;
