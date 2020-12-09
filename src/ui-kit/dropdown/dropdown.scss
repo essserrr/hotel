@@ -105,6 +105,8 @@
         top: 0;
         left: 0;
 
+        z-index: 100;
+
         background: transparent;
     }
 
@@ -112,10 +114,6 @@
         display: block;
         position: absolute;
         height: min-content;
-
-        z-index: 2;
-
-        padding: 13px 7px 7px 15px;
 
         background: #ffffff;
         border: 1px solid $color-dark-shade50;

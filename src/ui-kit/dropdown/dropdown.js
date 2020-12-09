@@ -15,7 +15,7 @@ $(function () {
         }
 
         getDropdownNodes() {
-            this.parent = $(this.nodeClicked).parent().closest(".ui-dropdown");
+            this.parent = $(this.nodeClicked).closest(".ui-dropdown");
             this.label = this.parent.find(".js-dropdown__label");
             this.input = this.parent.find(".js-dropdown__input");
             this.container = this.parent.find(".js-dropdown__container");
