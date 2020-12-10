@@ -1,11 +1,19 @@
 include increase-form-element/increase-form-element.pug
+include ../buttons/button/button.pug
 
 mixin increase-form(props)
-    - const { list, hasSubmit } = props;
+    - const { list, hasSubmit, type, variant = 'sm' } = props;
 
-    .increase-form.increase-form--spacing(
-        data-increase-submittable=hasSubmit ? 'true' : 'false'
+    div(
+        class='increase-form increase-form__row increase-form--spacing' + (' increase-form--padding-' + variant) + (type ? ' js-inc-' + type : '')
     )
         each value in list
             .increase-form__column100
                 +increase-form-element(value)
+        if (hasSubmit)
+            .increase-form__column100.increase-form--margin
+                .increase-form__row.increase-form__row--justify-between
+                    .increase-form__column
+                        +button({label: "очистить", variant: "nofill", type: "clear"})
+                    .increase-form__auto
+                        +button({label: "применить", variant: "nofill", type: "apply"})
