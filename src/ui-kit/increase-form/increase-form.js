@@ -12,12 +12,12 @@ $(function () {
             this.onChange = this.onChange.bind(this);
         }
 
-        findNodes(event) {
-            this.nodes.nodeClicked = $(event.currentTarget);
+        findNodes(target) {
+            this.nodes.nodeClicked = $(target);
 
-            this.nodes.buttonBlock = this.nodes.nodeClicked.closest(
-                ".increase-form-element__button-block"
-            );
+            this.nodes.buttonBlock = this.nodes.nodeClicked
+                .closest(".increase-form-element")
+                .find(".increase-form-element__button-block");
 
             this.nodes.increaseButton = this.nodes.buttonBlock.find(
                 ".increase-form-element__button[data-button-type=inc]"
@@ -69,22 +69,45 @@ $(function () {
             );
         }
 
-        onChange(event) {
-            this.findNodes(event);
+        onChange(target) {
+            this.findNodes(target);
             this.findValues();
             this.changeValue();
+            this.changeNodeStatus();
+        }
+
+        onReset(target) {
+            this.findNodes(target);
+            this.findValues();
+
+            this.values.currentValue = 0;
+            this.nodes.valueLabel.html(0);
+
             this.changeNodeStatus();
         }
     }
 
     class IncreaseForm {
-        constructor() {
+        constructor({
+            setValue,
+            updateOnChange,
+            formStateReducer,
+            hasSubmit,
+            closeDropdown,
+        }) {
+            this.setValue = setValue;
+            this.updateOnChange = updateOnChange;
+            this.formStateReducer = formStateReducer;
+            this.hasSubmit = hasSubmit;
+            this.closeDropdown = closeDropdown;
+
             this.nodes = {};
             this.values = {
                 currentState: [],
             };
 
-            this.submitChanges = this.submitChanges.bind(this);
+            this.onSubmit = this.onSubmit.bind(this);
+            this.onClear = this.onClear.bind(this);
 
             this.onValueChange = this.onValueChange.bind(this);
             this.findState = this.findState.bind(this);
@@ -103,10 +126,19 @@ $(function () {
             this.nodes.incFormElements = this.nodes.incForm.find(
                 ".increase-form-element"
             );
+
+            if (this.hasSubmit) {
+                this.nodes.incFormClearButton = this.nodes.incForm.find(
+                    "[data-button-type=clear]"
+                );
+                this.nodes.incFormApplyButton = this.nodes.incForm.find(
+                    "[data-button-type=apply]"
+                );
+            }
         }
 
         findState() {
-            let currentState = [];
+            let newState = [];
             this.nodes.incFormElements.map((...element) => {
                 const title = $(element[1])
                     .find(".increase-form-element__title")
@@ -115,45 +147,125 @@ $(function () {
                     .find(".increase-form-element__value")
                     .html();
 
-                currentState.push({
+                newState.push({
                     title,
                     value,
                 });
             });
 
-            this.values.currentState = currentState;
+            this.values.currentState = newState;
         }
 
-        submitChanges(event) {
+        clearState() {
+            this.nodes.incFormElements.map((...element) => {
+                let entryAffected = new IncreaseBlock();
+                entryAffected.onReset(element[1]);
+            });
+        }
+
+        onSubmit(event) {
             this.findNodes(event);
             this.findState();
 
-            $.uiDropdown.setValue(
-                this.values.currentState.reduce((sum, value, index) => {
-                    if (index !== 0) sum += ", ";
-                    sum += `${value.value} ${value.title}`;
-                    return sum;
-                }, "")
-            );
+            this.setValue(this.formStateReducer(this.values.currentState));
+
+            if (
+                $(event.currentTarget).is(this.nodes.incFormApplyButton) &&
+                this.closeDropdown
+            ) {
+                this.closeDropdown();
+            }
+        }
+
+        onClear(event) {
+            this.findNodes(event);
+            this.clearState();
+
+            this.setValue("");
         }
 
         onValueChange(event) {
             let entryAffected = new IncreaseBlock();
-            entryAffected.onChange(event);
+            entryAffected.onChange(event.currentTarget);
 
-            this.submitChanges(event);
+            if (this.updateOnChange) {
+                this.onSubmit(event);
+            }
         }
 
-        setHandlers() {
-            $(".js-increase-form-button").on("click", this.onValueChange);
+        setHandlers(rootNode) {
+            const incButtons =
+                (!!rootNode ? `${rootNode} ` : "") + ".js-increase-form-button";
+            $(incButtons).on("click", this.onValueChange);
 
-            /*$.uiDropdown = {
-                close: this.close,
-                setValue: this.setValue,
-            };*/
+            if (this.hasSubmit) {
+                const applyButtons =
+                    (!!rootNode ? `${rootNode} ` : "") +
+                    "[data-button-type=apply]";
+                const clearButtons =
+                    (!!rootNode ? `${rootNode} ` : "") +
+                    "[data-button-type=clear]";
+
+                $(applyButtons).on("click", this.onSubmit);
+                $(clearButtons).on("click", this.onClear);
+            }
         }
     }
 
-    let increaseForm = new IncreaseForm();
-    increaseForm.setHandlers();
+    let increaseRooms = new IncreaseForm({
+        setValue: $.uiDropdown.setValue,
+        updateOnChange: true,
+
+        formStateReducer: function (state) {
+            return state.reduce((sum, value, index) => {
+                if (index !== 0) sum += ", ";
+                sum += `${value.value} ${value.title}`;
+                return sum;
+            }, "");
+        },
+    });
+
+    increaseRooms.setHandlers(".js-inc-rooms");
+
+    let increaseGuests = new IncreaseForm({
+        setValue: $.uiDropdown.setValue,
+        closeDropdown: $.uiDropdown.close,
+
+        hasSubmit: true,
+
+        formStateReducer: function (state) {
+            const guests = state.reduce(
+                (sum, value) => {
+                    const trimmedTitle = value.title.trim();
+                    if (
+                        trimmedTitle === "взрослые" ||
+                        trimmedTitle === "дети"
+                    ) {
+                        sum.guests.number += Number(value.value);
+                    }
+
+                    if (trimmedTitle === "младенцы") {
+                        sum.newborn.number += Number(value.value);
+                    }
+                    return sum;
+                },
+                {
+                    guests: { number: 0, title: "гостя" },
+                    newborn: { number: 0, title: "младенец" },
+                }
+            );
+
+            const guestStrings = Object.entries(guests).reduce((sum, value) => {
+                if (value[1].number > 0) {
+                    sum.push(`${value[1].number} ${value[1].title}`);
+                }
+                return sum;
+            }, []);
+
+            console.log(guestStrings);
+            return guestStrings.join(", ");
+        },
+    });
+
+    increaseGuests.setHandlers(".js-inc-guests");
 });
