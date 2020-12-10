@@ -49,4 +49,10 @@
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     }
+
+    &--hide-button {
+        button {
+            visibility: hidden;
+        }
+    }
 }

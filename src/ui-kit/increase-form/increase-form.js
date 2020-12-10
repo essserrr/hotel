@@ -108,10 +108,11 @@ $(function () {
 
             this.onSubmit = this.onSubmit.bind(this);
             this.onClear = this.onClear.bind(this);
-
             this.onValueChange = this.onValueChange.bind(this);
+
             this.findState = this.findState.bind(this);
             this.findNodes = this.findNodes.bind(this);
+            this.showClearButton = this.showClearButton.bind(this);
 
             this.setHandlers = this.setHandlers.bind(this);
         }
@@ -184,9 +185,38 @@ $(function () {
             this.setValue("");
         }
 
+        showClearButton(event) {
+            this.findNodes(event);
+            this.findState();
+
+            const clearParent = this.nodes.incFormClearButton.closest(
+                ".increase-form__column"
+            );
+
+            const valueSum = this.values.currentState.reduce(
+                (sum, value) => (sum += Number(value.value)),
+                0
+            );
+
+            if (
+                valueSum > 0 &&
+                clearParent.hasClass("increase-form--hide-button")
+            ) {
+                clearParent.removeClass("increase-form--hide-button");
+            }
+
+            if (valueSum === 0) {
+                clearParent.addClass("increase-form--hide-button");
+            }
+        }
+
         onValueChange(event) {
             let entryAffected = new IncreaseBlock();
             entryAffected.onChange(event.currentTarget);
+
+            if (this.hasSubmit) {
+                this.showClearButton(event);
+            }
 
             if (this.updateOnChange) {
                 this.onSubmit(event);
