@@ -4,7 +4,7 @@ mixin with-label(props)
         div(
             class='ui-with-label__column100 ui-with-label__label' + (' ui-with-label__label--margin-' + variant)
         )
-            if (labelLeft && labelRight)
+            if (labelLeft || labelRight)
                 .ui-with-label__row
                     if (labelLeft)
                         .ui-with-label__column
