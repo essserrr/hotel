@@ -3,7 +3,7 @@ include ../../../../ui-kit/dropdown/dropdown.pug
 include ../../../../ui-kit/increase-form/increase-form.pug
 
 block col1
-    .form-page-block.form-page-block__row
+    .form-page-block
         .form-page-block__column100.form-page-block--width-320
             .form-page-block__column100.form-page-block--width-266
                 +dropdown({ placeholder:"Сколько гостей", value: "2 спальни, 2 кровати, 2 ванные комнаты", labelLeft: "Dropdown", labelRight: "Default", type: "text"})
@@ -14,13 +14,15 @@ block col1
                     +increase-form({type: "rooms", list: [{title: "спальни", value: 2, minValue: 0, maxValue: 5, step: 1}, {title: "кровати", value: 2, minValue: 0, maxValue: 5, step: 1}, {title: "ванные комнаты", value: 0, minValue: 0, maxValue: 5, step: 1}]})
 
 block col2
-    .form-page-block__column100.form-page-block--width-320
-        .form-page-block__column100
-            +dropdown({ placeholder:"Сколько гостей", labelLeft: "Dropdown", type: "text"})
-                +increase-form({type: "guests", variant: "md", hasSubmit: true, clearHidden: true, list: [{title: "взрослые", value: 0, minValue: 0, maxValue: 5, step: 1}, {title: "дети", value: 0, minValue: 0, maxValue: 5, step: 1}, {title: "младенцы", value: 0, minValue: 0, maxValue: 5, step: 1}]})
+    .form-page-block
+        .form-page-block__column100.form-page-block--width-320
+            .form-page-block__column100
+                +dropdown({ placeholder:"Сколько гостей", labelLeft: "Dropdown", type: "text"})
+                    +increase-form({type: "guests", variant: "md", hasSubmit: true, clearHidden: true, list: [{title: "взрослые", value: 0, minValue: 0, maxValue: 5, step: 1}, {title: "дети", value: 0, minValue: 0, maxValue: 5, step: 1}, {title: "младенцы", value: 0, minValue: 0, maxValue: 5, step: 1}]})
 
 block col3
-    .form-page-block__column100.form-page-block--width-320
-        .form-page-block__column100
-            +dropdown({ placeholder:"Сколько гостей",value: "3 гостя", labelLeft: "Dropdown", type: "text"})
-                +increase-form({type: "guests", variant: "md", hasSubmit: true, list: [{title: "взрослые", value: 2, minValue: 0, maxValue: 5, step: 1}, {title: "дети", value: 1, minValue: 0, maxValue: 5, step: 1}, {title: "младенцы", value: 0, minValue: 0, maxValue: 5, step: 1}]})
+    .form-page-block
+        .form-page-block__column100.form-page-block--width-320
+            .form-page-block__column100
+                +dropdown({ placeholder:"Сколько гостей",value: "3 гостя", labelLeft: "Dropdown", type: "text"})
+                    +increase-form({type: "guests", variant: "md", hasSubmit: true, list: [{title: "взрослые", value: 2, minValue: 0, maxValue: 5, step: 1}, {title: "дети", value: 1, minValue: 0, maxValue: 5, step: 1}, {title: "младенцы", value: 0, minValue: 0, maxValue: 5, step: 1}]})
