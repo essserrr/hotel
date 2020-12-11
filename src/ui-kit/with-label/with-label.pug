@@ -1,13 +1,16 @@
 mixin with-label(props)
-    - const { labelLeft, labelRight, variant="sm" } = props;
+    - const { labelLeft, labelRight, variant = 'sm' } = props;
     .ui-with-label__row
         div(
-            class='ui-with-label__column100 ui-with-label__label' + (" ui-with-label__label--margin-"+variant),
-            )
-            .ui-with-label__row
-                .ui-with-label__column
-                    h3 #{labelLeft}
-                .ui-with-label__column-auto
-                    h3.ui-with-label__label--right #{labelRight}
+            class='ui-with-label__column100 ui-with-label__label' + (' ui-with-label__label--margin-' + variant)
+        )
+            if (labelLeft && labelRight)
+                .ui-with-label__row
+                    if (labelLeft)
+                        .ui-with-label__column
+                            h3 #{labelLeft}
+                    if (labelRight)
+                        .ui-with-label__column-auto
+                            h3.ui-with-label__label--right #{labelRight}
         .ui-with-label__column100
             block
