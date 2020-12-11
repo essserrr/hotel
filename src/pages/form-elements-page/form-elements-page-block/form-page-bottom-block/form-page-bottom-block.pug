@@ -1,0 +1,20 @@
+extends ../form-page-block-layout/form-page-block-layout.pug
+include ../../../../ui-kit/collapse/collapse.pug
+
+include ../../../../ui-kit/increase-form/increase-form.pug
+
+block col1
+    .form-page-block
+        .form-page-block__column100.form-page-block--width-320
+            .form-page-block__column100.form-page-block--width-266
+                +collapse({label: "expandable checkbox list"})
+                    p fffffffffffffffffffffffffff
+            .form-page-block__column100.form-page-block--width-266.form-page-block--margin-top-sm
+                +collapse({label: "expandable checkbox list", expanded: true}) 
+                    p fffffffffffffffffffffffffff
+
+block col2
+    .form-page-block
+
+block col3
+    .form-page-block
