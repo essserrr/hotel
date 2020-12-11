@@ -1,5 +1,6 @@
 .ui-collapse {
     &__label {
+        padding-left: 1px;
         a {
             text-decoration: none;
         }
@@ -31,7 +32,7 @@
             transform: rotate(-135deg);
         }
         .ui-collapse__label {
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
     }
 
