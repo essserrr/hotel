@@ -16,6 +16,26 @@
     -ms-user-select: none;
     user-select: none;
 
+    &.ui-checkbox--sublabled {
+        color: $color-dark-shade75;
+        font-weight: bold;
+    }
+
+    &__sublabel {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+
+        font-size: 12px;
+        line-height: 14px;
+        color: $color-dark-shade50;
+        font-weight: normal;
+
+        &--margin {
+            margin-top: 6px;
+        }
+    }
+
     &__input {
         position: absolute;
         opacity: 0;

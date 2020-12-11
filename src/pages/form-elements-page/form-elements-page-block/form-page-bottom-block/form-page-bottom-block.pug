@@ -1,6 +1,7 @@
 extends ../form-page-block-layout/form-page-block-layout.pug
 include ../../../../ui-kit/collapse/collapse.pug
 include ../../../../ui-kit/vertical-list/vertical-list.pug
+include ../../../../ui-kit/with-label/with-label.pug
 
 block col1
     .form-page-block
@@ -14,6 +15,10 @@ block col1
 
 block col2
     .form-page-block
+        .form-page-block__column100.form-page-block--width-320
+            .form-page-block__column100.form-page-block--width-266
+                +with-label({labelLeft: "rich Checkbox Buttons", variant: "md"})
+                    +vertical-list({labelVariant: "none", variant: "checkbox", list: [{mainLabel: "Широкий коридор", subLabel: ["Ширина коридоров в номере", "не менее 91 см."]}, {mainLabel: "Помощник для инвалидов", subLabel: ["На 1 этаже вас встретит специалист","и проводит до номера."]}]})
 
 block col3
     .form-page-block
