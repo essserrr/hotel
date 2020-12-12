@@ -17,8 +17,10 @@ block col2
     .form-page-block
         .form-page-block__column100.form-page-block--width-320
             .form-page-block__column100.form-page-block--width-266
-                +with-label({labelLeft: "rich Checkbox Buttons", variant: "md"})
-                    +vertical-list({labelVariant: "none", variant: "checkbox", list: [{mainLabel: "Широкий коридор", subLabel: ["Ширина коридоров в номере", "не менее 91 см."]}, {mainLabel: "Помощник для инвалидов", subLabel: ["На 1 этаже вас встретит специалист","и проводит до номера."]}]})
+                +vertical-list({labelLeft: "rich Checkbox Buttons",labelVariant: "md", variant: "checkbox", list: [{mainLabel: "Широкий коридор", subLabel: ["Ширина коридоров в номере", "не менее 91 см."]}, {mainLabel: "Помощник для инвалидов", subLabel: ["На 1 этаже вас встретит специалист","и проводит до номера."]}]})
 
 block col3
     .form-page-block
+        .form-page-block__column100.form-page-block--width-320
+            .form-page-block__column100.form-page-block--width-266
+                +vertical-list({labelLeft: "bullet list", labelVariant: "md", list: [["Нельзя с питомцами"], ["Без вечеринок и мероприятий"], ["Время прибытия — после 13:00,", "а выезд до 12:00"], ]})

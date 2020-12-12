@@ -20,4 +20,10 @@ mixin vertical-list(props)
                         li.ui-vertical-list__entry
                             +switch(value)
                     default
-                        li #{value}
+                        li.ui-vertical-list__entry.ui-vertical-list__entry--with-bullet
+                            each val, index in value
+                                if (index === 0)
+                                    | !{val}
+                                else
+                                    br 
+                                    | !{val}
