@@ -2,12 +2,15 @@ include ../checkbox/checkbox.pug
 include ../with-label/with-label.pug
 include ../radio-group/radio-group.pug
 include ../switch/switch.pug
+include ../feature/feature.pug
 
 mixin vertical-list(props)
-    - const { list = [], variant, labelLeft, labelRight, labelVariant } = props;
+    - const { listStyle, list = [], variant, labelLeft, labelRight, labelVariant } = props;
 
     +with-label({labelLeft, labelRight, variant: labelVariant})
-        ul.ui-vertical-list
+        ul(
+            class='ui-vertical-list' + (listStyle ? ` ui-vertical-list--${listStyle}` : '')
+        )
             each value in list
                 case variant
                     when "checkbox"
@@ -19,6 +22,9 @@ mixin vertical-list(props)
                     when "switch"
                         li.ui-vertical-list__entry
                             +switch(value)
+                    when "feature"
+                        li.ui-vertical-list__entry
+                            +feature(value)
                     default
                         li.ui-vertical-list__entry.ui-vertical-list__entry--with-bullet
                             each val, index in value
