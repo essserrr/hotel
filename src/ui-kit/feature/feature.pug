@@ -1,0 +1,16 @@
+mixin feature(props)
+    - const { icon, title, description } = props;
+
+    .ui-feature
+        .ui-feature__icon-container
+            case icon
+                when "comfort"
+                    include ../icons/comfort/comfort.svg
+                when "convinient"
+                    include ../icons/convinient/convinient.svg
+                when "cosy"
+                    include ../icons/cosy/cosy.svg
+
+        .ui-feature__label
+            .ui-feature__label-title #{title}
+            .ui-feature__label-description #{description}
