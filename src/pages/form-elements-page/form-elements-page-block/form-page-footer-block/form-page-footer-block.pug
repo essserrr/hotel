@@ -1,0 +1,17 @@
+include ../../../../ui-kit/collapse/collapse.pug
+include ../../../../ui-kit/vertical-list/vertical-list.pug
+include ../../../../ui-kit/with-label/with-label.pug
+
+.form-page-block-layout
+    .form-page-block-layout__column
+        .form-page-block
+            .form-page-block__column100.form-page-block--width-320
+                .form-page-block__column100.form-page-block--width-266
+                    +collapse({label: "expandable checkbox list", expanded: true}) 
+                        +vertical-list({labelVariant: "none", variant: "checkbox", list: [{mainLabel: "Завтрак"}, {checked:"checked", mainLabel: "Письменный стол"}, {checked:"checked", mainLabel: "Стул для кормления"}, {checked:"checked", mainLabel: "Кроватка"}, {mainLabel: "Телевизор"}, {mainLabel: "Шампунь"}]})
+
+    .form-page-block-layout__column.form-page-block-layout__column--footer.form-page-block-layout--padding-left
+        .form-page-block
+            .form-page-block__column100.form-page-block--width-320
+                .form-page-block__column100.form-page-block--width-266
+                    +vertical-list({labelLeft: "bullet list", labelVariant: "md", list: [["Нельзя с питомцами"], ["Без вечеринок и мероприятий"], ["Время прибытия — после 13:00,", "а выезд до 12:00"], ]})
