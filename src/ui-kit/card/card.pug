@@ -1,0 +1,9 @@
+mixin card(props)
+    - const { title } = props;
+
+    .ui-card.ui-card__row
+        if (title)
+            .ui-card__column100
+                h1 #{title}
+        .ui-card__column100
+            block
