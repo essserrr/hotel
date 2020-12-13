@@ -1,0 +1,19 @@
+include ../buttons/button/button.pug
+include ../icons/arrow-forward/arrow-forward.pug
+include ../card/card.pug
+include ../dropdown/dropdown.pug
+
++card({title: "Найдём номера под ваши пожелания"})
+    form(action="#", method="POST")
+        .ui-card__column100.ui-card--margin-bottom-md
+            .ui-card__row.ui-card--spacing
+                .ui-card__column50
+                    +dropdown({ placeholder:"ДД.ММ.ГГГГ", labelLeft: "прибытие", type: "date", opens: "right"})
+                .ui-card__column50
+                    +dropdown({ placeholder:"ДД.ММ.ГГГГ",labelLeft: "выезд", type: "date"})
+
+        .ui-card__column100.ui-card--margin-bottom-lg
+            +dropdown({ placeholder:"Сколько гостей", labelLeft: "гости", type: "text"})
+        .ui-card__column100
+            +button({label: "подобрать номер", variant: "long", icon: true})
+                +arrow-forward

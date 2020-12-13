@@ -5,7 +5,7 @@
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
 
-    padding: 40px 30px 30px 30px;
+    padding: 40px 29px 30px 29px;
 
     &__row {
         display: -ms-flexbox;
@@ -21,5 +21,45 @@
         -ms-flex: 0 0 100%;
         flex: 0 0 100%;
         max-width: 100%;
+    }
+
+    &__column50 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    &--spacing {
+        margin-left: -10px;
+        margin-right: -10px;
+        .ui-card__column100,
+        .ui-card__column50 {
+            box-sizing: border-box;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        &-sm {
+            margin-left: -5px;
+            margin-right: -5px;
+            .ui-card__column100,
+            .ui-card__column50 {
+                box-sizing: border-box;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+    }
+
+    &--margin-bottom {
+        &-sm {
+            margin-bottom: 10px;
+        }
+        &-md {
+            margin-bottom: 20px;
+        }
+        &-lg {
+            margin-bottom: 30px;
+        }
     }
 }
