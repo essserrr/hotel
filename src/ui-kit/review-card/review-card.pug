@@ -1,0 +1,22 @@
+include ../buttons/like/like.pug
+
+mixin review-card(props)
+    - const { title, date, dexcription, likes, checked } = props;
+        .ui-review-card.ui-review-card__row
+            .ui-review-card__column100
+                .ui-review-card__row
+                    .ui-review-card__element-container
+                        .ui-review-card__icon-window
+                            img(src="/avatars/m.png")
+
+                    .ui-review-card__column
+                        .ui-review-card__title #{title}
+                        .ui-review-card__description #{date}
+
+            .ui-review-card__column100.ui-review-card--margin-top
+                .ui-review-card__row
+                    .ui-review-card__element-container
+                        .ui-review-card__like-container
+                            +like({value: likes, checked: checked})
+
+                    .ui-review-card__column #{dexcription}

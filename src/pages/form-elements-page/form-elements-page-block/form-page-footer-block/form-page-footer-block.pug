@@ -1,6 +1,7 @@
 include ../../../../ui-kit/collapse/collapse.pug
 include ../../../../ui-kit/vertical-list/vertical-list.pug
 include ../../../../ui-kit/with-label/with-label.pug
+include ../../../../ui-kit/review-card/review-card.pug
 
 .form-page-block-layout
     .form-page-block-layout__column
@@ -9,4 +10,7 @@ include ../../../../ui-kit/with-label/with-label.pug
                 .form-page-block__column100.form-page-block--width-280
                     +vertical-list({labelVariant: "none", listStyle: "separated", variant: "feature", list: [{ icon: "comfort", title: "Комфорт", description: "Шумопоглощающие стены" }, { icon: "convinient", title: "Удобство", description: "Окно в каждой из спален" }, { icon: "cosy", title: "Уют", description: "Номер оснащён камином" }]})
 
-    .form-page-block-layout__column.form-page-block-layout__column--footer.form-page-block-layout--padding-left
+    .form-page-block-layout__column.form-page-block-layout__column--footer.form-page-block-layout--padding-left.form-page-block--margin-top-xs
+        .form-page-block
+            .form-page-block__column100
+                +review-card({likes: 12, checked: "checked", title: "Мурад Сарафанов", date: "5 дней назад", dexcription: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."})
