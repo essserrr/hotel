@@ -1,0 +1,51 @@
+body {
+    background: #f4f4f6;
+}
+
+.cards-page {
+    &--padding {
+        padding: 72px 140px 140px 140px;
+    }
+
+    &--margin-top {
+        margin-top: 40px;
+    }
+
+    &__row {
+        display: -ms-flexbox;
+        display: flex;
+
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    &--justify-between {
+        justify-content: space-between;
+    }
+
+    &__column100 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    &--width380 {
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .cards-page {
+        &--padding {
+            padding: 53px 50px 132px 50px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .cards-page {
+        &--padding {
+            padding: 50px 30px 80px 30px;
+        }
+    }
+}

@@ -23,6 +23,10 @@ module.exports = {
             __dirname,
             "src/pages/form-elements-page/form-elements-page.js"
         ),
+        cardsPage: path.resolve(
+            __dirname,
+            "src/pages/cards-page/cards-page.js"
+        ),
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -112,6 +116,11 @@ module.exports = {
             filename: "pages/form/index.html",
             template: "./src/pages/form-elements-page/form-elements-page.pug",
             chunks: ["mainLayout", "demoLayout", "formsPage"],
+        }),
+        new HtmlWebpackPlugin({
+            filename: "pages/cards/index.html",
+            template: "./src/pages/cards-page/cards-page.pug",
+            chunks: ["mainLayout", "demoLayout", "cardsPage"],
         }),
     ],
     devServer: {

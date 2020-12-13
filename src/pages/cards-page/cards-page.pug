@@ -1,0 +1,36 @@
+extends ../../components/ui-kit-demostartion-layout/ui-kit-demostartion-layout.pug
+include ../../ui-kit/card/card.pug
+
+block meta
+    title Карточки
+block scripts
+    script(
+        type="text/javascript",
+        src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+    )
+    script(
+        type="text/javascript",
+        src="/libs/daterangepicker/daterangepicker.js"
+    )
+    script(type="text/javascript", src="/libs/mask/jquery.inputmask.js")
+
+block styles
+    link(
+        rel="stylesheet",
+        type="text/css",
+        href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+    )
+
+block content
+    .cards-page.cards-page__row.cards-page--padding.cards-page--justify-between
+        .cards-page__column100.cards-page--width380
+            .cards-page__column100
+                +card({title: "Найдём номера под ваши пожелания"})
+            .cards-page__column100.cards-page--margin-top
+                +card({title: "Регистрация аккаунта"})
+
+        .cards-page__column100.cards-page--width380
+            .cards-page__column100
+                +card({title: "Найдём номера под ваши пожелания"})
+            .cards-page__column100.cards-page--margin-top
+                +card({title: "Войти"})
