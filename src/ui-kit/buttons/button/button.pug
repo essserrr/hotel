@@ -1,8 +1,13 @@
 mixin button(props)
-    - const { label, variant, disabled = false, icon, type } = props;
+    - const { label, variant, disabled = false, icon, type, dataType } = props;
     - var styleVaraint = variant ? ' ui-button--' + variant : '';
 
-    button(class='ui-button' + styleVaraint, disabled=disabled, data-button-type=type)
+    button(
+        class='ui-button' + styleVaraint,
+        disabled=disabled,
+        data-button-type=dataType,
+        type=type
+    )
         .ui-button__container
             .ui-button__label #{label}
             if (icon)
