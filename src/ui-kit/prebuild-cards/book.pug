@@ -1,0 +1,19 @@
+include ../card/card.pug
+
+include ../dropdown/dropdown.pug
+include ../increase-form/increase-form.pug
+
+include ../buttons/button/button.pug
+include ../icons/arrow-forward/arrow-forward.pug
+
++card({title: "Войти"})
+    form.ui-card__column100(action="#", method="POST")
+        .ui-card__column100.ui-card--margin-bottom-md
+            .ui-card__row.ui-card--spacing
+                .ui-card__column50
+                    +dropdown({ placeholder:"ДД.ММ.ГГГГ", labelLeft: "прибытие", value: "19.08.2019", type: "date", opens: "right"})
+                .ui-card__column50
+                    +dropdown({ placeholder:"ДД.ММ.ГГГГ",labelLeft: "выезд", value: "23.08.2019", type: "date"})
+        .ui-card__column100.ui-card--margin-bottom-md
+            +dropdown({ labelLeft: "гости", value: "3 гостя", type: "text"})
+                +increase-form({type: "guests", variant: "md", hasSubmit: true, list: [{title: "взрослые", value: 2, minValue: 0, maxValue: 5, step: 1}, {title: "дети", value: 1, minValue: 0, maxValue: 5, step: 1}, {title: "младенцы", value: 0, minValue: 0, maxValue: 5, step: 1}]})
