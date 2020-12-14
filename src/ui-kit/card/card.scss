@@ -17,6 +17,13 @@
         box-sizing: border-box;
     }
 
+    &--justify-between {
+        justify-content: space-between;
+    }
+    &--align-center {
+        align-items: center;
+    }
+
     &__column100 {
         -ms-flex: 0 0 100%;
         flex: 0 0 100%;
@@ -52,13 +59,19 @@
     }
 
     &--margin-bottom {
-        &-sm {
+        &-xs {
             margin-bottom: 10px;
+        }
+        &-sm {
+            margin-bottom: 15px;
         }
         &-md {
             margin-bottom: 20px;
         }
         &-lg {
+            margin-bottom: 25px;
+        }
+        &-xl {
             margin-bottom: 30px;
         }
     }
