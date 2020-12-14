@@ -41,6 +41,8 @@
     }
 
     &--nofill {
+        min-width: unset;
+
         padding: 0;
         color: $color-purple;
         background: none;
