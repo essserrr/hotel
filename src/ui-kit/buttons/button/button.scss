@@ -1,6 +1,8 @@
 .ui-button {
     position: relative;
 
+    min-width: 99px;
+
     padding: 14px 19px 15px 19px;
 
     border: none;
@@ -27,6 +29,8 @@
     }
 
     &--outlined {
+        min-width: 99px;
+
         padding: 12px 17px 13px 17px;
         border: 2px solid transparent;
 
