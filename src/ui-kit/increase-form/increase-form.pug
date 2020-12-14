@@ -16,6 +16,6 @@ mixin increase-form(props)
                     div(
                         class='increase-form__column' + (clearHidden ? ' increase-form--hide-button' : '')
                     )
-                        +button({label: "очистить", variant: "nofill", type: "clear"})
+                        +button({label: "очистить", variant: "nofill", dataType: "clear", type: "button"})
                     .increase-form__auto
-                        +button({label: "применить", variant: "nofill", type: "apply"})
+                        +button({label: "применить", variant: "nofill", dataType: "apply", type: "button"})
