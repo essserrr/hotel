@@ -1,0 +1,31 @@
+include ../icons/info/info.pug
+
+mixin calculate-price(props)
+    - const { roomPrice, days, discount, other, sum } = props;
+    - const preciOverDays = Number(roomPrice) * Number(days);
+    - const sumPrice = preciOverDays - Number(discount) + Number(other);
+    - function formatNumber(number) {return String(number).replace(/(?!^)(?=(?:\d{3})+(?:\.|$))/gm, ' ');}
+    .ui-calculate-price
+        .ui-calculate-price__row
+            .ui-calculate-price__column100.ui-calculate-price__flex.ui-calculate-price--margin-sm
+                .ui-calculate-price__title #{formatNumber(roomPrice)}<span>&#8381</span> х #{days} суток
+                .ui-calculate-price__column-auto
+                .ui-calculate-price__column.ui-calculate-price__price #{formatNumber(preciOverDays)}<span>&#8381</span>
+
+            .ui-calculate-price__column100.ui-calculate-price__flex.ui-calculate-price--margin-sm
+                .ui-calculate-price__title Сбор за услуги: скидка #{formatNumber(discount)}<span>&#8381</span>
+                .ui-calculate-price__column-auto
+                    +info
+                .ui-calculate-price__column.ui-calculate-price__price #{0}<span>&#8381</span>
+
+            .ui-calculate-price__column100.ui-calculate-price__flex.ui-calculate-price--special-line.ui-calculate-price--margin-lg
+                .ui-calculate-price__title Сбор за дополнительные услуги
+
+                .ui-calculate-price__column-auto
+                    +info
+                .ui-calculate-price__column.ui-calculate-price__price #{formatNumber(other)}<span>&#8381</span>
+
+            .ui-calculate-price__column100.ui-calculate-price__flex
+                h2 Итого
+                .ui-calculate-price__column.ui-calculate-price__dots-separator
+                h2.ui-calculate-price__price-overall #{formatNumber(sumPrice)}<span>&#8381</span>

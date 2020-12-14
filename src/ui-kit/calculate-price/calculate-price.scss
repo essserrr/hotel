@@ -1,0 +1,65 @@
+.ui-calculate-price {
+    line-height: 24px;
+
+    &__column100 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    &__column-auto {
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
+    }
+
+    &__column {
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        max-width: 100%;
+    }
+
+    &__row {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    &__title {
+        width: 214px;
+        padding-right: 5px;
+    }
+
+    &__price {
+        text-align: right;
+
+        &-overall {
+            margin-right: -9px;
+        }
+    }
+
+    &__dots-separator {
+        border-bottom: 1px dashed rgba(31, 32, 65, 0.25);
+        margin: 0px 5px 4px 4px;
+    }
+
+    &__flex {
+        display: -ms-flexbox;
+        display: flex;
+    }
+
+    &--margin-sm {
+        margin-bottom: 10px;
+    }
+    &--margin-lg {
+        margin-bottom: 30px;
+    }
+
+    &--special-line {
+        line-height: 18px;
+    }
+}
