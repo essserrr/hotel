@@ -1,5 +1,5 @@
 import "./dropdown/dropdown";
-import "./masks/date";
+import "./masks/masks";
 import "./datepicker/datepicker";
 import "./buttons/like/like";
 import "./buttons/rate/rate";
