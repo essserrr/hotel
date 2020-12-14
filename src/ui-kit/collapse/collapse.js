@@ -1,4 +1,8 @@
 $(function () {
+    if (!$().collapsable) {
+        console.log("Collapsible doesn't connected");
+        return;
+    }
     $(".js-collapse").collapsable({
         fx: "slide",
         fxDuration: 300,

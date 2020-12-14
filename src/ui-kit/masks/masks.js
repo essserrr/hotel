@@ -1,5 +1,8 @@
 $(function () {
-    if (!$().inputmask) return;
+    if (!$().inputmask) {
+        console.log("Mask doesn't connected");
+        return;
+    }
     $("[data-masktype=date]").inputmask({
         alias: "datetime",
         inputFormat: "dd.mm.yyyy",

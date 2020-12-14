@@ -1,4 +1,8 @@
 $(function () {
+    if (!$().ionRangeSlider) {
+        console.log("Slider doesn't connected");
+        return;
+    }
     $(".js-range-slider").ionRangeSlider({
         skin: "round",
         type: "double",
