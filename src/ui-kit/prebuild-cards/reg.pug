@@ -1,0 +1,34 @@
+include ../card/card.pug
+
+include ../dropdown/dropdown.pug
+include ../input/input.pug
+include ../radio-group/radio-group.pug
+include ../switch/switch.pug
+
+include ../buttons/button/button.pug
+include ../icons/arrow-forward/arrow-forward.pug
+
++card({title: "Регистрация аккаунта"})
+    form.ui-card__column100(action="#", method="POST")
+        .ui-card__column100.ui-card--margin-bottom-xs
+            +input({placeholder:"Имя", labelVariant: "none"})
+        .ui-card__column100.ui-card--margin-bottom-xs
+            +input({placeholder:"Фамилия", labelVariant: "none"})
+        .ui-card__column100.ui-card--margin-bottom-lg
+            +radio-group({list: [{label: "Мужчина", name: "radio", checked: "checked"}, {label: "Женщина", name: "radio"}]})
+        .ui-card__column100.ui-card--margin-bottom-md
+            +input({mask:"date", labelLeft:"дата рождения"})
+        .ui-card__column100.ui-card--margin-bottom-xs
+            +input({placeholder:"Email", labelLeft:"данные для входа в сервис"})
+        .ui-card__column100.ui-card--margin-bottom-xs
+            +input({placeholder:"Пароль", labelVariant: "none"})
+        .ui-card__column100.ui-card--margin-bottom-md
+            +switch({label: "Получать спецпредложения"})
+
+        .ui-card__column100.ui-card--margin-bottom-xl
+            +button({label: "перейти к оплате", variant: "long", icon: true})
+                +arrow-forward
+        .ui-card__column100
+            .ui-card__row.ui-card--justify-between.ui-card--align-center
+                span Уже есть аккаунт на Toxin
+                +button({label: "войти", variant: "outlined"})
