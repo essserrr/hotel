@@ -24,11 +24,12 @@ block content
     .cards-page.cards-page__row.cards-page--padding.cards-page--justify-between
         .cards-page__column100.cards-page--width380
             .cards-page__column100
-                include ../../ui-kit/prebuild-cards/find.pug
+                include ../../ui-kit/prebuild-cards/find/find.pug
             .cards-page__column100.cards-page--margin-top
-                include ../../ui-kit/prebuild-cards/reg.pug
+                include ../../ui-kit/prebuild-cards/reg/reg.pug
         .cards-page__column100.cards-page--width380
             .cards-page__column100
-                include ../../ui-kit/prebuild-cards/book.pug
+                include ../../ui-kit/prebuild-cards/book/book.pug
+                +book({title: "title", number: "888", type: "люкс", price: "9 990"})
             .cards-page__column100.cards-page--margin-top
-                include ../../ui-kit/prebuild-cards/login.pug
+                include ../../ui-kit/prebuild-cards/login/login.pug
