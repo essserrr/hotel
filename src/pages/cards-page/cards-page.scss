@@ -32,6 +32,9 @@ body {
     &--width380 {
         max-width: 380px;
     }
+    &--width320 {
+        max-width: 320px;
+    }
 }
 
 @media (max-width: 1200px) {
