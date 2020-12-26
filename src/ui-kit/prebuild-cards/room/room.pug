@@ -1,0 +1,10 @@
+include ../../buttons/like/like.pug
+
+include ../../card/card.pug
+
+include ../book/book-title/book-title.pug
+
+mixin room(props)
+    - const { date, description, likes, checked } = props;
+        +card({type: "sm"})
+            +book-title({number: "888", type: "люкс", price: "9 990"})
