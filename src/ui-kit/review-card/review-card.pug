@@ -1,7 +1,7 @@
 include ../buttons/like/like.pug
 
 mixin review-card(props)
-    - const { title, date, dexcription, likes, checked } = props;
+    - const { title, date, description, likes, checked } = props;
         .ui-review-card.ui-review-card__row
             .ui-review-card__column100
                 .ui-review-card__row
@@ -19,4 +19,4 @@ mixin review-card(props)
                         .ui-review-card__like-container
                             +like({value: likes, checked: checked})
 
-                    .ui-review-card__column #{dexcription}
+                    .ui-review-card__column #{description}
