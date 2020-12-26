@@ -3,8 +3,9 @@ mixin book-title(props)
 
     .ui-card__row.ui-card--align-end.ui-card__book-title
         .ui-card__column
-            .ui-card__book-title-number.ui-calculate-price__row.ui-card--align-end <b>№&nbsp</b>
+            .ui-card__book-title-number.ui-card__row.ui-card--align-end <b>№&nbsp</b>
                 h1 #{number}
-                h3 #{type}
+                if type
+                    h3 #{type}
         .ui-card__column-auto
-            .ui-card__book-title-price.ui-calculate-price__row.ui-card--align-end <b>#{price}&#8381&nbsp</b> в сутки
+            .ui-card__book-title-price.ui-card__row.ui-card--align-end <b>#{price}&#8381&nbsp</b> в сутки
