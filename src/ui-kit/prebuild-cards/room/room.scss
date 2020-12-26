@@ -1,0 +1,38 @@
+.ui-room {
+    max-width: 270px;
+    &__image {
+        height: 151px;
+        width: 100%;
+        background-color: black;
+    }
+    &--padding {
+        padding: 20px 16px 19px 20px;
+    }
+
+    &--text {
+        font-size: 14px;
+        line-height: 18px;
+        color: $color-dark-shade50;
+
+        padding-bottom: 1px;
+        padding-right: 2px;
+    }
+
+    &--vertical-spacing {
+        .ui-room__element {
+            padding-top: 8px;
+            padding-bottom: 11px;
+
+            border-top: 1px solid $color-dark-shade10;
+
+            &:first-of-type {
+                padding-top: 0px;
+                border-top: none;
+            }
+
+            &:last-of-type {
+                padding-bottom: 0px;
+            }
+        }
+    }
+}

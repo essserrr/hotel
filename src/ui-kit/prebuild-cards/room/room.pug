@@ -1,10 +1,20 @@
-include ../../buttons/like/like.pug
+include ../../buttons/rate/rate.pug
 
 include ../../card/card.pug
 
-include ../book/book-title/book-title.pug
+include ../card-title/card-title.pug
 
 mixin room(props)
-    - const { date, description, likes, checked } = props;
+    - const { number, type, price, reviews = 0, checkedStars = 5 } = props;
+    .ui-room
         +card({type: "sm"})
-            +book-title({number: "888", type: "люкс", price: "9 990"})
+            .ui-room__image
+            .ui-card__column100.ui-room--padding.ui-room--vertical-spacing
+                .ui-card__column100.ui-room__element
+                    +book-title({number: "888", type: "люкс", price: "9 990", titleStyle: 'sm'})
+                .ui-card__column100.ui-room__element
+                    .ui-card__row.ui-card--align-end
+                        .ui-card__column
+                            +rate({checkedStars})
+                        .ui-card__column-auto.ui-room--text
+                            .ui-card__row.ui-card--align-end <b>#{reviews}&nbsp</b> Отзывов
