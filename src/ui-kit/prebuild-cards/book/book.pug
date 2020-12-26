@@ -10,7 +10,7 @@ include ../../icons/arrow-forward/arrow-forward.pug
 include book-title/book-title.pug
 
 mixin book(props)
-    - const { number, type, price, title } = props;
+    - const { number, type, price } = props;
     +card({})
         form.ui-card__column100(action="#", method="POST")
             .ui-card__column100.ui-card--margin-bottom-md
