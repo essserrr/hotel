@@ -4,6 +4,8 @@
 
     background: #ffffff;
 
+    overflow: hidden;
+
     &--default {
         box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
         padding: 40px 29px 30px 29px;
@@ -100,34 +102,6 @@
         }
         &-xl {
             margin-bottom: 30px;
-        }
-    }
-
-    &__book-title {
-        padding-bottom: 3px;
-    }
-
-    &__book-title-number {
-        b {
-            padding-bottom: 3px;
-
-            font-size: 14px;
-            line-height: 17px;
-            color: $color-dark-shade100;
-        }
-        h3 {
-            padding-bottom: 1px;
-
-            color: $color-purple;
-        }
-    }
-    &__book-title-price {
-        font-size: 12px;
-        line-height: 18px;
-
-        b {
-            font-size: 14px;
-            line-height: 18px;
         }
     }
 }

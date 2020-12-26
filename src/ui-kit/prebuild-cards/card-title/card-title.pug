@@ -1,0 +1,13 @@
+mixin book-title(props)
+    - const { number, type, price, titleStyle = 'default' } = props;
+
+    div(
+        class='ui-card-title__row ui-card-title--align-end' + (titleStyle === 'default' ? '' : ` ui-card-title--${titleStyle}`)
+    )
+        .ui-card-title__column
+            .ui-card-title__book-title-number.ui-card-title__row.ui-card-title--align-end <b>№&nbsp</b>
+                h1 #{number}
+                if type
+                    h3 #{type}
+        .ui-card-title__column-auto
+            .ui-card-title__book-title-price.ui-card-title__row.ui-card-title--align-end <b>#{price}&#8381&nbsp</b> в сутки
