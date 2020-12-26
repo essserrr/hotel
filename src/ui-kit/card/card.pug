@@ -1,7 +1,7 @@
 mixin card(props)
-    - const { title } = props;
+    - const { title, type = 'default' } = props;
 
-    .ui-card.ui-card__row
+    div(class=`ui-card ui-card--${type} ui-card__row`)
         if (title)
             .ui-card__column100.ui-card--margin-bottom-md
                 h1 #{title}
