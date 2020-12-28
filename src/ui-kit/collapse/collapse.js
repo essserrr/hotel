@@ -1,6 +1,6 @@
 $(function () {
     if (!$().collapsable) {
-        console.log("Collapsible doesn't connected");
+        console.log("Collapsible is not connected");
         return;
     }
     $(".js-collapse").collapsable({

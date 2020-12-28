@@ -1,6 +1,6 @@
 $(function () {
     if (!$().ionRangeSlider) {
-        console.log("Slider doesn't connected");
+        console.log("Ion slider is not connected");
         return;
     }
     $(".js-range-slider").ionRangeSlider({

@@ -1,6 +1,6 @@
 $(function () {
     if (!$().inputmask) {
-        console.log("Mask doesn't connected");
+        console.log("Input mask is not connected");
         return;
     }
     $("[data-masktype=date]").inputmask({
