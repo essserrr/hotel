@@ -5,14 +5,14 @@ include ../card-title/card-title.pug
 include ../../image-slider/image-slider.pug
 
 mixin room(props)
-    - const { number, type, price, reviews = 0, checkedStars = 5 } = props;
+    - const { number, type, price, reviews = 0, checkedStars = 5, images = [], noButtons } = props;
     .ui-room
         +card({type: "sm"})
             .ui-room__image
-                +image-slider({images: ["/rooms/room1.png", "/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png"]})
+                +image-slider({images, noButtons})
             .ui-card__column100.ui-room--padding.ui-room--vertical-spacing
                 .ui-card__column100.ui-room__element
-                    +book-title({number: "888", type: "люкс", price: "9 990", titleStyle: 'sm'})
+                    +book-title({number, type, price, titleStyle: 'sm'})
                 .ui-card__column100.ui-room__element
                     .ui-card__row.ui-card--align-end
                         .ui-card__column

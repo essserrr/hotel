@@ -48,5 +48,6 @@ block content
             .cards-page__column100
                 include ../../ui-kit/prebuild-cards/date-select.pug
             .cards-page__column100.cards-page--margin-top
-                +room({number: "888", type: "люкс", price: "9 990", reviews: "145", checkedStars: 5})
+                +room({number: "888", type: "люкс", price: "9 990", reviews: "145", checkedStars: 5, images: ["/rooms/room1.png", "/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png"]})
             .cards-page__column100.cards-page--margin-top
+                +room({number: "840", price: "9 900", reviews: "65", checkedStars: 4, images: ["/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png", "/rooms/room1.png"], noButtons: true})
