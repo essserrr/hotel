@@ -49,7 +49,7 @@
         width: 48px;
         height: 48px;
 
-        filter: drop-shadow(0px 10px 20px $color-dark-shade10);
+        filter: drop-shadow($shadow10);
         border-radius: 50%;
 
         img {

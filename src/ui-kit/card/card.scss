@@ -7,13 +7,13 @@
     overflow: hidden;
 
     &--default {
-        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+        box-shadow: $shadow20;
         padding: 40px 29px 30px 29px;
         border: 1px solid rgba(0, 0, 0, 0.12);
     }
 
     &--sm {
-        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+        box-shadow: $shadow5;
         padding: 0px;
         border: none;
     }
