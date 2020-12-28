@@ -1,0 +1,5 @@
+mixin image-slider(props)
+    - const { images } = props;
+    .js-image-slider.ui-image-slider
+        each image in images
+            img(src=image, alt="")

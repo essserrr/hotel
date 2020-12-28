@@ -1,14 +1,15 @@
 include ../../buttons/rate/rate.pug
 
 include ../../card/card.pug
-
 include ../card-title/card-title.pug
+include ../../image-slider/image-slider.pug
 
 mixin room(props)
     - const { number, type, price, reviews = 0, checkedStars = 5 } = props;
     .ui-room
         +card({type: "sm"})
             .ui-room__image
+                +image-slider({images: ["/rooms/room1.png", "/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png"]})
             .ui-card__column100.ui-room--padding.ui-room--vertical-spacing
                 .ui-card__column100.ui-room__element
                     +book-title({number: "888", type: "люкс", price: "9 990", titleStyle: 'sm'})
