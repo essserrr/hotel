@@ -1,0 +1,17 @@
+.ui-header {
+    height: 70px;
+    width: 100%;
+
+    display: flex;
+    display: -ms-flexbox;
+
+    box-sizing: border-box;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0px 140px 0px 140px;
+
+    background-color: white;
+    box-shadow: $shadow5;
+}
