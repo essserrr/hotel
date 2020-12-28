@@ -1,0 +1,51 @@
+body {
+    background: #f4f4f6;
+}
+
+.hf-page {
+    &--padding {
+        padding: 62px 0px 140px 0px;
+    }
+
+    &__row {
+        display: -ms-flexbox;
+        display: flex;
+
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    &--justify-center {
+        justify-content: center;
+    }
+
+    &--margin-top {
+        margin-top: 40px;
+    }
+
+    &__column100 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    &--width768 {
+        max-width: 768px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .cards-page {
+        &--padding {
+            padding: 53px 0px 132px 0px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .cards-page {
+        &--padding {
+            padding: 50px 0px 80px 0px;
+        }
+    }
+}

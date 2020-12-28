@@ -27,6 +27,10 @@ module.exports = {
             __dirname,
             "src/pages/cards-page/cards-page.js"
         ),
+        headerFooterPage: path.resolve(
+            __dirname,
+            "src/pages/header-footer-page/header-footer-page.js"
+        ),
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -121,6 +125,11 @@ module.exports = {
             filename: "pages/cards/index.html",
             template: "./src/pages/cards-page/cards-page.pug",
             chunks: ["mainLayout", "demoLayout", "cardsPage"],
+        }),
+        new HtmlWebpackPlugin({
+            filename: "pages/header-footer/index.html",
+            template: "./src/pages/header-footer-page/header-footer-page.pug",
+            chunks: ["mainLayout", "demoLayout", "headerFooterPage"],
         }),
     ],
     devServer: {
