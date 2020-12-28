@@ -8,3 +8,9 @@ $color-purple: #bc9cff;
 $color-green: #6fcf97;
 $color-gradient-purple: linear-gradient(180deg, $color-purple 0%, #8ba4f9 100%);
 $color-gradient-green: linear-gradient(180deg, $color-green 0%, #66d2ea 100%);
+$color-gradient-dark: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0) 99.99%,
+    rgba(255, 255, 255, 0) 100%
+);
