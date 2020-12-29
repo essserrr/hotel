@@ -1,3 +1,7 @@
+include ../icons/comfort/comfort.pug
+include ../icons/convinient/convinient.pug
+include ../icons/cosy/cosy.pug
+
 mixin feature(props)
     - const { icon, title, description } = props;
 
@@ -5,11 +9,11 @@ mixin feature(props)
         .ui-feature__icon-container
             case icon
                 when "comfort"
-                    include ../icons/comfort/comfort.svg
+                    +comfort
                 when "convinient"
-                    include ../icons/convinient/convinient.svg
+                    +convinient
                 when "cosy"
-                    include ../icons/cosy/cosy.svg
+                    +cosy
 
         .ui-feature__label
             .ui-feature__label-title #{title}
