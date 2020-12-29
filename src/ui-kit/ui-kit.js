@@ -7,3 +7,4 @@ import "./range-slider/range-slider";
 import "./increase-form/increase-form.js";
 import "./collapse/collapse.js";
 import "./image-slider/image-slider.js";
+import "./nav-dropdown/nav-dropdown.js";

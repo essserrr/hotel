@@ -2,9 +2,6 @@
     height: 70px;
     width: 100%;
 
-    display: flex;
-    display: -ms-flexbox;
-
     box-sizing: border-box;
 
     align-items: center;
@@ -14,4 +11,9 @@
 
     background-color: white;
     box-shadow: $shadow5;
+
+    &--flex {
+        display: flex;
+        display: -ms-flexbox;
+    }
 }

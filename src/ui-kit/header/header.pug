@@ -1,6 +1,13 @@
+include ../toxin-logo/toxin-logo.pug
+include ../nav-dropdown/nav-dropdown.pug
+
 mixin header(props)
     - const { loggedIn = false, name = '' } = props;
 
-    .ui-header
-        div logo
-        div other block
+    .ui-header.ui-header--flex
+        .ui-header--flex
+            +toxin-logo
+        .ui-header--flex
+            +nav-dropdown({root: {node: "a", title: "О нас", link: "#"},})
+
+            +nav-dropdown({root: {node: "div", title: "Услуги", link: "#"}, list: ["Category One", "Category Two", "Category Three"]})
