@@ -1,0 +1,14 @@
+.ui-toxin-logo {
+    box-sizing: border-box;
+
+    display: flex;
+    display: -ms-flexbox;
+
+    align-items: center;
+
+    &__logo {
+    }
+    &__text {
+        margin-left: 11.5px;
+    }
+}
