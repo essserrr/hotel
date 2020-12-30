@@ -10,15 +10,15 @@ mixin header(props)
             +toxin-logo
         .ui-header__row.ui-header__row-margin.ui-header--align-center
             .ui-header__item
-                +nav-dropdown({root: {node: "a", title: "О нас", link: "#", style: "bold"},})
+                +nav-dropdown({root: {node: "a", title: "О нас", href: "#", style: "bold"},})
             .ui-header__item
-                +nav-dropdown({root: {node: "div", title: "Услуги", link: "#"}, list: ["Category One", "Category Two", "Category Three"]})
+                +nav-dropdown({root: {node: "div", title: "Услуги"}, list: [{title: "Category One", href: "#"}, {title: "Category Two", href: "#"},{title: "Category Three", href: "#"}]})
             .ui-header__item
-                +nav-dropdown({root: {node: "a", title: "Вакансии", link: "#"},})
+                +nav-dropdown({root: {node: "a", title: "Вакансии", href: "#"},})
             .ui-header__item
-                +nav-dropdown({root: {node: "a", title: "Новости", link: "#"},})
+                +nav-dropdown({root: {node: "a", title: "Новости", href: "#"},})
             .ui-header__item
-                +nav-dropdown({root: {node: "div", title: "Соглашения", link: "#"}, list: ["Category One", "Category Two", "Category Three"]})
+                +nav-dropdown({root: {node: "div", title: "Соглашения"}, list: [{title: "Category One", href: "#"}, {title: "Category Two", href: "#"},{title: "Category Three", href: "#"}]})
             case loggedIn
                 when true
                     .ui-header__item.ui-header__name #{name}

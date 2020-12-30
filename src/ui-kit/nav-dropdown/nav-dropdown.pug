@@ -6,11 +6,11 @@ mixin nav-dropdown(props)
         if root
             case root.node
                 when "a"
-                    a(href=root.link, class='ui-nav-dropdown__title' + rootStyle) #{root.title}
+                    a(href=root.href, class='ui-nav-dropdown__title' + rootStyle) #{root.title}
                 when "div"
                     div(class='ui-nav-dropdown__title' + rootStyle) #{root.title}
         if list
             ul.ui-nav-dropdown__list.js-nav-dropdown__list
                 each value in list
                     li.ui-nav-dropdown__list-item
-                        a(href="#") #{value}
+                        a(href=value.href) #{value.title}
