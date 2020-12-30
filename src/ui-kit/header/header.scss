@@ -29,4 +29,13 @@
         padding-left: 10px;
         padding-right: 10px;
     }
+
+    &__name {
+        margin-left: 11px;
+
+        padding-left: 20px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        border-left: 1px solid $color-dark-shade10;
+    }
 }

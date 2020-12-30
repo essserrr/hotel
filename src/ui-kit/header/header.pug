@@ -21,7 +21,7 @@ mixin header(props)
                 +nav-dropdown({root: {node: "div", title: "Соглашения", link: "#"}, list: ["Category One", "Category Two", "Category Three"]})
             case loggedIn
                 when true
-                    div #{name}
+                    .ui-header__item.ui-header__name #{name}
                 when false
                     .ui-header__item
                         +button({label: "войти", variant: "outlined", size: "sm"})
