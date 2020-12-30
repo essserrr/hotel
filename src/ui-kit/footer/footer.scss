@@ -4,9 +4,10 @@
 
     &__nav-block {
         box-sizing: border-box;
-        padding-left: 140px;
-        padding-right: 140px;
+        padding: 100px 140px 0px 140px;
         min-height: 372px;
+
+        line-height: 24px;
     }
     &__credits-block {
         box-sizing: border-box;
@@ -15,6 +16,14 @@
         min-height: 70px;
 
         border-top: 1px solid $color-dark-shade10;
+    }
+
+    &--margin-top {
+        margin-top: 17px;
+    }
+
+    &--width260 {
+        max-width: 260px;
     }
 
     &__row {
