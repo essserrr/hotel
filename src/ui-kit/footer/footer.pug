@@ -1,17 +1,29 @@
 include ../toxin-logo/toxin-logo.pug
 include ../s-media/s-media.pug
+include ./footer-list/footer-list.pug
+include ../input/input.pug
+include ../icons/arrow-forward/arrow-forward.pug
 
 mixin footer(props)
     - const { loggedIn = false, name = '' } = props;
 
     .ui-footer.ui-footer__row
         .ui-footer__column100
-            .ui-footer__nav-block.ui-footer__row
+            .ui-footer__nav-block.ui-footer__row.ui-footer--justify-between
                 .ui-footer__column-auto
                     .ui-footer__column-auto
                         +toxin-logo
                     .ui-footer__column-aut.ui-footer--margin-top.ui-footer--width260 Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-
+                .ui-footer__column-auto
+                    +footer-list({title: "навигация", list: [{title: "О нас", node: "a", href: "#"}, {title: "Новости", node: "a", href: "#"}, {title: "Служба поддержки", node: "a", href: "#"}, {title: "Услуги", node: "a", href: "#"}]})
+                .ui-footer__column-auto
+                    +footer-list({title: "о нас", list: [{title: "О сервисе", node: "a", href: "#"}, {title: "Наша команда", node: "a", href: "#"}, {title: "Вакансии", node: "a", href: "#"}, {title: "Инвесторы", node: "a", href: "#"}]})
+                .ui-footer__column-auto
+                    +footer-list({title: "Служба поддержки", list: [{title: "Соглашения", node: "a", href: "#"}, {title: "Сообщества", node: "a", href: "#"}, {title: "Связь с нами", node: "a", href: "#"}]})
+                .ui-footer__column-auto
+                    +footer-list({title: "Подписка", hasBlock: true, list: [{title: "Получайте специальные предложения и новости сервиса", node: "div"}]}) 
+                        +input({placeholder:"Email", submitable: true}) 
+                            +arrow-forward
         .ui-footer__column100
             .ui-footer__credits-block.ui-footer__row.ui-footer--align-center.ui-footer--justify-between
                 .ui-footer__column-auto Copyright © 2018 Toxin отель. Все права зачищены.
