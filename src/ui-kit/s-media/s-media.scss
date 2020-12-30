@@ -1,0 +1,25 @@
+.ui-smedia {
+    &__row {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+
+        margin-left: -11px;
+        margin-right: -11px;
+    }
+
+    &--align-center {
+        align-items: center;
+    }
+
+    &__column-auto {
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
+
+        padding-left: 11px;
+        padding-right: 11px;
+    }
+}
