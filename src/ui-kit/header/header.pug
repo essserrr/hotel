@@ -1,13 +1,29 @@
 include ../toxin-logo/toxin-logo.pug
 include ../nav-dropdown/nav-dropdown.pug
+include ../buttons/button/button.pug
 
 mixin header(props)
     - const { loggedIn = false, name = '' } = props;
 
-    .ui-header.ui-header--flex
-        .ui-header--flex
+    .ui-header.ui-header__row.ui-header--align-center
+        .ui-header__row
             +toxin-logo
-        .ui-header--flex
-            +nav-dropdown({root: {node: "a", title: "О нас", link: "#"},})
-
-            +nav-dropdown({root: {node: "div", title: "Услуги", link: "#"}, list: ["Category One", "Category Two", "Category Three"]})
+        .ui-header__row.ui-header__row-margin.ui-header--align-center
+            .ui-header__item
+                +nav-dropdown({root: {node: "a", title: "О нас", link: "#", style: "bold"},})
+            .ui-header__item
+                +nav-dropdown({root: {node: "div", title: "Услуги", link: "#"}, list: ["Category One", "Category Two", "Category Three"]})
+            .ui-header__item
+                +nav-dropdown({root: {node: "a", title: "Вакансии", link: "#"},})
+            .ui-header__item
+                +nav-dropdown({root: {node: "a", title: "Новости", link: "#"},})
+            .ui-header__item
+                +nav-dropdown({root: {node: "div", title: "Соглашения", link: "#"}, list: ["Category One", "Category Two", "Category Three"]})
+            case loggedIn
+                when true
+                    div #{name}
+                when false
+                    .ui-header__item
+                        +button({label: "войти", variant: "outlined", size: "sm"})
+                    .ui-header__item
+                        +button({label: "зарегистрироваться", size: "sm"})

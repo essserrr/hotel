@@ -4,7 +4,6 @@
 
     box-sizing: border-box;
 
-    align-items: center;
     justify-content: space-between;
 
     padding: 0px 140px 0px 140px;
@@ -12,8 +11,22 @@
     background-color: white;
     box-shadow: $shadow5;
 
-    &--flex {
+    &__row {
         display: flex;
         display: -ms-flexbox;
+    }
+
+    &--align-center {
+        align-items: center;
+    }
+
+    &--row-margin {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    &__item {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
