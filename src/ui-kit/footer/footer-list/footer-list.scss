@@ -1,0 +1,25 @@
+.ui-footer-list {
+    &__title {
+        font-size: 12px;
+        line-height: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: $color-dark-shade100;
+
+        &--margin {
+            margin-bottom: 1px;
+        }
+    }
+
+    &__item {
+        display: block;
+        max-width: 260px;
+
+        margin-top: 20px;
+        font-size: 14px;
+        line-height: 17px;
+        color: $color-dark-shade50;
+
+        text-decoration: none;
+    }
+}
