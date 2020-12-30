@@ -3,8 +3,6 @@
 
     min-width: 99px;
 
-    padding: 14px 19px 15px 19px;
-
     border: none;
     border-radius: 22px;
 
@@ -28,10 +26,29 @@
         outline: none;
     }
 
+    &--md {
+        padding: 14px 19px 15px 19px;
+        &.ui-button--outlined {
+            padding: 12px 17px 13px 17px;
+        }
+
+        &.ui-button--nofill {
+            padding: 0;
+        }
+    }
+
+    &--sm {
+        padding: 9px 20px 10px 20px;
+
+        &.ui-button--outlined {
+            min-width: 87px;
+            padding: 7px 18px 8px 18px;
+        }
+    }
+
     &--outlined {
         min-width: 99px;
 
-        padding: 12px 17px 13px 17px;
         border: 2px solid transparent;
 
         color: $color-purple;
@@ -43,7 +60,6 @@
     &--nofill {
         min-width: unset;
 
-        padding: 0;
         color: $color-purple;
         background: none;
     }
