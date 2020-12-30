@@ -7,14 +7,53 @@
     position: relative;
     cursor: pointer;
 
+    &[data-navdropdown-hover="true"] {
+        .ui-nav-dropdown__arrow {
+            &::after {
+                transform: rotate(225deg);
+            }
+        }
+    }
+
+    &__arrow {
+        position: relative;
+        padding-right: 25px;
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+
+            top: calc(50% - 4.5px);
+            right: 9px;
+
+            width: 6.5px;
+            height: 6.5px;
+
+            border-color: $color-dark-shade50;
+            border-style: solid;
+
+            border-width: 0px 2px 2px 0px;
+
+            transform-origin: 75% 64%;
+            transform: rotate(45deg);
+            transition: all 0.15s linear;
+        }
+    }
+
     &__title {
         display: block;
-        padding: 15px 14px;
+        padding: 10px 0x;
 
         text-decoration: none;
 
         font-size: 14px;
         transition: 0.3s linear;
+
+        color: $color-dark-shade75;
+
+        &--bold {
+            font-weight: bold;
+        }
 
         &:hover {
             text-decoration: none;

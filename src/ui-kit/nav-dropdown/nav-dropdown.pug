@@ -1,13 +1,14 @@
 mixin nav-dropdown(props)
     - const { root, list } = props;
+    - const rootStyle = `${root && root.style ? ` ui-nav-dropdown__title--${root.style}` : ''}${list && list.length > 0 ? ' ui-nav-dropdown__arrow' : ''}`;
 
-    .ui-nav-dropdown.js-nav-dropdown
+    .ui-nav-dropdown.js-nav-dropdown(data-navdropdown-hover=false)
         if root
             case root.node
                 when "a"
-                    a.ui-nav-dropdown__title(href=root.link) #{root.title}
+                    a(href=root.link, class='ui-nav-dropdown__title' + rootStyle) #{root.title}
                 when "div"
-                    .ui-dropdown__root #{root.title}
+                    div(class='ui-nav-dropdown__title' + rootStyle) #{root.title}
         if list
             ul.ui-nav-dropdown__list.js-nav-dropdown__list
                 each value in list
