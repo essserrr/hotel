@@ -5,21 +5,27 @@
         font-weight: bold;
         text-transform: uppercase;
         color: $color-dark-shade100;
+    }
 
-        &--margin {
-            margin-bottom: 1px;
-        }
+    .ui-footer-list__item:nth-of-type(2) {
+        margin-top: 22px;
     }
 
     &__item {
         display: block;
         max-width: 260px;
 
-        margin-top: 20px;
+        margin-top: 21px;
         font-size: 14px;
         line-height: 17px;
         color: $color-dark-shade50;
 
         text-decoration: none;
+
+        &--subscribe {
+            line-height: 24px;
+            margin-top: 18px !important;
+            margin-bottom: -4px;
+        }
     }
 }

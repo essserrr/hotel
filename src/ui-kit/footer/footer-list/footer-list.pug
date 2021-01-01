@@ -2,13 +2,13 @@ mixin footer-list(props)
     - const { title, list = [], hasBlock = false } = props;
 
     .ui-footer-list
-        .ui-footer-list__title.ui-footer-list__title--margin #{title}
+        .ui-footer-list__title #{title}
         each value in list
             case value.node
                 when "a"
                     a.ui-footer-list__item(href=value.href) #{value.title}
-                when "div"
-                    .ui-footer-list__item  #{value.title}
+                when "subscribe"
+                    .ui-footer-list__item.ui-footer-list__item--subscribe  #{value.title}
         if hasBlock
             .ui-footer-list__item
                 block
