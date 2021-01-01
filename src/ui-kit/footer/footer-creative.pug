@@ -1,0 +1,12 @@
+include ../toxin-logo/toxin-logo.pug
+include ../s-media/s-media.pug
+
+mixin footer-creative(props)
+    - const { loggedIn = false, name = '' } = props;
+
+    .ui-footer.ui-footer-creative.ui-footer__row.ui-footer--align-center.ui-footer--justify-center
+        .ui-footer__column-auto
+            +toxin-logo
+        .ui-footer__column100.ui-footer--margin-top20.ui-footer--text-center Copyright © 2018 Toxin отель. Все права зачищены.
+        .ui-footer__column-auto.ui-footer--margin-top22
+            +s-media({twitter: true, facebook: true, instagram: true })

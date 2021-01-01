@@ -2,6 +2,7 @@ extends ../../components/ui-kit-demostartion-layout/ui-kit-demostartion-layout.p
 
 include ../../ui-kit/header/header.pug
 include ../../ui-kit/footer/footer.pug
+include ../../ui-kit/footer/footer-creative.pug
 
 block meta
     title Хедер и футер
@@ -17,4 +18,4 @@ block content
         .hf-page__column100.hf-page--margin-top
             +footer({})
         .hf-page__column100.hf-page--width768.hf-page--margin-top
-            div(style="height: 367px; width: 100%; background: black")
+            +footer-creative({})

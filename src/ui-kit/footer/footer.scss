@@ -1,4 +1,8 @@
 .ui-footer {
+    &-creative {
+        padding: 120px 104px;
+    }
+
     background: #ffffff;
     box-shadow: $shadow5;
 
@@ -33,7 +37,19 @@
     }
 
     &--margin-top {
-        margin-top: 17px;
+        &17 {
+            margin-top: 17px;
+        }
+        &20 {
+            margin-top: 20px;
+        }
+        &22 {
+            margin-top: 22px;
+        }
+    }
+
+    &--text-center {
+        text-align: center;
     }
 
     &--width260 {
@@ -53,6 +69,9 @@
 
     &--justify-between {
         justify-content: space-between;
+    }
+    &--justify-center {
+        justify-content: center;
     }
 
     &__column100 {
