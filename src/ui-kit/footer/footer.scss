@@ -9,6 +9,20 @@
 
         line-height: 24px;
     }
+
+    &__nav-column {
+        padding-left: 40px;
+        padding-top: 4px;
+        .ui-footer__column-auto {
+            &:nth-of-type(2) {
+                padding-left: 8px;
+            }
+            &:nth-of-type(3) {
+                padding-left: 41px;
+            }
+        }
+    }
+
     &__credits-block {
         box-sizing: border-box;
         padding-left: 140px;
