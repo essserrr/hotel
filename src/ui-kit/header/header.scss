@@ -14,6 +14,15 @@
     &__row {
         display: flex;
         display: -ms-flexbox;
+
+        .ui-header__item {
+            &:first-of-type {
+                padding-left: 0;
+            }
+            &:last-of-type {
+                padding-right: 0;
+            }
+        }
     }
 
     &--align-center {
