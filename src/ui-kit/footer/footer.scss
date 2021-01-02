@@ -1,16 +1,27 @@
 .ui-footer {
+    background: #ffffff;
+    box-shadow: $shadow5;
+
     &-creative {
         padding: 120px 104px;
     }
 
-    background: #ffffff;
-    box-shadow: $shadow5;
+    &--padding-x {
+        padding-left: 140px;
+        padding-right: 140px;
+    }
+
+    &__credits-block {
+        box-sizing: border-box;
+        min-height: 70px;
+        border-top: 1px solid $color-dark-shade10;
+    }
 
     &__nav-block {
         box-sizing: border-box;
-        padding: 100px 140px 0px 140px;
+        padding-top: 100px;
+        padding-bottom: 20px;
         min-height: 372px;
-
         line-height: 24px;
     }
 
@@ -25,15 +36,6 @@
                 padding-left: 41px;
             }
         }
-    }
-
-    &__credits-block {
-        box-sizing: border-box;
-        padding-left: 140px;
-        padding-right: 140px;
-        min-height: 70px;
-
-        border-top: 1px solid $color-dark-shade10;
     }
 
     &--margin-top {
@@ -93,5 +95,88 @@
         flex: 0 0 auto;
         width: auto;
         max-width: 100%;
+    }
+}
+
+@media (max-width: 1300px) {
+    .ui-footer {
+        &--padding-x {
+            padding-left: 45px;
+            padding-right: 45px;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .ui-footer {
+        &-creative {
+            padding: 100px 84px;
+        }
+
+        &--padding-x {
+            padding-left: 45px;
+            padding-right: 45px;
+        }
+
+        &__nav-block {
+            padding-top: 60px;
+
+            & > .ui-footer__column-auto:first-of-type {
+                padding-top: 20px;
+            }
+        }
+
+        &__nav-column {
+            padding-left: 10px;
+            .ui-footer__column-auto {
+                padding-top: 20px;
+                &:nth-of-type(2) {
+                    padding-left: 0px;
+                }
+                &:nth-of-type(3) {
+                    padding-left: 0px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .ui-footer {
+        &-creative {
+            padding: 80px 64px;
+        }
+
+        &--padding-x {
+            padding-left: 35px;
+            padding-right: 35px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .ui-footer {
+        &-creative {
+            padding: 50px 24px;
+        }
+
+        &--padding-x {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        &__column-xs100 {
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        &--justify-xs-center {
+            justify-content: center;
+        }
+
+        &--text-xs-center {
+            text-align: center;
+        }
     }
 }

@@ -35,17 +35,10 @@ body {
 }
 
 @media (max-width: 1200px) {
-    .cards-page {
-        &--padding {
-            padding: 53px 0px 132px 0px;
-        }
-    }
 }
 
 @media (max-width: 992px) {
-    .cards-page {
-        &--padding {
-            padding: 50px 0px 80px 0px;
-        }
-    }
+}
+
+@media (min-width: 576px) {
 }

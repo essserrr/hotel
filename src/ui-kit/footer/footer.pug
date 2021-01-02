@@ -9,7 +9,7 @@ mixin footer(props)
 
     .ui-footer.ui-footer__row
         .ui-footer__column100
-            .ui-footer__nav-block.ui-footer__row
+            .ui-footer__nav-block.ui-footer--padding-x.ui-footer__row
                 .ui-footer__column-auto
                     .ui-footer__column-auto
                         +toxin-logo
@@ -23,12 +23,13 @@ mixin footer(props)
                             +footer-list({title: "о нас", list: [{title: "О сервисе", node: "a", href: "#"}, {title: "Наша команда", node: "a", href: "#"}, {title: "Вакансии", node: "a", href: "#"}, {title: "Инвесторы", node: "a", href: "#"}]})
                         .ui-footer__column-auto
                             +footer-list({title: "Служба поддержки", list: [{title: "Соглашения", node: "a", href: "#"}, {title: "Сообщества", node: "a", href: "#"}, {title: "Связь с нами", node: "a", href: "#"}]})
-                        .ui-footer__column-auto
+                        .ui-footer__column-auto.ui-footer--margin-top-lg20
                             +footer-list({title: "Подписка", hasBlock: true, list: [{title: "Получайте специальные предложения и новости сервиса", node: "subscribe"}]}) 
                                 +input({placeholder:"Email", submitable: true}) 
                                     +arrow-forward
+
         .ui-footer__column100
-            .ui-footer__credits-block.ui-footer__row.ui-footer--align-center.ui-footer--justify-between
-                .ui-footer__column-auto Copyright © 2018 Toxin отель. Все права зачищены.
+            .ui-footer__credits-block.ui-footer--padding-x.ui-footer__row.ui-footer--align-center.ui-footer--justify-between.ui-footer--justify-xs-center
+                .ui-footer__column-auto.ui-footer__column-xs100.ui-footer--text-xs-center Copyright © 2018 Toxin отель. Все права зачищены.
                 .ui-footer__column-auto
                     +s-media({twitter: true, facebook: true, instagram: true })
