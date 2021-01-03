@@ -15,3 +15,16 @@
         }
     }
 }
+
+@media (max-width: 576px) {
+    .ui-toxin-logo {
+        & > svg {
+            margin-left: 4px;
+            height: 12px;
+            &:first-of-type {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+}
