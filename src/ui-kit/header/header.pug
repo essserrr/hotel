@@ -1,6 +1,8 @@
 include ../toxin-logo/toxin-logo.pug
 include ../nav-dropdown/nav-dropdown.pug
 include ../buttons/button/button.pug
+include ../icons/login/login.pug
+include ../icons/logout/logout.pug
 
 mixin header(props)
     - const { loggedIn = false, name = '' } = props;
@@ -8,22 +10,41 @@ mixin header(props)
     .ui-header.ui-header__row.ui-header--align-center
         .ui-header__row
             +toxin-logo
-        .ui-header__row.ui-header__row-margin.ui-header--align-center
-            .ui-header__item
+        .ui-header__row.ui-header--row-margin.ui-header--align-center
+            .ui-header__item.ui-header__show-md
+                +nav-dropdown({root: {node: "m-button"}, hasBlock: true})
+                    li.ui-nav-dropdown__list-item
+                        +nav-dropdown({root: {node: "a", title: "О нас", href: "#", style: "bold"},})
+                    li.ui-nav-dropdown__list-item
+                        +nav-dropdown({root: {node: "div", title: "Услуги"}, list: [{title: "Category One", href: "#"}, {title: "Category Two", href: "#"},{title: "Category Three", href: "#"}]})
+                    li.ui-nav-dropdown__list-item
+                        +nav-dropdown({root: {node: "a", title: "Вакансии", href: "#"},})
+                    li.ui-nav-dropdown__list-item
+                        +nav-dropdown({root: {node: "a", title: "Новости", href: "#"},})
+                    li.ui-nav-dropdown__list-item
+                        +nav-dropdown({root: {node: "div", title: "Соглашения"}, list: [{title: "Category One", href: "#"}, {title: "Category Two", href: "#"},{title: "Category Three", href: "#"}]})
+
+            .ui-header__item.ui-header__hide-md
                 +nav-dropdown({root: {node: "a", title: "О нас", href: "#", style: "bold"},})
-            .ui-header__item
+            .ui-header__item.ui-header__hide-md
                 +nav-dropdown({root: {node: "div", title: "Услуги"}, list: [{title: "Category One", href: "#"}, {title: "Category Two", href: "#"},{title: "Category Three", href: "#"}]})
-            .ui-header__item
+            .ui-header__item.ui-header__hide-md
                 +nav-dropdown({root: {node: "a", title: "Вакансии", href: "#"},})
-            .ui-header__item
+            .ui-header__item.ui-header__hide-md
                 +nav-dropdown({root: {node: "a", title: "Новости", href: "#"},})
-            .ui-header__item
+            .ui-header__item.ui-header__hide-md
                 +nav-dropdown({root: {node: "div", title: "Соглашения"}, list: [{title: "Category One", href: "#"}, {title: "Category Two", href: "#"},{title: "Category Three", href: "#"}]})
             case loggedIn
                 when true
                     .ui-header__item.ui-header__name #{name}
                 when false
-                    .ui-header__item
+                    .ui-header__item.ui-header__hide-xs
                         +button({label: "войти", variant: "outlined", size: "sm"})
-                    .ui-header__item
+                    .ui-header__item.ui-header__hide-xs
                         +button({label: "зарегистрироваться", size: "sm"})
+                    .ui-header__item.ui-header__show-xs
+                        +button({variant: "nofill", icon: true})
+                            +login
+                    .ui-header__item.ui-header__show-xs
+                        +button({variant: "nofill", icon: true})
+                            +logout
