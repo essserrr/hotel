@@ -88,18 +88,10 @@ $(function () {
     }
 
     class IncreaseForm {
-        constructor({
-            setValue,
-            updateOnChange,
-            formStateReducer,
-            hasSubmit,
-            closeDropdown,
-        }) {
-            this.setValue = setValue;
+        constructor({ updateOnChange, formStateReducer, hasSubmit }) {
             this.updateOnChange = updateOnChange;
             this.formStateReducer = formStateReducer;
             this.hasSubmit = hasSubmit;
-            this.closeDropdown = closeDropdown;
 
             this.nodes = {};
             this.values = {
@@ -168,13 +160,12 @@ $(function () {
             this.findNodes(event);
             this.findState();
 
-            this.setValue(this.formStateReducer(this.values.currentState));
+            $.uiDropdown.setValue(
+                this.formStateReducer(this.values.currentState)
+            );
 
-            if (
-                $(event.currentTarget).is(this.nodes.incFormApplyButton) &&
-                this.closeDropdown
-            ) {
-                this.closeDropdown();
+            if ($(event.currentTarget).is(this.nodes.incFormApplyButton)) {
+                $.uiDropdown.close(event);
             }
         }
 
@@ -182,7 +173,7 @@ $(function () {
             this.findNodes(event);
             this.clearState();
 
-            this.setValue("");
+            $.uiDropdown.setValue("");
         }
 
         showClearButton(event) {
@@ -243,7 +234,6 @@ $(function () {
     }
 
     let increaseRooms = new IncreaseForm({
-        setValue: $.uiDropdown.setValue,
         updateOnChange: true,
 
         formStateReducer: function (state) {
@@ -258,9 +248,6 @@ $(function () {
     increaseRooms.setHandlers(".js-inc-rooms");
 
     let increaseGuests = new IncreaseForm({
-        setValue: $.uiDropdown.setValue,
-        closeDropdown: $.uiDropdown.close,
-
         hasSubmit: true,
 
         formStateReducer: function (state) {
@@ -291,8 +278,6 @@ $(function () {
                 }
                 return sum;
             }, []);
-
-            console.log(guestStrings);
             return guestStrings.join(", ");
         },
     });

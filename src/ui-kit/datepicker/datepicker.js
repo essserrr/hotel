@@ -52,8 +52,8 @@ $(function () {
         hideSecondCalendar(activePicker);
     };
 
-    const hideHandler = function () {
-        $.uiDropdown.close();
+    const hideHandler = function (event) {
+        $.uiDropdown.close(event);
     };
 
     const applyDateHanler = function (ev, picker) {

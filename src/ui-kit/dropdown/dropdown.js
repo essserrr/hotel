@@ -38,6 +38,15 @@ $(function () {
                 this.closeDropHandler(event, nodes, resizeCallback);
             };
             $(nodes.container).on("click", closeCallback);
+
+            const setCallback = (value) => {
+                this.setValue(value, nodes);
+            };
+
+            $.uiDropdown = {
+                close: closeCallback,
+                setValue: setCallback,
+            };
         }
 
         getDropdownNodes(nodeClicked) {
@@ -77,7 +86,8 @@ $(function () {
         }
 
         closeDropHandler(event, nodes, resizeCallback) {
-            if (!nodes.container.is(event.target)) return;
+            if (!nodes.container.is(event.target) && event.type !== "hide")
+                return;
             this.close(nodes, resizeCallback);
         }
 
@@ -105,8 +115,8 @@ $(function () {
             }
         }
 
-        setValue(value) {
-            this.input.val(value);
+        setValue(value, nodes) {
+            nodes.input.val(value);
         }
     }
 
