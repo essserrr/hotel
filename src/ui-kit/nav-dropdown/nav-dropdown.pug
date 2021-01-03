@@ -1,6 +1,6 @@
 mixin nav-dropdown(props)
-    - const { root, list } = props;
-    - const rootStyle = `${root && root.style ? ` ui-nav-dropdown__title--${root.style}` : ''}${list && list.length > 0 ? ' ui-nav-dropdown__arrow' : ''}`;
+    - const { root, list, hasBlock } = props;
+    - const rootStyle = `${root && root.style ? ` ui-nav-dropdown__title--${root.style}` : ''}${(list && list.length > 0) || hasBlock ? ' ui-nav-dropdown__arrow' : ''}`;
 
     .ui-nav-dropdown.js-nav-dropdown(data-navdropdown-hover=false)
         if root
@@ -9,8 +9,13 @@ mixin nav-dropdown(props)
                     a(href=root.href, class='ui-nav-dropdown__title' + rootStyle) #{root.title}
                 when "div"
                     div(class='ui-nav-dropdown__title' + rootStyle) #{root.title}
+                when "m-button"
+                    .ui-nav-dropdown__title.ui-nav-dropdown__m-button
         if list
             ul.ui-nav-dropdown__list.js-nav-dropdown__list
                 each value in list
                     li.ui-nav-dropdown__list-item
                         a(href=value.href) #{value.title}
+        if hasBlock
+            ul.ui-nav-dropdown__list.js-nav-dropdown__list
+                block

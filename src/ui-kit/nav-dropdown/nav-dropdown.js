@@ -1,6 +1,6 @@
 $(function () {
     const enterHandler = function () {
-        $(".js-nav-dropdown__list", this).stop().slideDown(200);
+        $(this).find(".js-nav-dropdown__list").first().stop().slideDown(200);
         $(this).attr("data-navdropdown-hover", true);
     };
     const leaveHandler = function () {
