@@ -10,7 +10,10 @@ mixin button(props)
         type=type
     )
         .ui-button__container
-            .ui-button__label #{label}
-            if (icon)
+            if label
+                .ui-button__label #{label}
+            if icon && label
                 .ui-button__icon
                     block
+            if icon && !label
+                block
