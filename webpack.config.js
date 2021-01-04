@@ -31,6 +31,10 @@ module.exports = {
             __dirname,
             "src/pages/header-footer-page/header-footer-page.js"
         ),
+        landingPage: path.resolve(
+            __dirname,
+            "src/pages/landing-page/landing-page.js"
+        ),
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -130,6 +134,11 @@ module.exports = {
             filename: "pages/header-footer/index.html",
             template: "./src/pages/header-footer-page/header-footer-page.pug",
             chunks: ["mainLayout", "demoLayout", "headerFooterPage"],
+        }),
+        new HtmlWebpackPlugin({
+            filename: "index.html",
+            template: "./src/pages/landing-page/landing-page.pug",
+            chunks: ["mainLayout", "landingPage"],
         }),
     ],
     devServer: {

@@ -1,0 +1,33 @@
+extends ../../components/main-layout/main-layout.pug
+include ../../ui-kit/header/header.pug
+include ../../ui-kit/footer/footer.pug
+
+block meta
+    title Главная страница
+block scripts
+    script(
+        type="text/javascript",
+        src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+    )
+    script(
+        type="text/javascript",
+        src="/libs/daterangepicker/daterangepicker.js"
+    )
+    script(type="text/javascript", src="/libs/mask/jquery.inputmask.js")
+block styles
+    link(
+        rel="stylesheet",
+        type="text/css",
+        href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+    )
+
+block navigation
+    +header({})
+block content
+    .landing-page.landing-page__row
+        .landing-page--width380
+            include ../../ui-kit/prebuild-cards/find/find.pug
+        .landing-page__text-block.landing-page--width297.landing-page--align-self-end Лучшие номера для вашей работы, отдыха и просто вдохновения
+
+block footer
+    +footer({})
