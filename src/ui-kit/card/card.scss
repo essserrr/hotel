@@ -8,7 +8,7 @@
 
     &--default {
         box-shadow: $shadow20;
-        padding: 40px 29px 30px 29px;
+        padding: 39px 29px 29px 29px;
         border: 1px solid rgba(0, 0, 0, 0.12);
     }
 
@@ -88,11 +88,26 @@
     }
 
     &--margin-bottom {
+        &-2 {
+            margin-bottom: 2px;
+        }
+        &-21 {
+            margin-bottom: 21px;
+        }
+
+        &-22 {
+            margin-bottom: 22px;
+        }
+        &-23 {
+            margin-bottom: 23px;
+        }
+
+        &-31 {
+            margin-bottom: 31px;
+        }
+
         &-xs {
             margin-bottom: 10px;
-        }
-        &-sm {
-            margin-bottom: 15px;
         }
         &-md {
             margin-bottom: 20px;

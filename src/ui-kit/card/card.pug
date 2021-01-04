@@ -1,9 +1,9 @@
 mixin card(props)
-    - const { title, type = 'default' } = props;
+    - const { title, type = 'default', titleMargin = 'md' } = props;
 
     div(class=`ui-card ui-card--${type} ui-card__row`)
         if (title)
-            .ui-card__column100.ui-card--margin-bottom-md
+            div(class=`ui-card__column100 ui-card--margin-bottom-${titleMargin}`)
                 h1 #{title}
         .ui-card__column100
             block

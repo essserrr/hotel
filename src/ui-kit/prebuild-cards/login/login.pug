@@ -5,7 +5,7 @@ include ../../input/input.pug
 include ../../buttons/button/button.pug
 include ../../icons/arrow-forward/arrow-forward.pug
 
-+card({title: "Войти"})
++card({title: "Войти", titleMargin: "21"})
     form.ui-card__column100(action="#", method="POST")
         .ui-card__column100.ui-card--margin-bottom-xs
             +input({placeholder:"Email", labelVariant: "none"})
@@ -15,7 +15,7 @@ include ../../icons/arrow-forward/arrow-forward.pug
         .ui-card__column100.ui-card--margin-bottom-xl
             +button({label: "войти", variant: "long", icon: true})
                 +arrow-forward
-        .ui-card__column100
+        .ui-card__column100.ui-card--margin-bottom-2
             .ui-card__row.ui-card--justify-between.ui-card--align-center
                 span Нет аккаунта на Toxin?
                 +button({label: "создать", variant: "outlined", type: "button"})
