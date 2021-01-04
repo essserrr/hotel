@@ -8,7 +8,7 @@
 
     width: 320px;
 
-    padding: 20px 19px 20px 19px;
+    padding: 19px 19px 20px 19px;
 
     font-family: Montserrat;
     font-style: normal;
@@ -38,10 +38,13 @@
                             padding-top: 0;
                             padding-bottom: auto;
                         }
+                        .month {
+                            line-height: 24px !important;
+                        }
                         .next {
                             vertical-align: top;
                             text-align: right;
-                            padding: 3px 3px;
+                            padding: 4px 3px;
                             box-sizing: border-box;
                             width: 40px;
                             &:hover {
@@ -64,7 +67,7 @@
                         .prev {
                             vertical-align: top;
                             text-align: left;
-                            padding: 3px 3px;
+                            padding: 4px 3px;
                             box-sizing: border-box;
                             width: 40px;
                             &:hover {
