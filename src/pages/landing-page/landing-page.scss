@@ -1,12 +1,12 @@
 .landing-page {
-    padding: 70px 134px 22px 140px;
+    padding: 69px 134px 23px 140px;
     box-sizing: border-box;
-    min-height: 900px;
+    min-height: 834px;
 
     background-image: url("../../public/bg/bg1.png");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 50% 50%;
+    background-position: 50% -69px;
 
     &__row {
         display: -ms-flexbox;
@@ -33,7 +33,16 @@
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1500px) {
+    .landing-page {
+        background-position: 50% 50%;
+    }
+}
+
+@media (max-width: 1400px) {
+    .landing-page {
+        background-position: 50% 50%;
+    }
 }
 
 @media (max-width: 992px) {
