@@ -35,6 +35,10 @@ module.exports = {
             __dirname,
             "src/pages/landing-page/landing-page.js"
         ),
+        searchPage: path.resolve(
+            __dirname,
+            "src/pages/search-page/search-page.js"
+        ),
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -139,6 +143,11 @@ module.exports = {
             filename: "index.html",
             template: "./src/pages/landing-page/landing-page.pug",
             chunks: ["mainLayout", "landingPage"],
+        }),
+        new HtmlWebpackPlugin({
+            filename: "search/index.html",
+            template: "./src/pages/search-page/search-page.pug",
+            chunks: ["mainLayout", "searchPage"],
         }),
     ],
     devServer: {

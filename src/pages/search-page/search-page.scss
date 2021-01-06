@@ -1,0 +1,30 @@
+.search-page {
+    padding: 30px 140px 69px 140px;
+    box-sizing: border-box;
+
+    &__row {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    &--width380 {
+        max-width: 380px;
+    }
+    &--width266 {
+        max-width: 266px;
+    }
+}
+
+@media (max-width: 1500px) {
+}
+
+@media (max-width: 1400px) {
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 576px) {
+}
