@@ -54,32 +54,49 @@ block content
         .search-page--width266
             div
                 +dropdown({ placeholder:"ДД ММ - ДД ММ", value: "19 авг - 23 авг", labelLeft: "даты пребывания в отеле", type: "date-range"})
-            div
+            .search-page--margin-top21
                 +dropdown({ placeholder:"Сколько гостей", value: "3 гостя, 1 младенец", labelLeft: "гости", type: "text"})
                     +increase-form({type: "guests", variant: "md", hasSubmit: true, list: [{title: "взрослые", value: 2, minValue: 0, maxValue: 5, step: 1}, {title: "дети", value: 1, minValue: 0, maxValue: 5, step: 1}, {title: "младенцы", value: 1, minValue: 0, maxValue: 5, step: 1}]})
-            div 
+            .search-page--margin-top30
                 +range-slider({labelLeft: "диапазон цены", labelRight: "5 000₽ - 10 000₽", variant: "lg"})
-            div Стоимость за сутки пребывания в номере
-            div 
+            .search-page--text-sm.search-page--margin-top10 Стоимость за сутки пребывания в номере
+            .search-page--width222.search-page--margin-top30
                 +vertical-list({labelLeft: "правила дома", labelVariant: "md", variant: "checkbox", list: [{mainLabel: "Можно курить"}, {mainLabel: "Можно с питомцами"}, {mainLabel: "Можно пригласить гостей (до 10 человек)"}]})
 
-            div 
+            .search-page--margin-top30
                 +vertical-list({labelLeft: "доступность",labelVariant: "md", variant: "checkbox", list: [{mainLabel: "Широкий коридор", subLabel: ["Ширина коридоров в номере", "не менее 91 см."]}, {mainLabel: "Помощник для инвалидов", subLabel: ["На 1 этаже вас встретит специалист","и проводит до номера."]}]})
-            div
+            .search-page--margin-top30
                 +dropdown({ placeholder:"Сколько гостей", value: "2 спальни, 2 кровати, 2 ванные комнаты", labelLeft: "удобства номера", type: "text"})
                     +increase-form({type: "rooms", list: [{title: "спальни", value: 2, minValue: 0, maxValue: 5, step: 1}, {title: "кровати", value: 2, minValue: 0, maxValue: 5, step: 1}, {title: "ванные комнаты", value: 0, minValue: 0, maxValue: 5, step: 1}]})
-            div
+            .search-page--margin-top15
                 +collapse({label: "дополнительные удобства", expanded: true}) 
                     +vertical-list({labelVariant: "none", variant: "checkbox", list: [{mainLabel: "Завтрак"}, {checked:"checked", mainLabel: "Письменный стол"}, {checked:"checked", mainLabel: "Стул для кормления"}, {checked:"checked", mainLabel: "Кроватка"}, {mainLabel: "Телевизор"}, {mainLabel: "Шампунь"}]})
-        div
-            div
-                +room({number: "888", type: "люкс", price: "9 990", reviews: "145", checkedStars: 5, images: ["/rooms/room1.png", "/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png"]})
+        .search-page__search-block.search-page__column
+            .search-page__row.search-page__search-block--spacing
+                .search-page__column100.search-page--margin-bottom20
+                    h1 Номера, которые мы для вас подобрали
 
-            div
-                +room({number: "840", price: "9 900", reviews: "65", checkedStars: 4, images: ["/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png", "/rooms/room1.png"], noButtons: true})
+                .search-page__room-cell
+                    +room({number: "888", type: "люкс", price: "9 990", reviews: "145", checkedStars: 5, images: ["/rooms/room1.png", "/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png"]})
 
-            div
-                +paginator({label: "1 – 12 из 100+ вариантов аренды", pages: [{value: "1", active: true}, {value: "2"}, {value: "3"}, {value: "...", type: "dots"}, {value: "15"}, {type: "nav"}]})
+                .search-page__room-cell
+                    +room({number: "840", price: "9 900", reviews: "65", checkedStars: 4, images: ["/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png", "/rooms/room1.png"], noButtons: true})
+
+                .search-page__room-cell
+                    +room({number: "888", type: "люкс", price: "9 990", reviews: "145", checkedStars: 5, images: ["/rooms/room1.png", "/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png"]})
+
+                .search-page__room-cell
+                    +room({number: "840", price: "9 900", reviews: "65", checkedStars: 4, images: ["/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png", "/rooms/room1.png"], noButtons: true})
+
+                .search-page__room-cell
+                    +room({number: "888", type: "люкс", price: "9 990", reviews: "145", checkedStars: 5, images: ["/rooms/room1.png", "/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png"]})
+
+                .search-page__room-cell
+                    +room({number: "840", price: "9 900", reviews: "65", checkedStars: 4, images: ["/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png", "/rooms/room1.png"], noButtons: true})
+
+                .search-page__column100.search-page--margin-top21.search-page__row.search-page--justify-center
+                    .search-page--width241
+                        +paginator({label: "1 – 12 из 100+ вариантов аренды", pages: [{value: "1", active: true}, {value: "2"}, {value: "3"}, {value: "...", type: "dots"}, {value: "15"}, {type: "nav"}]})
 
 block footer
     +footer({})
