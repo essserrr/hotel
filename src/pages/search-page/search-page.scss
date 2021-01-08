@@ -1,6 +1,7 @@
 .search-page {
-    padding: 30px 140px 69px 140px;
+    padding: 30px 140px 75px 140px;
     box-sizing: border-box;
+    border-bottom: 1px solid rgba(31, 32, 65, 0.25);
 
     &__row {
         display: -ms-flexbox;
@@ -11,11 +12,21 @@
 
     &__search-block {
         padding-left: 60px;
+    }
 
-        &--spacing {
-            margin-left: -6px;
-            margin-right: -6px;
-        }
+    &__search-title {
+        margin-left: -1px;
+        margin-bottom: 22px;
+    }
+
+    &__search-cards {
+        margin-left: -6px;
+        margin-right: -6px;
+    }
+
+    &__search-paginator {
+        margin-left: -12px;
+        max-width: 241px;
     }
 
     &__room-cell {
@@ -56,17 +67,8 @@
         &266 {
             max-width: 266px;
         }
-        &241 {
-            max-width: 241px;
-        }
         &222 {
             max-width: 222px;
-        }
-    }
-
-    &--margin-bottom {
-        &20 {
-            margin-bottom: 20px;
         }
     }
 
@@ -86,14 +88,49 @@
     }
 }
 
-@media (max-width: 1500px) {
-}
-
-@media (max-width: 1400px) {
+@media (max-width: 1200px) {
+    .search-page {
+        padding: 30px 60px 75px 60px;
+        &__search-block {
+            padding-left: 50px;
+        }
+    }
 }
 
 @media (max-width: 992px) {
+    .search-page {
+        padding: 30px 40px 55px 40px;
+        &__search-block {
+            padding-left: 20px;
+        }
+
+        &--justify-md-center {
+            justify-content: center;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .search-page {
+        &__column100-sm {
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        &--margin-top30-sm {
+            margin-top: 30px;
+        }
+        &--justify-sm-center {
+            justify-content: center;
+        }
+    }
 }
 
 @media (max-width: 576px) {
+    .search-page {
+        padding: 30px 20px 55px 20px;
+        &__search-block {
+            padding-left: 20px;
+        }
+    }
 }

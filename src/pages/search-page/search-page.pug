@@ -50,7 +50,7 @@ block styles
 block navigation
     +header({})
 block content
-    .search-page.search-page__row
+    .search-page.search-page__row.search-page--justify-sm-center
         .search-page--width266
             div
                 +dropdown({ placeholder:"ДД ММ - ДД ММ", value: "19 авг - 23 авг", labelLeft: "даты пребывания в отеле", type: "date-range"})
@@ -71,31 +71,50 @@ block content
             .search-page--margin-top15
                 +collapse({label: "дополнительные удобства", expanded: true}) 
                     +vertical-list({labelVariant: "none", variant: "checkbox", list: [{mainLabel: "Завтрак"}, {checked:"checked", mainLabel: "Письменный стол"}, {checked:"checked", mainLabel: "Стул для кормления"}, {checked:"checked", mainLabel: "Кроватка"}, {mainLabel: "Телевизор"}, {mainLabel: "Шампунь"}]})
-        .search-page__search-block.search-page__column
-            .search-page__row.search-page__search-block--spacing
-                .search-page__column100.search-page--margin-bottom20
+        .search-page__search-block.search-page__column.search-page__column100-sm.search-page--margin-top30-sm
+            .search-page__row
+                .search-page__column100.search-page__search-title
                     h1 Номера, которые мы для вас подобрали
 
-                .search-page__room-cell
-                    +room({number: "888", type: "люкс", price: "9 990", reviews: "145", checkedStars: 5, images: ["/rooms/room1.png", "/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png"]})
+                .search-page__column100
+                    .search-page__row.search-page__search-cards.search-page--justify-md-center
+                        .search-page__room-cell
+                            +room({number: "888", type: "люкс", price: "9 990", reviews: "145", checkedStars: 5, images: ["/rooms/room1.png", "/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png"]})
 
-                .search-page__room-cell
-                    +room({number: "840", price: "9 900", reviews: "65", checkedStars: 4, images: ["/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png", "/rooms/room1.png"], noButtons: true})
+                        .search-page__room-cell
+                            +room({number: "840", price: "9 900", reviews: "65", checkedStars: 4, images: ["/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png", "/rooms/room1.png"], noButtons: true})
 
-                .search-page__room-cell
-                    +room({number: "888", type: "люкс", price: "9 990", reviews: "145", checkedStars: 5, images: ["/rooms/room1.png", "/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png"]})
+                        .search-page__room-cell
+                            +room({number: "980", type: "люкс", price: "8 500", reviews: "35", checkedStars: 3, images: ["/rooms/room3.png", "/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png"]})
 
-                .search-page__room-cell
-                    +room({number: "840", price: "9 900", reviews: "65", checkedStars: 4, images: ["/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png", "/rooms/room1.png"], noButtons: true})
+                        .search-page__room-cell
+                            +room({number: "865", price: "7 300", reviews: "19", checkedStars: 5, images: ["/rooms/room4.png", "/rooms/room4.png", "/rooms/room2.png", "/rooms/room1.png"], noButtons: true})
 
-                .search-page__room-cell
-                    +room({number: "888", type: "люкс", price: "9 990", reviews: "145", checkedStars: 5, images: ["/rooms/room1.png", "/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png"]})
+                        .search-page__room-cell
+                            +room({number: "740", price: "6 000", reviews: "44", checkedStars: 4, images: ["/rooms/room5.png", "/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png"]})
 
-                .search-page__room-cell
-                    +room({number: "840", price: "9 900", reviews: "65", checkedStars: 4, images: ["/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png", "/rooms/room1.png"], noButtons: true})
+                        .search-page__room-cell
+                            +room({number: "982", price: "5 800", reviews: "56", checkedStars: 3, images: ["/rooms/room6.png", "/rooms/room6.png", "/rooms/room2.png", "/rooms/room1.png"], noButtons: true})
+                        .search-page__room-cell
+                            +room({number: "678", price: "5 500", reviews: "45", checkedStars: 5, images: ["/rooms/room7.png", "/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png"]})
+
+                        .search-page__room-cell
+                            +room({number: "450", price: "5 300", reviews: "39", checkedStars: 4, images: ["/rooms/room8.png", "/rooms/room8.png", "/rooms/room2.png", "/rooms/room1.png"], noButtons: true})
+
+                        .search-page__room-cell
+                            +room({number: "350", price: "5 000", reviews: "77", checkedStars: 3, images: ["/rooms/room9.png", "/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png"]})
+
+                        .search-page__room-cell
+                            +room({number: "666", price: "5 000", reviews: "25", checkedStars: 5, images: ["/rooms/room10.png", "/rooms/room10.png", "/rooms/room2.png", "/rooms/room1.png"], noButtons: true})
+
+                        .search-page__room-cell
+                            +room({number: "444", price: "5 000", reviews: "15", checkedStars: 3, images: ["/rooms/room11.png", "/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png"]})
+
+                        .search-page__room-cell
+                            +room({number: "352", price: "5 000", reviews: "55", checkedStars: 3, images: ["/rooms/room12.png", "/rooms/room1.png", "/rooms/room2.png", "/rooms/room1.png"], noButtons: true})
 
                 .search-page__column100.search-page--margin-top21.search-page__row.search-page--justify-center
-                    .search-page--width241
+                    .search-page__search-paginator
                         +paginator({label: "1 – 12 из 100+ вариантов аренды", pages: [{value: "1", active: true}, {value: "2"}, {value: "3"}, {value: "...", type: "dots"}, {value: "15"}, {type: "nav"}]})
 
 block footer
