@@ -1,13 +1,13 @@
 include ../buttons/like/like.pug
 
 mixin review-card(props)
-    - const { title, date, description, likes, checked } = props;
+    - const { title, date, avatar = 'm', description, likes, checked } = props;
         .ui-review-card.ui-review-card__row
             .ui-review-card__column100
                 .ui-review-card__row
                     .ui-review-card__element-container
                         .ui-review-card__icon-window
-                            img(src="/avatars/m.png")
+                            img(src=`/avatars/${avatar}.png`)
 
                     .ui-review-card__column
                         .ui-review-card__title #{title}
