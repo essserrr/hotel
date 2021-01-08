@@ -1,0 +1,83 @@
+extends ../../components/main-layout/main-layout.pug
+include ../../ui-kit/header/header.pug
+include ../../ui-kit/footer/footer.pug
+
+include ../../ui-kit/vertical-list/vertical-list.pug
+include ../../ui-kit/review-card/review-card.pug
+include ../../ui-kit/prebuild-cards/book/book.pug
+
+block meta
+    title Поиск комнаты
+block scripts
+    script(
+        type="text/javascript",
+        src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+    )
+    script(
+        type="text/javascript",
+        src="/libs/daterangepicker/daterangepicker.js"
+    )
+    script(type="text/javascript", src="/libs/mask/jquery.inputmask.js")
+    script(
+        type="text/javascript",
+        src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"
+    )
+    script(type="text/javascript", src="/libs/collapse/jquery.collapsable.js")
+    script(
+        type="text/javascript",
+        src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"
+    )
+block styles
+    link(
+        rel="stylesheet",
+        type="text/css",
+        href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+    )
+    link(
+        rel="stylesheet",
+        type="text/css",
+        href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"
+    )
+    link(
+        rel="stylesheet",
+        type="text/css",
+        href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css"
+    )
+
+block navigation
+    +header({})
+block content
+    .room-page
+        .room-page__image
+        .room-page__description
+            .room-page__row.room-page--justify-between
+                .room-page__column100.room-page--width711
+                    .room-page__row.room-page--justify-between
+                        .room-page__column100.room-page--width280.room-page--margin-bottom30
+                            h2.room-page--margin-bottom20 Сведения о номере
+                            +vertical-list({labelVariant: "none", listStyle: "separated", variant: "feature", list: [{ icon: "comfort", title: "Комфорт", description: "Шумопоглощающие стены" }, { icon: "convinient", title: "Удобство", description: "Окно в каждой из спален" }, { icon: "cosy", title: "Уют", description: "Номер оснащён камином" }]})
+                        .room-page__column100.room-page--width311.room-page--margin-bottom30
+                            h2.room-page--margin-bottom20 Впечатления от номера
+                            .room-page__rating
+
+                        .room-page__column100.room-page--margin-bottom30
+                            .room-page__column100.room-page--margin-bottom20
+                                .room-page__row.room-page--justify-between
+                                    h2.room-page--margin-bottom20 Сведения о номере
+                                    .room-page__rewiew-amount 2 отзыва
+                            .room-page__column100.room-page--margin-bottom22
+                                +review-card({likes: 12, checked: "checked", title: "Мурад Сарафанов", date: "5 дней назад", description: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."})
+                            .room-page__column100
+                                +review-card({likes: 2, avatar: "f", title: "Патрисия Стёклышкова", date: "Неделю назад", description: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"})
+
+                        .room-page__column100.room-page--width280
+                            h2.room-page--margin-bottom20 Правила
+                            +vertical-list({labelVariant: "none", list: [["Нельзя с питомцами"], ["Без вечеринок и мероприятий"], ["Время прибытия — после 13:00,", "а выезд до 12:00"], ]})
+
+                        .room-page__column100.room-page--width341
+                            h2.room-page--margin-bottom20 Отмена
+                            .room-page--line-height24 Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+                .room-page__column-auto.room-page--width380
+                    +book({number: "888", type: "люкс", price: "9 990"})
+block footer
+    +footer({})

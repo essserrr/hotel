@@ -1,0 +1,108 @@
+.room-page {
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(31, 32, 65, 0.25);
+
+    &__image {
+        height: 485px;
+        width: 100%;
+        background: black;
+    }
+
+    &__description {
+        padding: 70px 140px;
+    }
+
+    &__rewiew-amount {
+        font-size: 14px;
+        line-height: 14px;
+        color: rgba(31, 32, 65, 0.5);
+    }
+
+    &__rating {
+        height: 126px;
+        width: 100%;
+        background: black;
+    }
+
+    &__row {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    &__column-auto {
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
+    }
+
+    &__column {
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        max-width: 100%;
+    }
+
+    &__column100 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    &--justify {
+        &-between {
+            justify-content: space-between;
+        }
+    }
+
+    &--line-height {
+        &24 {
+            line-height: 24px;
+        }
+    }
+
+    &--width {
+        &711 {
+            max-width: 711px;
+        }
+        &280 {
+            max-width: 280px;
+        }
+        &311 {
+            max-width: 311px;
+        }
+        &380 {
+            max-width: 380px;
+        }
+        &341 {
+            max-width: 341px;
+        }
+    }
+
+    &--margin-bottom {
+        &20 {
+            margin-bottom: 20px;
+        }
+        &22 {
+            margin-bottom: 22px;
+        }
+        &30 {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 576px) {
+}

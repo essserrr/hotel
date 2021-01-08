@@ -39,6 +39,7 @@ module.exports = {
             __dirname,
             "src/pages/search-page/search-page.js"
         ),
+        roomPage: path.resolve(__dirname, "src/pages/room-page/room-page.js"),
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -148,6 +149,11 @@ module.exports = {
             filename: "search/index.html",
             template: "./src/pages/search-page/search-page.pug",
             chunks: ["mainLayout", "searchPage"],
+        }),
+        new HtmlWebpackPlugin({
+            filename: "room/index.html",
+            template: "./src/pages/room-page/room-page.pug",
+            chunks: ["mainLayout", "roomPage"],
         }),
     ],
     devServer: {
