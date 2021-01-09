@@ -3,7 +3,7 @@ mixin card(props)
 
     div(class=`ui-card ui-card--${type} ui-card__row`)
         if (title)
-            div(class=`ui-card__column100 ui-card--margin-bottom-${titleMargin}`)
+            div(class=`ui-card__column100 ui-card--margin-bottom${titleMargin}`)
                 h1 #{title}
         .ui-card__column100
             block

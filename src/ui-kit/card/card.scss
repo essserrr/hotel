@@ -88,35 +88,32 @@
     }
 
     &--margin-bottom {
-        &-2 {
+        &2 {
             margin-bottom: 2px;
         }
-        &-21 {
-            margin-bottom: 21px;
-        }
-
-        &-22 {
-            margin-bottom: 22px;
-        }
-        &-23 {
-            margin-bottom: 23px;
-        }
-
-        &-31 {
-            margin-bottom: 31px;
-        }
-
-        &-xs {
+        &10 {
             margin-bottom: 10px;
         }
-        &-md {
+        &18 {
+            margin-bottom: 18px;
+        }
+        &20 {
             margin-bottom: 20px;
         }
-        &-lg {
+        &21 {
+            margin-bottom: 21px;
+        }
+        &23 {
+            margin-bottom: 23px;
+        }
+        &25 {
             margin-bottom: 25px;
         }
-        &-xl {
+        &30 {
             margin-bottom: 30px;
+        }
+        &31 {
+            margin-bottom: 31px;
         }
     }
 }

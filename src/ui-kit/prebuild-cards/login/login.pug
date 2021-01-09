@@ -7,15 +7,15 @@ include ../../icons/arrow-forward/arrow-forward.pug
 
 +card({title: "Войти", titleMargin: "21"})
     form.ui-card__column100(action="#", method="POST")
-        .ui-card__column100.ui-card--margin-bottom-xs
+        .ui-card__column100.ui-card--margin-bottom10
             +input({placeholder:"Email", labelVariant: "none"})
-        .ui-card__column100.ui-card--margin-bottom-md
+        .ui-card__column100.ui-card--margin-bottom20
             +input({placeholder:"Пароль", labelVariant: "none"})
 
-        .ui-card__column100.ui-card--margin-bottom-xl
+        .ui-card__column100.ui-card--margin-bottom30
             +button({label: "войти", variant: "long", icon: true})
                 +arrow-forward
-        .ui-card__column100.ui-card--margin-bottom-2
+        .ui-card__column100.ui-card--margin-bottom2
             .ui-card__row.ui-card--justify-between.ui-card--align-center
                 span Нет аккаунта на Toxin?
                 +button({label: "создать", variant: "outlined", type: "button"})

@@ -8,14 +8,14 @@ include ../../icons/arrow-forward/arrow-forward.pug
 
 +card({title: "Найдём номера под ваши пожелания", titleMargin: "23"})
     form.ui-card__column100(action="#", method="POST")
-        .ui-card__column100.ui-card--margin-bottom-22
+        .ui-card__column100.ui-card--margin-bottom22
             .ui-card__row.ui-card--spacing
                 .ui-card__column50
                     +dropdown({ placeholder:"ДД.ММ.ГГГГ", labelLeft: "прибытие", type: "date", opens: "right"})
                 .ui-card__column50
                     +dropdown({ placeholder:"ДД.ММ.ГГГГ",labelLeft: "выезд", type: "date"})
 
-        .ui-card__column100.ui-card--margin-bottom-31
+        .ui-card__column100.ui-card--margin-bottom31
             +dropdown({ placeholder:"Сколько гостей", labelLeft: "гости", type: "text"})
                 +increase-form({type: "guests", variant: "md", hasSubmit: true, list: [{title: "взрослые", value: 0, minValue: 0, maxValue: 5, step: 1}, {title: "дети", value: 0, minValue: 0, maxValue: 5, step: 1}, {title: "младенцы", value: 0, minValue: 0, maxValue: 5, step: 1}]})
 
