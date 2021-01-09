@@ -1,0 +1,66 @@
+.pie {
+    overflow: hidden;
+    position: relative;
+
+    height: calc(var(--size, 200) * 1px);
+    width: calc(var(--size, 200) * 1px);
+
+    border-radius: 100%;
+
+    &__segment {
+        --a: calc(var(--over50, 0) * -100%);
+        --b: calc((1 + var(--over50, 0)) * 100%);
+        --degrees: calc((var(--start, 0) / 100) * 360);
+
+        position: absolute;
+
+        height: 100%;
+        width: 100%;
+
+        z-index: calc(1 + var(--over50));
+
+        transform-origin: 50% 100%;
+        transform: translate(0, -50%) rotate(90deg)
+            rotate(calc(var(--degrees) * 1deg));
+
+        -webkit-clip-path: polygon(
+            var(--a) var(--a),
+            var(--b) var(--a),
+            var(--b) var(--b),
+            var(--a) var(--b)
+        );
+        clip-path: polygon(
+            var(--a) var(--a),
+            var(--b) var(--a),
+            var(--b) var(--b),
+            var(--a) var(--b)
+        );
+
+        &:after,
+        &:before {
+            content: "";
+            position: absolute;
+
+            height: 100%;
+            width: 100%;
+
+            background: var(--bg, #e74c3c);
+        }
+        &:before {
+            --degrees: calc((var(--sector, 45) / 100) * 360);
+            transform: translate(0, 100%) rotate(calc(var(--degrees) * 1deg));
+            transform-origin: 50% 0%;
+        }
+        &:after {
+            opacity: var(--over50, 0);
+        }
+    }
+
+    &__total-mark {
+        position: absolute;
+        z-index: 100;
+
+        top: 50%;
+        left: 50%;
+    }
+}

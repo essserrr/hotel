@@ -1,0 +1,29 @@
+mixin pie-diagram(props)
+    - const { size = 120, start = 0, section1 = 0, section2 = 0, section3 = 0, section4 = 0, total = 0 } = props;
+
+    - const section1Per = !!total ? (section1 / total) * 100 : 0;
+    - const section1End = start + section1Per;
+
+    - const section2Per = !!total ? (section2 / total) * 100 : 0;
+    - const section2End = section1End + section2Per;
+
+    - const section3Per = !!total ? (section3 / total) * 100 : 0;
+    - const section3End = section2End + section3Per;
+
+    - const section4Per = !!total ? (section4 / total) * 100 : 0;
+    - const section4End = section3End + section4Per;
+
+    .pie(style=`--size: ${size}`)
+        .pie__total-mark #{total}
+        .pie__segment(
+            style=`--start: ${start}; --sector: ${section1Per};  --over50: ${section1Per > 50 ? 1 : 0}; --bg: linear-gradient(180deg, #919191 0%, #3d4975 100%)`
+        )
+        .pie__segment(
+            style=`--start: ${section1End}; --sector: ${section2Per}; --over50: ${section2Per > 50 ? 1 : 0}; --bg: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%)`
+        )
+        .pie__segment(
+            style=`--start: ${section2End}; --sector: ${section3Per}; --over50: ${section3Per > 50 ? 1 : 0}; --bg: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%)`
+        )
+        .pie__segment(
+            style=`--start: ${section3End}; --sector: ${section4Per}; --over50: ${section4Per > 50 ? 1 : 0}; --bg: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%)`
+        )

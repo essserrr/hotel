@@ -5,6 +5,7 @@ include ../../ui-kit/footer/footer.pug
 include ../../ui-kit/vertical-list/vertical-list.pug
 include ../../ui-kit/review-card/review-card.pug
 include ../../ui-kit/prebuild-cards/book/book.pug
+include ../../ui-kit/pie-diagram/pie-diagram.pug
 
 block meta
     title Поиск комнаты
@@ -58,6 +59,7 @@ block content
                     .room-page__rating-column.room-page__column100.room-page--width311.room-page--margin-bottom34
                         h2.room-page--margin-bottom20 Впечатления от номера
                         .room-page__rating
+                            +pie-diagram({total: 260, section2: 65, section3: 65, section4: 130})
 
                     .room-page__review-column.room-page__column100.room-page--margin-bottom33
                         .room-page__column100
