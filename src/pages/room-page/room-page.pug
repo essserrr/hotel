@@ -53,29 +53,30 @@ block content
             .room-page__row.room-page--justify-between
                 .room-page__column100.room-page--width711
                     .room-page__row.room-page--justify-between
-                        .room-page__column100.room-page--width280.room-page--margin-bottom30
+                        .room-page__column100.room-page--width280.room-page--margin-bottom34
                             h2.room-page--margin-bottom20 Сведения о номере
                             +vertical-list({labelVariant: "none", listStyle: "separated", variant: "feature", list: [{ icon: "comfort", title: "Комфорт", description: "Шумопоглощающие стены" }, { icon: "convinient", title: "Удобство", description: "Окно в каждой из спален" }, { icon: "cosy", title: "Уют", description: "Номер оснащён камином" }]})
-                        .room-page__column100.room-page--width311.room-page--margin-bottom30
+                        .room-page__rating-column.room-page__column100.room-page--width311.room-page--margin-bottom34
                             h2.room-page--margin-bottom20 Впечатления от номера
                             .room-page__rating
 
-                        .room-page__column100.room-page--margin-bottom30
-                            .room-page__column100.room-page--margin-bottom20
+                        .room-page__review-column.room-page__column100.room-page--margin-bottom33
+                            .room-page__column100
                                 .room-page__row.room-page--justify-between
-                                    h2.room-page--margin-bottom20 Сведения о номере
-                                    .room-page__rewiew-amount 2 отзыва
-                            .room-page__column100.room-page--margin-bottom22
+                                    h2.room-page--margin-bottom20 Отзывы посетителей номера
+                                    .room-page__review-amount 2 отзыва
+
+                            .room-page__column100.room-page--margin-bottom23
                                 +review-card({likes: 12, checked: "checked", title: "Мурад Сарафанов", date: "5 дней назад", description: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."})
                             .room-page__column100
                                 +review-card({likes: 2, avatar: "f", title: "Патрисия Стёклышкова", date: "Неделю назад", description: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"})
 
                         .room-page__column100.room-page--width280
-                            h2.room-page--margin-bottom20 Правила
+                            h2.room-page__rules-title.room-page--margin-bottom20 Правила
                             +vertical-list({labelVariant: "none", list: [["Нельзя с питомцами"], ["Без вечеринок и мероприятий"], ["Время прибытия — после 13:00,", "а выезд до 12:00"], ]})
 
-                        .room-page__column100.room-page--width341
-                            h2.room-page--margin-bottom20 Отмена
+                        .room-page__cancel-column.room-page__column100.room-page--width341
+                            h2.room-page--margin-bottom18 Отмена
                             .room-page--line-height24 Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
                 .room-page__column-auto.room-page--width380
                     +book({number: "888", type: "люкс", price: "9 990"})
