@@ -2,14 +2,23 @@
     box-sizing: border-box;
     border-bottom: 1px solid rgba(31, 32, 65, 0.25);
 
-    &__image {
+    &__image-block {
         height: 485px;
         width: 100%;
         background: black;
     }
 
-    &__description {
+    &__room-block {
         padding: 70px 140px;
+
+        justify-content: space-between;
+    }
+
+    &__description-column {
+        max-width: 711px !important;
+    }
+    &__book-column {
+        max-width: 380px !important;
     }
 
     &__review {
@@ -28,6 +37,7 @@
 
     &__rating {
         &-column {
+            max-width: 311px !important;
             padding-right: 39px;
         }
 
@@ -39,6 +49,9 @@
     }
 
     &__rules {
+        &-column {
+            max-width: 280px !important;
+        }
         &-title {
             padding-left: 20px;
         }
@@ -46,6 +59,7 @@
 
     &__cancel {
         &-column {
+            max-width: 341px !important;
             padding-right: 9px;
         }
     }
@@ -61,14 +75,6 @@
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
         width: auto;
-        max-width: 100%;
-    }
-
-    &__column {
-        -ms-flex-preferred-size: 0;
-        flex-basis: 0;
-        -ms-flex-positive: 1;
-        flex-grow: 1;
         max-width: 100%;
     }
 
@@ -91,20 +97,8 @@
     }
 
     &--width {
-        &711 {
-            max-width: 711px;
-        }
         &280 {
             max-width: 280px;
-        }
-        &311 {
-            max-width: 311px;
-        }
-        &380 {
-            max-width: 380px;
-        }
-        &341 {
-            max-width: 341px;
         }
     }
 
@@ -127,14 +121,80 @@
     }
 }
 
+@media (max-width: 1360px) {
+    .room-page {
+        &__room-block {
+            padding: 70px 140px;
+
+            justify-content: center;
+        }
+
+        &__description-column {
+            max-width: 100% !important;
+        }
+        &__book-column {
+            margin-top: 40px;
+        }
+
+        &__rating {
+            &-column {
+                padding-right: 0px;
+            }
+        }
+
+        &__review {
+            &-column {
+                margin-left: 0px;
+            }
+        }
+
+        &__cancel {
+            &-column {
+                padding-right: 0px;
+            }
+        }
+    }
+}
+
 @media (max-width: 1200px) {
+    .room-page {
+        &__room-block {
+            padding: 60px 60px;
+        }
+    }
 }
 
 @media (max-width: 992px) {
+    .room-page {
+        &__room-block {
+            padding: 50px 40px;
+        }
+    }
 }
 
 @media (max-width: 768px) {
+    .room-page {
+        &__rules {
+            &-column {
+                max-width: 100% !important;
+            }
+        }
+        &__cancel {
+            &-column {
+                margin-top: 30px;
+                max-width: 100% !important;
+            }
+        }
+    }
 }
 
 @media (max-width: 576px) {
+    .room-page {
+        &__room-block {
+            padding: 30px 20px;
+        }
+        &__book-column {
+            max-width: 280px !important;
+        }
+    }
 }
