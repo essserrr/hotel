@@ -48,6 +48,7 @@
     }
     &__book-column {
         max-width: 380px !important;
+        margin-top: -1px;
     }
 
     &__review {
@@ -79,9 +80,10 @@
     &__rules {
         &-column {
             max-width: 280px !important;
+            margin-left: -2px;
         }
         &-title {
-            padding-left: 20px;
+            padding-left: 21px;
         }
     }
 
@@ -145,6 +147,9 @@
         }
         &23 {
             margin-bottom: 23px;
+        }
+        &22 {
+            margin-bottom: 22px;
         }
         &34 {
             margin-bottom: 34px;
