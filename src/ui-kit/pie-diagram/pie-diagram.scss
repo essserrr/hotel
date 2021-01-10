@@ -1,11 +1,18 @@
-.pie {
-    overflow: hidden;
-    position: relative;
+.ui-pie {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
 
-    height: calc(var(--size, 200) * 1px);
-    width: calc(var(--size, 200) * 1px);
+    &__diagram {
+        overflow: hidden;
+        position: relative;
 
-    border-radius: 100%;
+        height: calc(var(--size, 200) * 1px);
+        width: calc(var(--size, 200) * 1px);
+
+        border-radius: 100%;
+    }
 
     &__segment {
         --a: calc(var(--over50, 0) * -100%);
@@ -56,11 +63,94 @@
         }
     }
 
-    &__total-mark {
+    &__votes-container {
         position: absolute;
         z-index: 100;
 
-        top: 50%;
-        left: 50%;
+        top: 4px;
+        left: 4px;
+
+        width: calc(100% - 8px);
+        height: calc(100% - 8px);
+
+        border-radius: 50%;
+        background-color: white;
+
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__votes {
+        margin-top: -5px;
+        margin-left: -1px;
+
+        color: $color-purple;
+        text-align: center;
+        font-weight: bold;
+
+        font-size: 15px;
+        line-height: 15px;
+
+        h1 {
+            color: $color-purple;
+        }
+    }
+
+    &__legend {
+        align-self: flex-end;
+
+        margin-left: 30px;
+        margin-top: 0px;
+        margin-bottom: -2px;
+        padding-left: 0px;
+
+        list-style: none;
+
+        li {
+            position: relative;
+            padding-left: 15px;
+
+            line-height: 24px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                display: block;
+
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+
+                top: 7px;
+                left: 0;
+                background: black;
+            }
+
+            &.ui-pie__legend--yellow {
+                &::before {
+                    background: $color-gradient-yellow;
+                }
+            }
+            &.ui-pie__legend--green {
+                &::before {
+                    background: $color-gradient-green;
+                }
+            }
+            &.ui-pie__legend--purple {
+                &::before {
+                    background: $color-gradient-purple;
+                }
+            }
+            &.ui-pie__legend--black {
+                &::before {
+                    background: $color-gradient-black;
+                }
+            }
+        }
     }
 }

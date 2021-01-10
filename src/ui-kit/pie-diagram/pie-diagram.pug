@@ -1,6 +1,8 @@
 mixin pie-diagram(props)
     - const { size = 120, start = 0, section1 = 0, section2 = 0, section3 = 0, section4 = 0, total = 0 } = props;
 
+    - const margin = 0.3;
+
     - const section1Per = !!total ? (section1 / total) * 100 : 0;
     - const section1End = start + section1Per;
 
@@ -13,17 +15,30 @@ mixin pie-diagram(props)
     - const section4Per = !!total ? (section4 / total) * 100 : 0;
     - const section4End = section3End + section4Per;
 
-    .pie(style=`--size: ${size}`)
-        .pie__total-mark #{total}
-        .pie__segment(
-            style=`--start: ${start}; --sector: ${section1Per};  --over50: ${section1Per > 50 ? 1 : 0}; --bg: linear-gradient(180deg, #919191 0%, #3d4975 100%)`
-        )
-        .pie__segment(
-            style=`--start: ${section1End}; --sector: ${section2Per}; --over50: ${section2Per > 50 ? 1 : 0}; --bg: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%)`
-        )
-        .pie__segment(
-            style=`--start: ${section2End}; --sector: ${section3Per}; --over50: ${section3Per > 50 ? 1 : 0}; --bg: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%)`
-        )
-        .pie__segment(
-            style=`--start: ${section3End}; --sector: ${section4Per}; --over50: ${section4Per > 50 ? 1 : 0}; --bg: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%)`
-        )
+    .ui-pie
+        .ui-pie__diagram(style=`--size: ${size}`)
+            .ui-pie__votes-container 
+                .ui-pie__votes
+                    h1 #{total}
+                    | голосов
+            if section1Per > 0
+                .ui-pie__segment(
+                    style=`--start: ${start + margin}; --sector: ${section1Per - margin * 1.5};  --over50: ${section1Per > 50 ? 1 : 0}; --bg: linear-gradient(180deg, #919191 0%, #3d4975 100%)`
+                )
+            if section2Per > 0
+                .ui-pie__segment(
+                    style=`--start: ${section1End + margin}; --sector: ${section2Per - margin * 1.5}; --over50: ${section2Per > 50 ? 1 : 0}; --bg: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%)`
+                )
+            if section3Per > 0
+                .ui-pie__segment(
+                    style=`--start: ${section2End + margin}; --sector: ${section3Per - margin * 1.5}; --over50: ${section3Per > 50 ? 1 : 0}; --bg: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%)`
+                )
+            if section4Per > 0
+                .ui-pie__segment(
+                    style=`--start: ${section3End + margin}; --sector: ${section4Per - margin * 2}; --over50: ${section4Per > 50 ? 1 : 0}; --bg: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%)`
+                )
+        ul.ui-pie__legend
+            li.ui-pie__legend--yellow Великолепно
+            li.ui-pie__legend--green Хорошо
+            li.ui-pie__legend--purple Удовлетворительно
+            li.ui-pie__legend--black Разочарован
