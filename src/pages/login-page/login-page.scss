@@ -1,8 +1,16 @@
-.login-page {
+.auth-page {
     box-sizing: border-box;
-    min-height: 703px;
-    padding-top: 19px;
-    padding-bottom: 19px;
+
+    &--login-variant {
+        min-height: 703px;
+        padding-top: 19px;
+        padding-bottom: 19px;
+    }
+
+    &--reg-variant {
+        min-height: 683px;
+        padding-left: 8px;
+    }
 
     background-image: url("../../public/bg/bg2.png");
     background-size: cover;
@@ -41,13 +49,13 @@
 }
 
 @media (max-width: 1500px) {
-    .login-page {
+    .auth-page {
         background-position: 50% -69px;
     }
 }
 
 @media (max-width: 1400px) {
-    .landing-page {
+    .auth-page {
         background-position: 50% 50%;
     }
 }
