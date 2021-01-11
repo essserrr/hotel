@@ -160,6 +160,11 @@ module.exports = {
             template: "./src/pages/login-page/login-page.pug",
             chunks: ["mainLayout", "loginPage"],
         }),
+        new HtmlWebpackPlugin({
+            filename: "reg/index.html",
+            template: "./src/pages/reg-page/reg-page.pug",
+            chunks: ["mainLayout", "loginPage"],
+        }),
     ],
     devServer: {
         contentBase: "./src/public",
