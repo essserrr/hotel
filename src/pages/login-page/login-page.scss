@@ -1,0 +1,53 @@
+.login-page {
+    box-sizing: border-box;
+    min-height: 703px;
+    padding-top: 19px;
+    padding-bottom: 19px;
+
+    background-image: url("../../public/bg/bg2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+    &__card {
+        max-width: 380px !important;
+    }
+
+    &__row {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    &__column-auto {
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
+    }
+
+    &--justify {
+        &-center {
+            justify-content: center;
+        }
+    }
+
+    &--align {
+        &-center {
+            align-items: center;
+        }
+    }
+}
+
+@media (max-width: 1500px) {
+    .login-page {
+        background-position: 50% -69px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .landing-page {
+        background-position: 50% 50%;
+    }
+}

@@ -35,9 +35,9 @@ module.exports = {
             __dirname,
             "src/pages/landing-page/landing-page.js"
         ),
-        searchPage: path.resolve(
+        loginPage: path.resolve(
             __dirname,
-            "src/pages/search-page/search-page.js"
+            "src/pages/login-page/login-page.js"
         ),
         roomPage: path.resolve(__dirname, "src/pages/room-page/room-page.js"),
     },
@@ -154,6 +154,11 @@ module.exports = {
             filename: "room/index.html",
             template: "./src/pages/room-page/room-page.pug",
             chunks: ["mainLayout", "roomPage"],
+        }),
+        new HtmlWebpackPlugin({
+            filename: "login/index.html",
+            template: "./src/pages/login-page/login-page.pug",
+            chunks: ["mainLayout", "loginPage"],
         }),
     ],
     devServer: {

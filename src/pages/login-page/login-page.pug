@@ -1,0 +1,32 @@
+extends ../../components/main-layout/main-layout.pug
+include ../../ui-kit/header/header.pug
+include ../../ui-kit/footer/footer.pug
+
+block meta
+    title Поиск комнаты
+block scripts
+    script(
+        type="text/javascript",
+        src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+    )
+    script(
+        type="text/javascript",
+        src="/libs/daterangepicker/daterangepicker.js"
+    )
+    script(type="text/javascript", src="/libs/mask/jquery.inputmask.js")
+block styles
+    link(
+        rel="stylesheet",
+        type="text/css",
+        href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+    )
+
+block navigation
+    +header({})
+block content
+    .login-page.login-page__row.login-page--justify-center.login-page--align-center
+        .login-page__column-auto.login-page__card
+            include ../../ui-kit/prebuild-cards/login/login.pug
+
+block footer
+    +footer({})
