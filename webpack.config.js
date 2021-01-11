@@ -35,10 +35,7 @@ module.exports = {
             __dirname,
             "src/pages/landing-page/landing-page.js"
         ),
-        loginPage: path.resolve(
-            __dirname,
-            "src/pages/login-page/login-page.js"
-        ),
+        authPage: path.resolve(__dirname, "src/pages/login-page/login-page.js"),
         roomPage: path.resolve(__dirname, "src/pages/room-page/room-page.js"),
     },
     output: {
@@ -158,12 +155,12 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: "login/index.html",
             template: "./src/pages/login-page/login-page.pug",
-            chunks: ["mainLayout", "loginPage"],
+            chunks: ["mainLayout", "authPage"],
         }),
         new HtmlWebpackPlugin({
             filename: "reg/index.html",
             template: "./src/pages/reg-page/reg-page.pug",
-            chunks: ["mainLayout", "loginPage"],
+            chunks: ["mainLayout", "authPage"],
         }),
     ],
     devServer: {
