@@ -1,5 +1,5 @@
 mixin card(props)
-    - const { title, type = 'default', titleMargin = 'md' } = props;
+    - const { title, type = 'default', titleMargin = '20' } = props;
 
     div(class=`ui-card ui-card--${type} ui-card__row`)
         if (title)
