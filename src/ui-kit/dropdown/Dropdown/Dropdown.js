@@ -1,46 +1,103 @@
+const CONSTANTS = {
+    HIDE: "hide",
+};
+
 class Dropdown {
     constructor({ canBeDefaultOpened }) {
         this.defaultOpened = canBeDefaultOpened;
 
         this.getDropdownNodes = this.getDropdownNodes.bind(this);
-        this.getCoordinates = this.getCoordinates.bind(this);
+        this.getLabelParameters = this.getLabelParameters.bind(this);
         this.setElementPosition = this.setElementPosition.bind(this);
 
         this.show = this.show.bind(this);
-        this.close = this.close.bind(this);
 
-        this.showDropHandler = this.showDropHandler.bind(this);
         this.closeDropHandler = this.closeDropHandler.bind(this);
 
+        this.onShow = this.onShow.bind(this);
+        this.close = this.close.bind(this);
         this.setValue = this.setValue.bind(this);
     }
 
-    showDropHandler(event) {
-        this.show(event.target);
+    getDropdownNodes(nodeClicked) {
+        let $parent = $(nodeClicked).closest(".ui-dropdown");
+
+        return {
+            parent: $parent,
+            label: $parent.find(".js-dropdown__label"),
+            input: $parent.find(".js-dropdown__input"),
+            container: $parent.find(".js-dropdown__container"),
+            element: $parent.find(".ui-dropdown__element"),
+        };
     }
 
-    show(nodeClicked) {
-        let nodes = this.getDropdownNodes(nodeClicked);
-        nodes.parent.attr("data-drop-opened", true);
+    getLabelParameters(label) {
+        const width = label.outerWidth();
+        const height = label.outerHeight();
+        const borderBottom = parseInt(label.css("border-left-width"), 10);
+        let { left, top } = label.offset();
 
+        const $window = $(window);
+        top = top - $window.scrollTop() + height - borderBottom;
+        left = left - $window.scrollLeft();
+
+        return { width, height, left, top, borderBottom };
+    }
+
+    setElementPosition(nodes) {
+        //find label parameters
+        const parameters = this.getLabelParameters(nodes.label);
+        //set current element style
+        nodes.element.css({
+            width: parameters.width,
+            top: parameters.top,
+            left: parameters.left,
+        });
+    }
+
+    closeDropHandler(event, nodes, resizeCallback, forceClose) {
+        const isHideEvent = event.type === CONSTANTS.HIDE;
+        const containerIsTarget = nodes.container.is(event.target);
+
+        if (!containerIsTarget && !isHideEvent && !forceClose) return;
+
+        this.close(nodes, resizeCallback);
+
+        const $window = $(window);
+        $window.off("scroll", resizeCallback);
+        $window.off("resize", resizeCallback);
+    }
+
+    close(nodes) {
+        nodes.container.hide();
+        nodes.parent.removeAttr("data-drop-opened");
+    }
+
+    setValue(value, target) {
+        target.val(value);
+    }
+
+    show(nodes) {
+        nodes.parent.attr("data-drop-opened", true);
         this.setElementPosition(nodes);
         nodes.container.show();
+    }
 
+    bindCallbacks(nodes) {
         const resizeCallback = () => {
             this.setElementPosition(nodes);
         };
-
-        window.addEventListener("scroll", resizeCallback);
-        window.addEventListener("resize", resizeCallback);
-
-        const closeCallback = (event) => {
-            this.closeDropHandler(event, nodes, resizeCallback);
+        const closeCallback = (event, forceClose) => {
+            this.closeDropHandler(event, nodes, resizeCallback, forceClose);
         };
-        $(nodes.container).on("click", closeCallback);
-
         const setCallback = (value) => {
-            this.setValue(value, nodes);
+            this.setValue(value, nodes.input);
         };
+
+        const $window = $(window);
+        $window.on("scroll", resizeCallback);
+        $window.on("resize", resizeCallback);
+        nodes.container.on("click", closeCallback);
 
         $.uiDropdown = {
             close: closeCallback,
@@ -48,72 +105,26 @@ class Dropdown {
         };
     }
 
-    getDropdownNodes(nodeClicked) {
-        let parent = $(nodeClicked).closest(".ui-dropdown");
-
-        return {
-            parent,
-            label: parent.find(".js-dropdown__label"),
-            input: parent.find(".js-dropdown__input"),
-            container: parent.find(".js-dropdown__container"),
-            element: parent.find(".ui-dropdown__element"),
-        };
-    }
-
-    setElementPosition(nodes) {
-        //find label parameters
-        const coordinates = this.getCoordinates(nodes);
-        //set current element style
-        nodes.element.css({
-            width: coordinates.width,
-            top: coordinates.top,
-            left: coordinates.left,
-        });
-    }
-
-    getCoordinates(nodes) {
-        const width = $(nodes.label).outerWidth();
-        const height = $(nodes.label).outerHeight();
-        const borderBottom = parseInt(
-            $(nodes.label).css("border-left-width"),
-            10
-        );
-        let { left, top } = $(nodes.label).offset();
-        top = top - $(window).scrollTop() + height - borderBottom;
-        left = left - $(window).scrollLeft();
-        return { width, height, left, top, borderBottom };
-    }
-
-    closeDropHandler(event, nodes, resizeCallback) {
-        if (!nodes.container.is(event.target) && event.type !== "hide") return;
-        this.close(nodes, resizeCallback);
-    }
-
-    close(nodes, resizeCallback) {
-        nodes.container.hide();
-        nodes.parent.removeAttr("data-drop-opened");
-        $(window).off("scroll", resizeCallback);
-        $(window).off("resize", resizeCallback);
+    onShow(event) {
+        const nodes = this.getDropdownNodes(event.target);
+        this.show(nodes);
+        this.bindCallbacks(nodes);
     }
 
     setHandlers() {
         $(".js-dropdown__label, .js-dropdown__icon, .js-dropdown__input").on(
             "click",
-            this.showDropHandler
+            this.onShow
         );
-
+        /*
         $.uiDropdown = {
             close: this.close,
             setValue: this.setValue,
         };
-
+*/
         if (this.defaultOpened) {
             $(".js-dropdown__input[data-drop-default-opened]").trigger("click");
         }
-    }
-
-    setValue(value, nodes) {
-        nodes.input.val(value);
     }
 }
 
