@@ -1,84 +1,107 @@
+const CONSTANTS = {
+    DEC: "dec",
+    INC: "inc",
+};
+
 class IncreaseBlock {
     constructor() {
-        this.nodes = {};
-        this.values = {};
-
-        this.findNodes = this.findNodes.bind(this);
-        this.findValues = this.findValues.bind(this);
-        this.changeValue = this.changeValue.bind(this);
-        this.changeNodeStatus = this.changeNodeStatus.bind(this);
+        this.view = {
+            nodeClicked: null,
+            buttonBlock: null,
+            increaseButton: null,
+            decreaseButton: null,
+            valueLabel: null,
+        };
+        this.model = {
+            min: null,
+            max: null,
+            step: null,
+            currentValue: null,
+            sign: null,
+        };
 
         this.onChange = this.onChange.bind(this);
+        this.onReset = this.onReset.bind(this);
     }
 
-    findNodes(target) {
-        this.nodes.nodeClicked = $(target);
+    _createView(target) {
+        this.view.nodeClicked = $(target);
 
-        this.nodes.buttonBlock = this.nodes.nodeClicked
+        this.view.buttonBlock = this.view.nodeClicked
             .closest(".increase-form-element")
             .find(".increase-form-element__button-block");
 
-        this.nodes.increaseButton = this.nodes.buttonBlock.find(
+        this.view.increaseButton = this.view.buttonBlock.find(
             ".increase-form-element__button[data-button-type=inc]"
         );
-        this.nodes.decreaseButton = this.nodes.buttonBlock.find(
+        this.view.decreaseButton = this.view.buttonBlock.find(
             ".increase-form-element__button[data-button-type=dec]"
         );
-        this.nodes.valueLabel = this.nodes.buttonBlock.find(
+        this.view.valueLabel = this.view.buttonBlock.find(
             ".increase-form-element__value"
         );
     }
 
-    findValues() {
-        this.values.min = Number(this.nodes.buttonBlock.attr("data-min-value"));
-        this.values.max = Number(this.nodes.buttonBlock.attr("data-max-value"));
-        this.values.step = Number(this.nodes.buttonBlock.attr("data-step"));
-        this.values.currentValue = Number(this.nodes.valueLabel.html());
-        this.values.sign = this.nodes.nodeClicked.attr("data-button-type");
+    _createModel(view) {
+        this.model.min = Number(view.buttonBlock.attr("data-min-value"));
+        this.model.max = Number(view.buttonBlock.attr("data-max-value"));
+        this.model.step = Number(view.buttonBlock.attr("data-step"));
+        this.model.currentValue = Number(view.valueLabel.html());
+        this.model.sign = view.nodeClicked.attr("data-button-type");
     }
 
-    changeValue() {
-        const sign = this.values.sign;
-        if (this.values.min >= this.values.currentValue && sign === "dec")
-            return;
+    _modelChangeValue() {
+        const isDec = this.model.sign === CONSTANTS.DEC;
+        const lessOrEqualMin = this.model.min >= this.model.currentValue;
+        if (lessOrEqualMin && isDec) return;
 
-        if (this.values.max <= this.values.currentValue && sign === "inc")
-            return;
+        const isInc = this.model.sign === CONSTANTS.INC;
+        const moreOrEqualMax = this.model.max <= this.model.currentValue;
+        if (moreOrEqualMax && isInc) return;
 
-        this.values.currentValue =
-            sign === "dec"
-                ? this.values.currentValue - this.values.step
-                : this.values.currentValue + this.values.step;
+        this.model.currentValue = isDec
+            ? this.model.currentValue - this.model.step
+            : this.model.currentValue + this.model.step;
     }
 
-    changeNodeStatus() {
-        this.nodes.valueLabel.html(this.values.currentValue);
+    _viewUpdate(current, min, max) {
+        this.view.valueLabel.html(current);
 
-        this.nodes.increaseButton.prop(
-            "disabled",
-            !(this.values.currentValue < this.values.max)
-        );
-        this.nodes.decreaseButton.prop(
-            "disabled",
-            !(this.values.currentValue > this.values.min)
-        );
+        const currentLessMax = current < max;
+        this.view.increaseButton.prop("disabled", !currentLessMax);
+
+        const currentMoreMin = current > min;
+        this.view.decreaseButton.prop("disabled", !currentMoreMin);
+    }
+
+    _nullifyModel() {
+        this.view.valueLabel.html(0);
+    }
+    _nullifyView() {
+        this.view.valueLabel.html(0);
     }
 
     onChange(target) {
-        this.findNodes(target);
-        this.findValues();
-        this.changeValue();
-        this.changeNodeStatus();
+        this._createView(target);
+        this._createModel(this.view);
+        this._modelChangeValue();
+        this._viewUpdate(
+            this.model.currentValue,
+            this.model.min,
+            this.model.max
+        );
     }
 
     onReset(target) {
-        this.findNodes(target);
-        this.findValues();
-
-        this.values.currentValue = 0;
-        this.nodes.valueLabel.html(0);
-
-        this.changeNodeStatus();
+        this._createView(target);
+        this._createModel(this.view);
+        this._nullifyModel();
+        this._nullifyView();
+        this._viewUpdate(
+            this.model.currentValue,
+            this.model.min,
+            this.model.max
+        );
     }
 }
 
