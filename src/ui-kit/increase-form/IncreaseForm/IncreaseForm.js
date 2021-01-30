@@ -78,7 +78,7 @@ class IncreaseForm {
 
     _viewClearView() {
         let template = new IncreaseBlock();
-        this._view.incFormElements.forEach((...element) => {
+        this._view.incFormElements.map((...element) => {
             template.onReset(element[1]);
         });
     }
@@ -130,17 +130,17 @@ class IncreaseForm {
     }
 
     setHandlers(rootNode = "") {
-        $(`${rootNode}.js-increase-form-button`).on(
+        $(`${rootNode} .js-increase-form-button`).on(
             "click.uikitIncreaseForm",
             this._onValueChange
         );
 
         if (this._hasSubmit) {
-            $(`${rootNode}[data-button-type=apply]`).on(
+            $(`${rootNode} [data-button-type=apply]`).on(
                 "click.uikitIncreaseForm",
                 this._onSubmit
             );
-            $(`${rootNode}[data-button-type=clear]`).on(
+            $(`${rootNode} [data-button-type=clear]`).on(
                 "click.uikitIncreaseForm",
                 this._onClear
             );
