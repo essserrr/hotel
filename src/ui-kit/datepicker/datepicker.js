@@ -4,6 +4,22 @@ $(function () {
         return;
     }
 
+    const months = [
+        '',
+        'янв',
+        'фев',
+        'мар',
+        'апр',
+        'май',
+        'ию',
+        'июл',
+        'авг',
+        'сент',
+        'окт',
+        'ноя',
+        'дек',
+    ];
+
     const locale = {
         cancelLabel: 'Clear',
         format: 'dd/mm/yyyy',
@@ -53,10 +69,13 @@ $(function () {
     };
 
     const applyRangeHandler = function (ev, picker) {
+        const startMoth = Number(picker.startDate.format('MM'));
+        const endMoth = Number(picker.endDate.format('MM'));
+
         $.uiDropdown.setValue(
-            `${picker.startDate.format('DD.MM')} - ${picker.endDate.format(
-                'DD.MM'
-            )}`
+            `${picker.startDate.format('DD')} ${
+                months[startMoth]
+            } - ${picker.endDate.format('DD')} ${months[endMoth]}`
         );
     };
 
