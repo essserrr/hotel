@@ -1,13 +1,18 @@
 $(function () {
-    const enterHandler = function () {
-        $(this).find(".js-nav-dropdown__list").first().stop().slideDown(200);
-        $(this).attr("data-navdropdown-hover", true);
+    const enterHandler = function (event) {
+        const $target = $(event.currentTarget);
+
+        $target.find(".js-nav-dropdown__list").first().stop().slideDown(200);
+        $target.attr("data-navdropdown-hover", true);
     };
-    const leaveHandler = function () {
-        $(".js-nav-dropdown__list", this).stop().slideUp(200);
-        $(this).attr("data-navdropdown-hover", false);
+    const leaveHandler = function (event) {
+        const $target = $(event.currentTarget);
+
+        $(".js-nav-dropdown__list", $target).stop().slideUp(200);
+        $target.attr("data-navdropdown-hover", false);
     };
-    const targetNode = ".js-nav-dropdown";
-    $(targetNode).on("mouseenter", enterHandler);
-    $(targetNode).on("mouseleave", leaveHandler);
+
+    const $targetNode = $(".js-nav-dropdown");
+    $targetNode.on("mouseenter", enterHandler);
+    $targetNode.on("mouseleave", leaveHandler);
 });
