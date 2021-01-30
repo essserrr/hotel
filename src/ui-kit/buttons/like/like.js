@@ -1,20 +1,21 @@
 $(function () {
-    const likeClickHandler = function () {
-        const target = $(this);
-        let value = target.val();
-        const checked = target.is(":checked");
-        const likeRoot = target.closest(".ui-like");
+    const likeClickHandler = function (event) {
+        const $target = $(event.target);
+        const $likeRoot = $target.closest(".ui-like");
+
+        let value = Number($target.val());
+        const checked = $target.is(":checked");
 
         if (checked) {
             value++;
-            target.val(value);
-            likeRoot.find(".ui-like__label").text(value);
-            likeRoot.toggleClass("ui-like--checked");
+            $target.val(value);
+            $likeRoot.find(".ui-like__label").text(value);
+            $likeRoot.toggleClass("ui-like--checked");
         } else {
             value--;
-            target.val(value);
-            likeRoot.find(".ui-like__label").text(value);
-            likeRoot.toggleClass("ui-like--checked");
+            $target.val(value);
+            $likeRoot.find(".ui-like__label").text(value);
+            $likeRoot.toggleClass("ui-like--checked");
         }
     };
 
