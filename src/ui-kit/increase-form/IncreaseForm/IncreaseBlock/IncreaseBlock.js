@@ -75,7 +75,7 @@ class IncreaseBlock {
     }
 
     _nullifyModel() {
-        this._view.valueLabel.html(0);
+        this._model.currentValue = 0;
     }
     _nullifyView() {
         this._view.valueLabel.html(0);
