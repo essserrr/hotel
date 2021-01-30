@@ -27,6 +27,10 @@ module.exports = {
             __dirname,
             "src/pages/cards-page/cards-page.js"
         ),
+        searchPage: path.resolve(
+            __dirname,
+            "src/pages/search-page/search-page.js"
+        ),
         headerFooterPage: path.resolve(
             __dirname,
             "src/pages/header-footer-page/header-footer-page.js"
