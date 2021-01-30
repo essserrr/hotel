@@ -1,49 +1,52 @@
 import { IncreaseBlock } from "./IncreaseBlock/IncreaseBlock";
 
 class IncreaseForm {
-    constructor({ updateOnChange, formStateReducer, hasSubmit }) {
-        this.updateOnChange = updateOnChange;
-        this.formStateReducer = formStateReducer;
-        this.hasSubmit = hasSubmit;
+    constructor({
+        formStateReducer,
+        updateOnChange = false,
+        hasSubmit = false,
+    }) {
+        this._updateOnChange = updateOnChange;
+        this._formStateReducer = formStateReducer;
+        this._hasSubmit = hasSubmit;
 
-        this.nodes = {};
-        this.values = {
+        this._view = {
+            nodeClicked: null,
+            incForm: null,
+            incFormElements: null,
+            incFormClearButton: null,
+            incFormApplyButton: null,
+        };
+        this._model = {
             currentState: [],
         };
 
-        this.onSubmit = this.onSubmit.bind(this);
-        this.onClear = this.onClear.bind(this);
-        this.onValueChange = this.onValueChange.bind(this);
-
-        this.findState = this.findState.bind(this);
-        this.findNodes = this.findNodes.bind(this);
-        this.showClearButton = this.showClearButton.bind(this);
-
+        this._onSubmit = this._onSubmit.bind(this);
+        this._onClear = this._onClear.bind(this);
+        this._onValueChange = this._onValueChange.bind(this);
         this.setHandlers = this.setHandlers.bind(this);
     }
 
-    findNodes(event) {
-        this.nodes.nodeClicked = $(event.currentTarget);
-
-        this.nodes.incForm = this.nodes.nodeClicked.closest(".increase-form");
-
-        this.nodes.incFormElements = this.nodes.incForm.find(
+    _createView(event) {
+        this._view.nodeClicked = $(event.currentTarget);
+        this._view.incForm = this._view.nodeClicked.closest(".increase-form");
+        this._view.incFormElements = this._view.incForm.find(
             ".increase-form-element"
         );
 
-        if (this.hasSubmit) {
-            this.nodes.incFormClearButton = this.nodes.incForm.find(
+        if (this._hasSubmit) {
+            this._view.incFormClearButton = this._view.incForm.find(
                 "[data-button-type=clear]"
             );
-            this.nodes.incFormApplyButton = this.nodes.incForm.find(
+            this._view.incFormApplyButton = this._view.incForm.find(
                 "[data-button-type=apply]"
             );
         }
     }
 
-    findState() {
+    _createModel(formElements) {
         let newState = [];
-        this.nodes.incFormElements.map((...element) => {
+        formElements.map((...element) => {
             const title = $(element[1])
                 .find(".increase-form-element__title")
                 .html();
@@ -57,85 +60,90 @@ class IncreaseForm {
             });
         });
 
-        this.values.currentState = newState;
+        this._model.currentState = newState;
     }
 
-    clearState() {
-        this.nodes.incFormElements.map((...element) => {
-            let entryAffected = new IncreaseBlock();
-            entryAffected.onReset(element[1]);
-        });
-    }
-
-    onSubmit(event) {
-        this.findNodes(event);
-        this.findState();
-
-        $.uiDropdown.setValue(this.formStateReducer(this.values.currentState));
-
-        if ($(event.currentTarget).is(this.nodes.incFormApplyButton)) {
+    _submit(event) {
+        $.uiDropdown.setValue(this._formStateReducer(this._model.currentState));
+        if ($(event.currentTarget).is(this._view.incFormApplyButton)) {
             $.uiDropdown.close(event);
         }
     }
 
-    onClear(event) {
-        this.findNodes(event);
-        this.clearState();
+    _onSubmit(event) {
+        this._createView(event);
+        this._createModel(this._view.incFormElements);
+        this._submit(event);
+    }
 
+    _viewClearView() {
+        let template = new IncreaseBlock();
+        this._view.incFormElements.forEach((...element) => {
+            template.onReset(element[1]);
+        });
+    }
+
+    _onClear(event) {
+        this._createView(event);
+        this._viewClearView();
         $.uiDropdown.setValue("");
     }
 
-    showClearButton(event) {
-        this.findNodes(event);
-        this.findState();
-
-        const clearParent = this.nodes.incFormClearButton.closest(
+    _viewShowClearButton(valueSum) {
+        const $clearButtomParent = this._view.incFormClearButton.closest(
             ".increase-form__column"
         );
-
-        const valueSum = this.values.currentState.reduce(
-            (sum, value) => (sum += Number(value.value)),
-            0
+        const parentHidden = $clearButtomParent.hasClass(
+            "increase-form--hide-button"
         );
+        const notEmptyInput = valueSum > 0;
 
-        if (
-            valueSum > 0 &&
-            clearParent.hasClass("increase-form--hide-button")
-        ) {
-            clearParent.removeClass("increase-form--hide-button");
+        if (notEmptyInput && parentHidden) {
+            $clearButtomParent.removeClass("increase-form--hide-button");
         }
 
         if (valueSum === 0) {
-            clearParent.addClass("increase-form--hide-button");
+            $clearButtomParent.addClass("increase-form--hide-button");
         }
     }
 
-    onValueChange(event) {
-        let entryAffected = new IncreaseBlock();
-        entryAffected.onChange(event.currentTarget);
+    _onValueChange(event) {
+        let template = new IncreaseBlock();
+        template.onChange(event.currentTarget);
 
-        if (this.hasSubmit) {
-            this.showClearButton(event);
+        if (this._hasSubmit || this._updateOnChange) {
+            this._createView(event);
+            this._createModel(this._view.incFormElements);
         }
 
-        if (this.updateOnChange) {
-            this.onSubmit(event);
+        if (this._hasSubmit) {
+            const valueSum = this._model.currentState.reduce(
+                (sum, value) => (sum += Number(value.value)),
+                0
+            );
+            this._viewShowClearButton(valueSum);
+        }
+
+        if (this._updateOnChange) {
+            this._submit(event);
         }
     }
 
-    setHandlers(rootNode) {
-        const incButtons =
-            (!!rootNode ? `${rootNode} ` : "") + ".js-increase-form-button";
-        $(incButtons).on("click", this.onValueChange);
+    setHandlers(rootNode = "") {
+        $(`${rootNode}.js-increase-form-button`).on(
+            "click.uikitIncreaseForm",
+            this._onValueChange
+        );
 
-        if (this.hasSubmit) {
-            const applyButtons =
-                (!!rootNode ? `${rootNode} ` : "") + "[data-button-type=apply]";
-            const clearButtons =
-                (!!rootNode ? `${rootNode} ` : "") + "[data-button-type=clear]";
-
-            $(applyButtons).on("click", this.onSubmit);
-            $(clearButtons).on("click", this.onClear);
+        if (this._hasSubmit) {
+            $(`${rootNode}[data-button-type=apply]`).on(
+                "click.uikitIncreaseForm",
+                this._onSubmit
+            );
+            $(`${rootNode}[data-button-type=clear]`).on(
+                "click.uikitIncreaseForm",
+                this._onClear
+            );
         }
     }
 }
