@@ -38,29 +38,25 @@ $(function () {
         })[0];
     };
 
-    const hideSecondCalendar = function (activePicker) {
-        $(activePicker).find(".drp-calendar.right").css("display", "none");
-    };
-
     const showHandler = function () {
         const activePicker = findActivePicker();
         if (!activePicker) return;
-        hideSecondCalendar(activePicker);
+        $(activePicker).find(".drp-calendar.right").css("display", "none");
     };
 
     const hideHandler = function (event) {
         $.uiDropdown.close(event);
     };
 
-    const applyDateHanler = function (ev, picker) {
+    const applyDateHandler = function (ev, picker) {
         $.uiDropdown.setValue(picker.startDate.format("DD.MM.YYYY"));
     };
 
-    const applyRangeHanler = function (ev, picker) {
+    const applyRangeHandler = function (ev, picker) {
         $.uiDropdown.setValue(
-            picker.startDate.format("DD.MM") +
-                " - " +
-                picker.endDate.format("DD.MM")
+            `${picker.startDate.format("DD.MM")} - ${picker.endDate.format(
+                "DD.MM"
+            )}`
         );
     };
 
@@ -77,7 +73,7 @@ $(function () {
             locale,
         });
 
-        nodes.on("apply.daterangepicker", applyDateHanler);
+        nodes.on("apply.daterangepicker", applyDateHandler);
         nodes.on("cancel.daterangepicker", cancelHandler);
 
         nodes.on("show.daterangepicker", showHandler);
@@ -93,7 +89,7 @@ $(function () {
             locale,
         });
 
-        nodes.on("apply.daterangepicker", applyRangeHanler);
+        nodes.on("apply.daterangepicker", applyRangeHandler);
         nodes.on("cancel.daterangepicker", cancelHandler);
 
         nodes.on("show.daterangepicker", showHandler);
