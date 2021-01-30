@@ -1,1 +1,1 @@
-import "./search-page.scss";
+import './search-page.scss';

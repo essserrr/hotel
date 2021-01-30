@@ -1,3 +1,3 @@
-import "../../public/libs/mask/jquery.inputmask.js";
+import '../../public/libs/mask/jquery.inputmask.js';
 
-import "./form-elements-page.scss";
+import './form-elements-page.scss';

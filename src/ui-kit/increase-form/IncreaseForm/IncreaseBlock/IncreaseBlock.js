@@ -1,6 +1,6 @@
 const CONSTANTS = {
-    DEC: "dec",
-    INC: "inc",
+    DEC: 'dec',
+    INC: 'inc',
 };
 
 class IncreaseBlock {
@@ -28,26 +28,26 @@ class IncreaseBlock {
         this._view.nodeClicked = $(target);
 
         this._view.buttonBlock = this._view.nodeClicked
-            .closest(".increase-form-element")
-            .find(".increase-form-element__button-block");
+            .closest('.increase-form-element')
+            .find('.increase-form-element__button-block');
 
         this._view.increaseButton = this._view.buttonBlock.find(
-            ".increase-form-element__button[data-button-type=inc]"
+            '.increase-form-element__button[data-button-type=inc]'
         );
         this._view.decreaseButton = this._view.buttonBlock.find(
-            ".increase-form-element__button[data-button-type=dec]"
+            '.increase-form-element__button[data-button-type=dec]'
         );
         this._view.valueLabel = this._view.buttonBlock.find(
-            ".increase-form-element__value"
+            '.increase-form-element__value'
         );
     }
 
     _createModel(view) {
-        this._model.min = Number(view.buttonBlock.attr("data-min-value"));
-        this._model.max = Number(view.buttonBlock.attr("data-max-value"));
-        this._model.step = Number(view.buttonBlock.attr("data-step"));
+        this._model.min = Number(view.buttonBlock.attr('data-min-value'));
+        this._model.max = Number(view.buttonBlock.attr('data-max-value'));
+        this._model.step = Number(view.buttonBlock.attr('data-step'));
         this._model.currentValue = Number(view.valueLabel.html());
-        this._model.sign = view.nodeClicked.attr("data-button-type");
+        this._model.sign = view.nodeClicked.attr('data-button-type');
     }
 
     _modelChangeValue() {
@@ -68,10 +68,10 @@ class IncreaseBlock {
         this._view.valueLabel.html(current);
 
         const currentLessMax = current < max;
-        this._view.increaseButton.prop("disabled", !currentLessMax);
+        this._view.increaseButton.prop('disabled', !currentLessMax);
 
         const currentMoreMin = current > min;
-        this._view.decreaseButton.prop("disabled", !currentMoreMin);
+        this._view.decreaseButton.prop('disabled', !currentMoreMin);
     }
 
     _nullifyModel() {

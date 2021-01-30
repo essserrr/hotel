@@ -1,7 +1,7 @@
 $(function () {
     if (!$().bxSlider) {
-        console.log("Bx slider is not connected");
+        console.log('Bx slider is not connected');
         return;
     }
-    $(".js-image-slider").bxSlider();
+    $('.js-image-slider').bxSlider();
 });

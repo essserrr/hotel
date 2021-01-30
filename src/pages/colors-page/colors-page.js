@@ -1,1 +1,1 @@
-import "./colors-page.scss";
+import './colors-page.scss';

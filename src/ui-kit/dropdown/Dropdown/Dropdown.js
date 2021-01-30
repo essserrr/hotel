@@ -1,5 +1,5 @@
 const CONSTANTS = {
-    HIDE: "hide",
+    HIDE: 'hide',
 };
 
 class Dropdown {
@@ -20,21 +20,21 @@ class Dropdown {
     }
 
     getDropdownNodes(nodeClicked) {
-        let $parent = $(nodeClicked).closest(".ui-dropdown");
+        let $parent = $(nodeClicked).closest('.ui-dropdown');
 
         return {
             parent: $parent,
-            label: $parent.find(".js-dropdown__label"),
-            input: $parent.find(".js-dropdown__input"),
-            container: $parent.find(".js-dropdown__container"),
-            element: $parent.find(".ui-dropdown__element"),
+            label: $parent.find('.js-dropdown__label'),
+            input: $parent.find('.js-dropdown__input'),
+            container: $parent.find('.js-dropdown__container'),
+            element: $parent.find('.ui-dropdown__element'),
         };
     }
 
     getLabelParameters(label) {
         const width = label.outerWidth();
         const height = label.outerHeight();
-        const borderBottom = parseInt(label.css("border-left-width"), 10);
+        const borderBottom = parseInt(label.css('border-left-width'), 10);
         let { left, top } = label.offset();
 
         const $window = $(window);
@@ -64,13 +64,13 @@ class Dropdown {
         this.close(nodes, resizeCallback);
 
         const $window = $(window);
-        $window.off("scroll", resizeCallback);
-        $window.off("resize", resizeCallback);
+        $window.off('scroll', resizeCallback);
+        $window.off('resize', resizeCallback);
     }
 
     close(nodes) {
         nodes.container.hide();
-        nodes.parent.removeAttr("data-drop-opened");
+        nodes.parent.removeAttr('data-drop-opened');
     }
 
     setValue(value, target) {
@@ -78,7 +78,7 @@ class Dropdown {
     }
 
     show(nodes) {
-        nodes.parent.attr("data-drop-opened", true);
+        nodes.parent.attr('data-drop-opened', true);
         this.setElementPosition(nodes);
         nodes.container.show();
     }
@@ -95,9 +95,9 @@ class Dropdown {
         };
 
         const $window = $(window);
-        $window.on("scroll", resizeCallback);
-        $window.on("resize", resizeCallback);
-        nodes.container.on("click", closeCallback);
+        $window.on('scroll', resizeCallback);
+        $window.on('resize', resizeCallback);
+        nodes.container.on('click', closeCallback);
 
         $.uiDropdown = {
             close: closeCallback,
@@ -112,8 +112,8 @@ class Dropdown {
     }
 
     setHandlers() {
-        $(".js-dropdown__label, .js-dropdown__icon, .js-dropdown__input").on(
-            "click",
+        $('.js-dropdown__label, .js-dropdown__icon, .js-dropdown__input').on(
+            'click',
             this.onShow
         );
         /*
@@ -123,7 +123,7 @@ class Dropdown {
         };
 */
         if (this.defaultOpened) {
-            $(".js-dropdown__input[data-drop-default-opened]").trigger("click");
+            $('.js-dropdown__input[data-drop-default-opened]').trigger('click');
         }
     }
 }

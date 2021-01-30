@@ -1,23 +1,23 @@
-import { IncreaseForm } from "./IncreaseForm/IncreaseForm";
+import { IncreaseForm } from './IncreaseForm/IncreaseForm';
 
 $(function () {
     const reduceRooms = function (state) {
         return state.reduce((sum, value, index) => {
-            if (index !== 0) sum += ", ";
+            if (index !== 0) sum += ', ';
             sum += `${value.value} ${value.title}`;
             return sum;
-        }, "");
+        }, '');
     };
     let increaseRooms = new IncreaseForm({
         updateOnChange: true,
         formStateReducer: reduceRooms,
     });
-    increaseRooms.setHandlers(".js-inc-rooms");
+    increaseRooms.setHandlers('.js-inc-rooms');
 
     const CONSTANTS = {
-        guest: "взрослые",
-        child: "дети",
-        newborn: "младенцы",
+        guest: 'взрослые',
+        child: 'дети',
+        newborn: 'младенцы',
     };
 
     const reduceGuests = function (state) {
@@ -37,8 +37,8 @@ $(function () {
                 return sum;
             },
             {
-                guests: { number: 0, title: "гостя" },
-                newborn: { number: 0, title: "младенец" },
+                guests: { number: 0, title: 'гостя' },
+                newborn: { number: 0, title: 'младенец' },
             }
         );
 
@@ -49,7 +49,7 @@ $(function () {
             }
             return sum;
         }, []);
-        return guestStrings.join(", ");
+        return guestStrings.join(', ');
     };
 
     let increaseGuests = new IncreaseForm({
@@ -58,5 +58,5 @@ $(function () {
         formStateReducer: reduceGuests,
     });
 
-    increaseGuests.setHandlers(".js-inc-guests");
+    increaseGuests.setHandlers('.js-inc-guests');
 });
