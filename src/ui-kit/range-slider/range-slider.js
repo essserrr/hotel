@@ -4,7 +4,7 @@ $(function () {
         return;
     }
 
-    const onChangeHandler = (event) => {
+    const onChangeHandler = function (event) {
         $(event.slider)
             .closest(".ui-with-label__row")
             .find(".ui-with-label__label--right")
