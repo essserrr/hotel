@@ -13,6 +13,6 @@ $(function () {
     };
 
     const $targetNode = $(".js-nav-dropdown");
-    $targetNode.on("mouseenter", enterHandler);
-    $targetNode.on("mouseleave", leaveHandler);
+    $targetNode.on("mouseenter.uikitNavDropdown", enterHandler);
+    $targetNode.on("mouseleave.uikitNavDropdown", leaveHandler);
 });

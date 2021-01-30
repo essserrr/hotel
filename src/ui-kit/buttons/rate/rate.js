@@ -18,5 +18,5 @@ $(function () {
         $input.val(targetValue);
     };
 
-    $(".js-rating").on("click", rateClickHandler);
+    $(".js-rating").on("click.uikitRate", rateClickHandler);
 });

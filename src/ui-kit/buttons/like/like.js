@@ -19,5 +19,5 @@ $(function () {
         }
     };
 
-    $(".js-like").on("click", likeClickHandler);
+    $(".js-like").on("click.uikitLike", likeClickHandler);
 });
