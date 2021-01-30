@@ -3,10 +3,6 @@ $(function () {
         console.log("Daterange picker is not connected");
         return;
     }
-    const leftNodes = $("[data-label-type=date]:not([data-opens=right])");
-    const rightNodes = $("[data-label-type=date][data-opens=right]");
-
-    const rangeNodes = $("[data-label-type=date-range]");
 
     const locale = {
         cancelLabel: "Clear",
@@ -103,6 +99,10 @@ $(function () {
         nodes.on("show.daterangepicker", showHandler);
         nodes.on("hide.daterangepicker", hideHandler);
     };
+
+    const leftNodes = $("[data-label-type=date]:not([data-opens=right])");
+    const rightNodes = $("[data-label-type=date][data-opens=right]");
+    const rangeNodes = $("[data-label-type=date-range]");
 
     initDatepicker(leftNodes, "left");
     initDatepicker(rightNodes, "right");
