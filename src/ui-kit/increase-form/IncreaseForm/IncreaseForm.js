@@ -66,7 +66,7 @@ class IncreaseForm {
     _submit(event) {
         $.uiDropdown.setValue(this._formStateReducer(this._model.currentState));
         if ($(event.currentTarget).is(this._view.incFormApplyButton)) {
-            $.uiDropdown.close(event);
+            $.uiDropdown.close(event, true);
         }
     }
 
