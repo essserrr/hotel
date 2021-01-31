@@ -1,7 +1,7 @@
 include ../buttons/like/like.pug
 
 mixin review-card(props)
-    - const { title, date, avatar = "m", description, likes, checked } = props;
+    - const { title, date, description, likes, checked, avatar = 'm' } = props;
         article.ui-review-card.ui-review-card__row
             section.ui-review-card__column100
                 .ui-review-card__row
@@ -9,7 +9,7 @@ mixin review-card(props)
                         .ui-review-card__icon-window
                             img(
                                 src=`/avatars/${avatar}.png`,
-                                alt='User avatar'
+                                alt="User avatar"
                             )
 
                     section.ui-review-card__column

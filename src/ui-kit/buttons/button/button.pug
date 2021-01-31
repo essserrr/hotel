@@ -1,10 +1,10 @@
 mixin button(props)
-    - const { label, icon, type, dataType, variant, size = "md", disabled = false } = props;
-    - const styleVaraint = variant ? " ui-button--" + variant : "";
-    - const sizeVaraint = " ui-button--" + size;
+    - const { label, icon, type, dataType, variant, size = 'md', disabled = false } = props;
+    - const styleVaraint = variant ? ` ui-button--${variant}` : '';
+    - const sizeVaraint = ` ui-button--${size}`;
 
     button(
-        class="ui-button" + styleVaraint + sizeVaraint,
+        class=`ui-button${styleVaraint}${sizeVaraint}`,
         disabled=disabled,
         data-button-type=dataType,
         type=type

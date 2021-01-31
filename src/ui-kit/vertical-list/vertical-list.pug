@@ -9,7 +9,7 @@ mixin vertical-list(props)
 
     +with-label({labelLeft, labelRight, variant: labelVariant})
         ul(
-            class='ui-vertical-list' + (listStyle ? ` ui-vertical-list--${listStyle}` : '')
+            class=`ui-vertical-list ${listStyle ? ` ui-vertical-list--${listStyle}` : ''}`
         )
             each value in list
                 case variant

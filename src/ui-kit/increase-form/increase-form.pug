@@ -2,10 +2,10 @@ include ../buttons/button/button.pug
 include increase-form-element/increase-form-element.pug
 
 mixin increase-form(props)
-    - const { list, hasSubmit, type, variant = "sm", clearHidden = false } = props;
+    - const { list, hasSubmit, type, variant = 'sm', clearHidden = false } = props;
 
     section(
-        class="increase-form increase-form__row increase-form--spacing" + (" increase-form--padding-" + variant) + (type ? " js-inc-" + type : "")
+        class=`increase-form increase-form__row increase-form--spacing increase-form--padding-${variant}${type ? ' js-inc-' + type : ''}`
     )
         each value in list
             .increase-form__column100
@@ -14,7 +14,7 @@ mixin increase-form(props)
             .increase-form__column100.increase-form--margin
                 .increase-form__row.increase-form__row--justify-between
                     div(
-                        class="increase-form__column" + (clearHidden ? " increase-form--hide-button" : "")
+                        class=`increase-form__column${clearHidden ? ' increase-form--hide-button' : ''}`
                     )
                         +button({label: "очистить", variant: "nofill", dataType: "clear", type: "button"})
                     .increase-form__auto

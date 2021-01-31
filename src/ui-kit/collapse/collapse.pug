@@ -2,7 +2,7 @@ mixin collapse(props)
     - const { label, expanded = false } = props;
 
     section(
-        class="ui-collapse ui-collapse__row js-collapse collapsable-slide" + (expanded ? " ca-default-expanded" : "")
+        class=`ui-collapse ui-collapse__row js-collapse collapsable-slide${expanded ? ' ca-default-expanded' : ''}`
     )
         header.ui-collapse__label.ui-collapse__column100
             .ui-collapse__row.ui-collapse--align-center

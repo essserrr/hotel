@@ -1,8 +1,8 @@
 mixin with-label(props)
-    - const { labelLeft, labelRight, variant = "sm" } = props;
+    - const { labelLeft, labelRight, variant = 'sm' } = props;
     section.ui-with-label__row
         div(
-            class="ui-with-label__column100 ui-with-label__label" + (" ui-with-label__label--margin-" + variant)
+            class=`ui-with-label__column100 ui-with-label__label ui-with-label__label--margin-${variant}`
         )
             if (labelLeft || labelRight)
                 header.ui-with-label__row

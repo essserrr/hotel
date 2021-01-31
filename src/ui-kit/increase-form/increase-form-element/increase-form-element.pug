@@ -11,13 +11,13 @@ mixin increase-form-element(props)
                 data-step=step
             )
                 button.increase-form-element__button.js-increase-form-button(
-                    data-button-type='dec',
+                    data-button-type="dec",
                     disabled=!(Number(value) > Number(minValue)),
-                    type='button'
+                    type="button"
                 ) -
                 .increase-form-element__value #{value}
                 button.increase-form-element__button.js-increase-form-button(
-                    data-button-type='inc',
+                    data-button-type="inc",
                     disabled=!(Number(value) < Number(maxValue)),
-                    type='button'
+                    type="button"
                 ) +
