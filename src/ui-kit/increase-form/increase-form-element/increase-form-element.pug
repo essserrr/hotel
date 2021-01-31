@@ -1,7 +1,7 @@
 mixin increase-form-element(props)
     - const { title, value = 0, minValue = 0, maxValue = 1, step = 1 } = props;
 
-    .increase-form-element.increase-form-element--align-center
+    section.increase-form-element.increase-form-element--align-center
         .increase-form-element__column
             .increase-form-element__title  #{title}
         .increase-form-element__colum-auto
@@ -11,13 +11,13 @@ mixin increase-form-element(props)
                 data-step=step
             )
                 button.increase-form-element__button.js-increase-form-button(
-                    data-button-type="dec",
+                    data-button-type='dec',
                     disabled=!(Number(value) > Number(minValue)),
-                    type="button"
+                    type='button'
                 ) -
                 .increase-form-element__value #{value}
                 button.increase-form-element__button.js-increase-form-button(
-                    data-button-type="inc",
+                    data-button-type='inc',
                     disabled=!(Number(value) < Number(maxValue)),
-                    type="button"
+                    type='button'
                 ) +

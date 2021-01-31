@@ -4,16 +4,16 @@ mixin input(props)
 
     +with-label({labelLeft, labelRight, variant: labelVariant})
         div(
-            class='ui-text-input' + (submitable === true ? ' ui-text-input--submitable' : '')
+            class="ui-text-input" + (submitable === true ? " ui-text-input--submitable" : "")
         )
             input(
-                class='ui-text-input__input' + (forceHover === true ? ' ui-text-input__input--force-hover' : ''),
-                type="text",
+                class="ui-text-input__input" + (forceHover === true ? " ui-text-input__input--force-hover" : ""),
+                type='text',
                 placeholder=placeholder,
                 value=value,
                 data-masktype=mask,
                 focus
             )
             if (submitable === true)
-                button.ui-text-input__icon(type="submit")
+                button.ui-text-input__icon(type='submit')
                     block
