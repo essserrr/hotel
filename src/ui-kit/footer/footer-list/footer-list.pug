@@ -1,8 +1,8 @@
 mixin footer-list(props)
     - const { title, list = [], hasBlock = false } = props;
 
-    .ui-footer-list
-        .ui-footer-list__title #{title}
+    section.ui-footer-list
+        header.ui-footer-list__title #{title}
         each value in list
             case value.node
                 when "a"

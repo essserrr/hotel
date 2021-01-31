@@ -1,6 +1,6 @@
 mixin image-slider(props)
-    - const { images, noButtons = false } = props;
-    div(class=`ui-image-slider${noButtons ? ' ui-image-slider--no-buttons' : ''}`)
+    - const { images, alt = [], noButtons = false } = props;
+    div(class=`ui-image-slider${noButtons ? " ui-image-slider--no-buttons" : ""}`)
         .js-image-slider
-            each image in images
-                img(src=image, alt="")
+            each image, key in images
+                img(src=image, alt=alt[key])

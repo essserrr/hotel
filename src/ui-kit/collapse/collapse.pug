@@ -1,10 +1,10 @@
 mixin collapse(props)
     - const { label, expanded = false } = props;
 
-    div(
-        class='ui-collapse ui-collapse__row js-collapse collapsable-slide' + (expanded ? ' ca-default-expanded' : '')
+    section(
+        class="ui-collapse ui-collapse__row js-collapse collapsable-slide" + (expanded ? " ca-default-expanded" : "")
     )
-        .ui-collapse__label.ui-collapse__column100
+        header.ui-collapse__label.ui-collapse__column100
             .ui-collapse__row.ui-collapse--align-center
                 h3.ui-collapse__column #{label}
                 .ui-collapse__column-auto.ui-collapse--icon-padding

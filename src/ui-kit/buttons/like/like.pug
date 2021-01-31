@@ -1,7 +1,12 @@
 mixin like(props)
     - const { value, name, checked } = props;
-    
+
     label(class="ui-like" + (checked === "checked" ? " ui-like--checked" : ""))
-        input.ui-like__input.js-like(type="checkbox", checked=checked, value=value name=name)
+        input.ui-like__input.js-like(
+            type='checkbox',
+            checked=checked,
+            value=value,
+            name=name
+        )
         span.ui-like__checkmark
         span.ui-like__label #{value}

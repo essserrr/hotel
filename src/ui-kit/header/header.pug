@@ -7,10 +7,10 @@ include ../icons/logout/logout.pug
 mixin header(props)
     - const { loggedIn = false, name = "" } = props;
 
-    .ui-header.ui-header__row.ui-header--align-center
-        .ui-header__row
+    article.ui-header.ui-header__row.ui-header--align-center
+        section.ui-header__row
             +toxin-logo
-        .ui-header__row.ui-header--row-margin.ui-header--align-center
+        section.ui-header__row.ui-header--row-margin.ui-header--align-center
             .ui-header__item.ui-header__show-md
                 +nav-dropdown({root: {node: "m-button"}, hasBlock: true})
                     li.ui-nav-dropdown__list-item

@@ -1,8 +1,8 @@
 mixin checkbox(props)
     - const { name, mainLabel, subLabel, checked } = props;
 
-    label(class='ui-checkbox' + (subLabel ? ' ui-checkbox--sublabled' : '')) #{mainLabel}
-        input.ui-checkbox__input(type="checkbox", checked=checked, name=name)
+    label(class="ui-checkbox" + (subLabel ? " ui-checkbox--sublabled" : "")) #{mainLabel}
+        input.ui-checkbox__input(type='checkbox', checked=checked, name=name)
         span.ui-checkbox__checkmark
         if (subLabel)
             .ui-checkbox__sublabel.ui-checkbox__sublabel--margin
