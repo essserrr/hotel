@@ -5,7 +5,7 @@ include ../input/input.pug
 include ../icons/arrow-forward/arrow-forward.pug
 
 mixin footer(props)
-    - const { loggedIn = false, name = '' } = props;
+    - const { loggedIn = false, name = "" } = props;
 
     .ui-footer.ui-footer__row
         .ui-footer__column100
@@ -18,11 +18,11 @@ mixin footer(props)
                 .ui-footer__column.ui-footer__nav-column
                     .ui-footer__row.ui-footer--justify-between
                         .ui-footer__column-auto
-                            +footer-list({title: "навигация", list: [{title: "О нас", node: "a", href: "#"}, {title: "Новости", node: "a", href: "#"}, {title: "Служба поддержки", node: "a", href: "#"}, {title: "Услуги", node: "a", href: "#"}]})
+                            +footer-list({title: "навигация", list: [{title: "О нас", node: "a", href: "/urlunset"}, {title: "Новости", node: "a", href: "/urlunset"}, {title: "Служба поддержки", node: "a", href: "/urlunset"}, {title: "Услуги", node: "a", href: "/urlunset"}]})
                         .ui-footer__column-auto
-                            +footer-list({title: "о нас", list: [{title: "О сервисе", node: "a", href: "#"}, {title: "Наша команда", node: "a", href: "#"}, {title: "Вакансии", node: "a", href: "#"}, {title: "Инвесторы", node: "a", href: "#"}]})
+                            +footer-list({title: "о нас", list: [{title: "О сервисе", node: "a", href: "/urlunset"}, {title: "Наша команда", node: "a", href: "/urlunset"}, {title: "Вакансии", node: "a", href: "/urlunset"}, {title: "Инвесторы", node: "a", href: "/urlunset"}]})
                         .ui-footer__column-auto
-                            +footer-list({title: "Служба поддержки", list: [{title: "Соглашения", node: "a", href: "#"}, {title: "Сообщества", node: "a", href: "#"}, {title: "Связь с нами", node: "a", href: "#"}]})
+                            +footer-list({title: "Служба поддержки", list: [{title: "Соглашения", node: "a", href: "/urlunset"}, {title: "Сообщества", node: "a", href: "/urlunset"}, {title: "Связь с нами", node: "a", href: "/urlunset"}]})
                         .ui-footer__column-auto.ui-footer--margin-top-lg20
                             +footer-list({title: "Подписка", hasBlock: true, list: [{title: "Получайте специальные предложения и новости сервиса", node: "subscribe"}]}) 
                                 +input({placeholder:"Email", submitable: true}) 
