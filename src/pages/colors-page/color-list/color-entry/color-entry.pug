@@ -2,7 +2,7 @@ mixin color-entry(props)
     - const { title, description, variant } = props;
     .color-entry
         div(
-            class='color-entry__icon color-entry__icon--margin color-entry__icon--' + variant
+            class=`color-entry__icon color-entry__icon--margin color-entry__icon--${variant}`
         )
         .color-entry__text-col
             .color-entry__text.color-entry__text--title #{title}
