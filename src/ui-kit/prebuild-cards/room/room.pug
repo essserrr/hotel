@@ -1,19 +1,19 @@
 include ../../buttons/rate/rate.pug
-
-include ../../card/card.pug
-include ../card-title/card-title.pug
 include ../../image-slider/image-slider.pug
+include ../../card/card.pug
+
+include ../card-title/card-title.pug
 
 mixin room(props)
     - const { number, type, price, reviews = 0, checkedStars = 5, images = [], noButtons } = props;
-    .ui-room
+    article.ui-room
         +card({type: "sm"})
-            .ui-room__image
+            section.ui-room__image
                 +image-slider({images, noButtons})
             .ui-card__column100.ui-room--padding.ui-room--vertical-spacing
                 .ui-card__column100.ui-room__element
-                    +book-title({number, type, price, titleStyle: 'sm'})
-                .ui-card__column100.ui-room__element
+                    +card-title({number, type, price, titleStyle: 'sm'})
+                section.ui-card__column100.ui-room__element
                     .ui-card__row.ui-card--align-end
                         .ui-card__column
                             +rate({checkedStars})

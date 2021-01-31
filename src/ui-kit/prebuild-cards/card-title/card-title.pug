@@ -1,7 +1,7 @@
-mixin book-title(props)
+mixin card-title(props)
     - const { number, type, price, titleStyle = 'default' } = props;
 
-    div(
+    header(
         class='ui-card-title__row ui-card-title--align-end' + (titleStyle === 'default' ? '' : ` ui-card-title--${titleStyle}`)
     )
         .ui-card-title__column
