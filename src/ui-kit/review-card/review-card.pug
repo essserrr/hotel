@@ -1,22 +1,25 @@
 include ../buttons/like/like.pug
 
 mixin review-card(props)
-    - const { title, date, avatar = 'm', description, likes, checked } = props;
-        .ui-review-card.ui-review-card__row
-            .ui-review-card__column100
+    - const { title, date, avatar = "m", description, likes, checked } = props;
+        article.ui-review-card.ui-review-card__row
+            section.ui-review-card__column100
                 .ui-review-card__row
-                    .ui-review-card__element-container
+                    section.ui-review-card__element-container
                         .ui-review-card__icon-window
-                            img(src=`/avatars/${avatar}.png`)
+                            img(
+                                src=`/avatars/${avatar}.png`,
+                                alt='User avatar'
+                            )
 
-                    .ui-review-card__column
+                    section.ui-review-card__column
                         .ui-review-card__title #{title}
                         .ui-review-card__description #{date}
 
-            .ui-review-card__column100.ui-review-card--margin-top
+            section.ui-review-card__column100.ui-review-card--margin-top
                 .ui-review-card__row
-                    .ui-review-card__element-container
+                    section.ui-review-card__element-container
                         .ui-review-card__like-container
                             +like({value: likes, checked: checked})
 
-                    .ui-review-card__column #{description}
+                    section.ui-review-card__column #{description}

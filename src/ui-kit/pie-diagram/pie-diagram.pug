@@ -37,7 +37,7 @@ mixin pie-diagram(props)
                 .ui-pie__segment(
                     style=`--start: ${section3End + margin}; --sector: ${section4Per - margin * 2}; --over50: ${section4Per > 50 ? 1 : 0}; --bg: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%)`
                 )
-        ul.ui-pie__legend
+        ol.ui-pie__legend
             li.ui-pie__legend--yellow Великолепно
             li.ui-pie__legend--green Хорошо
             li.ui-pie__legend--purple Удовлетворительно
