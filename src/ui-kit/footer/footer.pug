@@ -25,8 +25,9 @@ mixin footer(props)
                             +footer-list({title: "Служба поддержки", list: [{title: "Соглашения", node: "a", href: "/urlunset"}, {title: "Сообщества", node: "a", href: "/urlunset"}, {title: "Связь с нами", node: "a", href: "/urlunset"}]})
                         .ui-footer__column-auto.ui-footer--margin-top-lg20
                             +footer-list({title: "Подписка", hasBlock: true, list: [{title: "Получайте специальные предложения и новости сервиса", node: "subscribe"}]}) 
-                                +input({placeholder:"Email", submitable: true}) 
-                                    +arrow-forward
+                                form(action="#", method="POST")
+                                    +input({placeholder:"Email", submitable: true}) 
+                                        +arrow-forward
 
         section.ui-footer__column100
             .ui-footer__credits-block.ui-footer--padding-x.ui-footer__row.ui-footer--align-center.ui-footer--justify-between.ui-footer--justify-xs-center

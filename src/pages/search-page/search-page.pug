@@ -13,47 +13,46 @@ block meta
     title Поиск комнаты
 block scripts
     script(
-        type='text/javascript',
-        src='https://cdn.jsdelivr.net/momentjs/latest/moment.min.js'
+        type="text/javascript",
+        src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
     )
     script(
-        type='text/javascript',
-        src='/libs/daterangepicker/daterangepicker.js'
+        type="text/javascript",
+        src="/libs/daterangepicker/daterangepicker.js"
     )
-    script(type='text/javascript', src='/libs/mask/jquery.inputmask.js')
+    script(type="text/javascript", src="/libs/mask/jquery.inputmask.js")
     script(
-        type='text/javascript',
-        src='https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js'
+        type="text/javascript",
+        src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"
     )
-    script(type='text/javascript', src='/libs/collapse/jquery.collapsable.js')
+    script(type="text/javascript", src="/libs/collapse/jquery.collapsable.js")
     script(
-        type='text/javascript',
-        src='https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js'
+        type="text/javascript",
+        src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"
     )
 block styles
     link(
-        rel='stylesheet',
-        type='text/css',
-        href='https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css'
+        rel="stylesheet",
+        type="text/css",
+        href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
     )
     link(
-        rel='stylesheet',
-        type='text/css',
-        href='https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css'
+        rel="stylesheet",
+        type="text/css",
+        href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"
     )
     link(
-        rel='stylesheet',
-        type='text/css',
-        href='https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css'
+        rel="stylesheet",
+        type="text/css",
+        href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css"
     )
 
 block navigation
     +header({})
 block content
     .search-page.search-page__row.search-page--justify-sm-center
-        .search-page--width266
-            div
-                +dropdown({ placeholder:"ДД ММ - ДД ММ", value: "19 авг - 23 авг", labelLeft: "даты пребывания в отеле", type: "date-range"})
+        form.search-page--width266
+            +dropdown({ placeholder:"ДД ММ - ДД ММ", value: "19 авг - 23 авг", labelLeft: "даты пребывания в отеле", type: "date-range"})
             .search-page--margin-top21
                 +dropdown({ placeholder:"Сколько гостей", value: "3 гостя, 1 младенец", labelLeft: "гости", type: "text"})
                     +increase-form({type: "guests", variant: "md", hasSubmit: true, list: [{title: "взрослые", value: 2, minValue: 0, maxValue: 5, step: 1}, {title: "дети", value: 1, minValue: 0, maxValue: 5, step: 1}, {title: "младенцы", value: 1, minValue: 0, maxValue: 5, step: 1}]})
