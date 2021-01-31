@@ -1,1 +1,1 @@
-import './ui-kit-nav/ui-kit-nav.scss';
+import "./ui-kit-demo-nav/ui-kit-demo-nav.scss";
