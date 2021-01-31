@@ -45,7 +45,7 @@ block styles
 block navigation
     +header({})
 block content
-    .search-page.search-page__row.search-page--justify-sm-center
+    article.search-page.search-page__row.search-page--justify-sm-center
         form.search-page--width266
             +dropdown({ placeholder:"ДД ММ - ДД ММ", value: "19 авг - 23 авг", labelLeft: "даты пребывания в отеле", type: "date-range"})
             .search-page--margin-top21
@@ -65,12 +65,12 @@ block content
             .search-page--margin-top15
                 +collapse({label: "дополнительные удобства", expanded: true}) 
                     +vertical-list({labelVariant: "none", variant: "checkbox", list: [{mainLabel: "Завтрак"}, {checked:"checked", mainLabel: "Письменный стол"}, {checked:"checked", mainLabel: "Стул для кормления"}, {checked:"checked", mainLabel: "Кроватка"}, {mainLabel: "Телевизор"}, {mainLabel: "Шампунь"}]})
-        .search-page__search-block.search-page__column.search-page__column100-sm.search-page--margin-top30-sm
+        section.search-page__search-block.search-page__column.search-page__column100-sm.search-page--margin-top30-sm
             .search-page__row
-                .search-page__column100.search-page__search-title
+                header.search-page__column100.search-page__search-title
                     h1 Номера, которые мы для вас подобрали
 
-                .search-page__column100
+                section.search-page__column100
                     .search-page__row.search-page__search-cards.search-page--justify-md-center
                         .search-page__room-cell
                             +room({number: "888", type: "люкс", price: "9 990", reviews: "145", checkedStars: 5, images: [{src: "/rooms/room1.png", alt: "room1.png"}, {src: "/rooms/room2.png", alt: "room1.png"}, {src: "/rooms/room1.png", alt: "room1.png"}, {src: "/rooms/room2.png", alt: "room1.png"}]})
@@ -107,7 +107,7 @@ block content
                         .search-page__room-cell
                             +room({number: "352", price: "5 000", reviews: "55", checkedStars: 3, images: [{src: "/rooms/room12.png", alt: "room1.png"}, {src: "/rooms/room1.png", alt: "room1.png"}, {src: "/rooms/room2.png", alt: "room1.png"}, {src: "/rooms/room1.png", alt: "room1.png"}], noButtons: true})
 
-                .search-page__column100.search-page--margin-top21.search-page__row.search-page--justify-center
+                section.search-page__column100.search-page--margin-top21.search-page__row.search-page--justify-center
                     .search-page__search-paginator
                         +paginator({label: "1 – 12 из 100+ вариантов аренды", pages: [{value: "1", active: true}, {value: "2"}, {value: "3"}, {value: "...", type: "dots"}, {value: "15"}, {type: "nav"}]})
 
