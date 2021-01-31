@@ -7,29 +7,29 @@ block meta
     title Карточки
 block scripts
     script(
-        type="text/javascript",
-        src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+        type='text/javascript',
+        src='https://cdn.jsdelivr.net/momentjs/latest/moment.min.js'
     )
     script(
-        type="text/javascript",
-        src="/libs/daterangepicker/daterangepicker.js"
+        type='text/javascript',
+        src='/libs/daterangepicker/daterangepicker.js'
     )
-    script(type="text/javascript", src="/libs/mask/jquery.inputmask.js")
+    script(type='text/javascript', src='/libs/mask/jquery.inputmask.js')
     script(
-        type="text/javascript",
-        src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"
+        type='text/javascript',
+        src='https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js'
     )
 
 block styles
     link(
-        rel="stylesheet",
-        type="text/css",
-        href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+        rel='stylesheet',
+        type='text/css',
+        href='https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css'
     )
     link(
-        rel="stylesheet",
-        type="text/css",
-        href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css"
+        rel='stylesheet',
+        type='text/css',
+        href='https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css'
     )
 
 block content
@@ -48,6 +48,6 @@ block content
             .cards-page__column100
                 include ../../ui-kit/prebuild-cards/date-select.pug
             .cards-page__column100.cards-page--margin-top
-                +room({number: "888", type: "люкс", price: "9 990", reviews: "145", checkedStars: 5, images: ["/rooms/room1.png", "/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png"]})
+                +room({number: "888", type: "люкс", price: "9 990", reviews: "145", checkedStars: 5, images: [{src: "/rooms/room1.png", alt: "room1.png"}, {src: "/rooms/room2.png", alt: "room1.png"}, {src: "/rooms/room1.png", alt: "room1.png"}, {src: "/rooms/room2.png", alt: "room1.png"}]})
             .cards-page__column100.cards-page--margin-top
-                +room({number: "840", price: "9 900", reviews: "65", checkedStars: 4, images: ["/rooms/room2.png", "/rooms/room1.png", "/rooms/room2.png", "/rooms/room1.png"], noButtons: true})
+                +room({number: "840", price: "9 900", reviews: "65", checkedStars: 4, images: [{src: "/rooms/room2.png", alt: "room1.png"}, {src: "/rooms/room1.png", alt: "room1.png"}, {src: "/rooms/room2.png", alt: "room1.png"}, {src: "/rooms/room1.png", alt: "room1.png"}], noButtons: true})
