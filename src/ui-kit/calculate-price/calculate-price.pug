@@ -4,7 +4,7 @@ mixin calculate-price(props)
     - const { roomPrice, days, discount, other, sum } = props;
     - const preciOverDays = Number(roomPrice) * Number(days);
     - const sumPrice = preciOverDays - Number(discount) + Number(other);
-    - function formatNumber(number) {return String(number).replace(/(?!^)(?=(?:\d{3})+(?:\.|$))/gm, ' ');}
+    - function formatNumber(number) {return String(number).replace(/(?!^)(?=(?:\d{3})+(?:\.|$))/gm, " ");}
 
     section.ui-calculate-price
         .ui-calculate-price__row
