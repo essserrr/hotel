@@ -9,7 +9,7 @@
     }
 
     &--spacing {
-        .increase-form__column100 {
+        .increase-form__column100:not(.increase-form--margin) {
             margin-top: 7px;
 
             &:first-of-type {
@@ -40,7 +40,7 @@
     }
 
     &--margin {
-        margin-top: 19px !important;
+        margin-top: 19px;
     }
 
     &__row {
