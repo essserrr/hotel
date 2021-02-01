@@ -130,7 +130,8 @@
             background-color: rgba(0, 0, 0, 0.05);
         }
 
-        > div {
+        > div,
+        section {
             padding-right: 10px;
             .ui-nav-dropdown__title {
                 padding-top: 10px;
