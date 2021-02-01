@@ -1,25 +1,10 @@
 .auth-page {
     box-sizing: border-box;
 
-    &--login-variant {
-        min-height: 703px;
-        padding-top: 19px;
-        padding-bottom: 19px;
-    }
-
-    &--reg-variant {
-        min-height: 683px;
-        padding-left: 8px;
-    }
-
     background-image: url("../../public/bg/bg2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-
-    &__card {
-        max-width: 380px;
-    }
 
     &__row {
         display: -ms-flexbox;
@@ -35,6 +20,10 @@
         max-width: 100%;
     }
 
+    &__card {
+        max-width: 380px;
+    }
+
     &--justify {
         &-center {
             justify-content: center;
@@ -45,6 +34,17 @@
         &-center {
             align-items: center;
         }
+    }
+
+    &--login-variant {
+        min-height: 703px;
+        padding-top: 19px;
+        padding-bottom: 19px;
+    }
+
+    &--reg-variant {
+        min-height: 683px;
+        padding-left: 8px;
     }
 }
 
