@@ -15,16 +15,19 @@
     }
 
     &__search-title {
+        //title shifted to the left, design error?
         margin-left: -1px;
         margin-bottom: 22px;
     }
 
+    //should it be 12px margins at all resolutions?
     &__search-cards {
         margin-left: -6px;
         margin-right: -6px;
     }
 
     &__search-paginator {
+        //cant be centered without margin, design error?
         margin-left: -12px;
         max-width: 241px;
     }
