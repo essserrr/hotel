@@ -33,7 +33,7 @@ h1 {
     font-size: 24px;
     line-height: 29px;
 
-    color: #1f2041;
+    color: $color-dark-shade100;
 }
 
 h2 {
@@ -44,7 +44,7 @@ h2 {
     font-size: 19px;
     line-height: 23px;
 
-    color: #1f2041;
+    color: $color-dark-shade100;
 }
 
 h3 {
@@ -57,7 +57,7 @@ h3 {
 
     text-transform: uppercase;
 
-    color: #1f2041;
+    color: $color-dark-shade100;
 }
 
 body {
@@ -66,5 +66,5 @@ body {
     font-weight: normal;
     font-size: 14px;
 
-    color: rgba(31, 32, 65, 0.75);
+    color: $color-dark-shade75;
 }
