@@ -60,6 +60,15 @@
         max-width: 100%;
     }
 
+    &__fake-block {
+        &--sm {
+            height: 118px;
+        }
+        &--md {
+            height: 158px;
+        }
+    }
+
     &--width-320 {
         max-width: 320px;
     }

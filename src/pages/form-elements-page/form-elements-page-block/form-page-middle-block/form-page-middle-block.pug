@@ -12,18 +12,18 @@ block col1
             .form-page-block__column100.form-page-block--width-266.form-page-block--margin-top-md
                 +dropdown({ placeholder:"Сколько гостей", opened: true, value: "2 спальни, 2 кровати, 2 ванные комнаты", labelLeft: "Dropdown", labelRight: "expanded", type: "text"})
                     +increase-form({type: "rooms", list: [{title: "спальни", value: 2, minValue: 0, maxValue: 5, step: 1}, {title: "кровати", value: 2, minValue: 0, maxValue: 5, step: 1}, {title: "ванные комнаты", value: 0, minValue: 0, maxValue: 5, step: 1}]})
-                div(style="height: 118px")
+                .form-page-block__fake-block--sm
 block col2
     .form-page-block
         .form-page-block__column100.form-page-block--width-320
             .form-page-block__column100
                 +dropdown({ placeholder:"Сколько гостей", opened: true, labelLeft: "Dropdown", type: "text"})
                     +increase-form({type: "guests", variant: "md", hasSubmit: true, clearHidden: true, list: [{title: "взрослые", value: 0, minValue: 0, maxValue: 5, step: 1}, {title: "дети", value: 0, minValue: 0, maxValue: 5, step: 1}, {title: "младенцы", value: 0, minValue: 0, maxValue: 5, step: 1}]})
-                div(style="height: 158px")
+                .form-page-block__fake-block--md
 block col3
     .form-page-block
         .form-page-block__column100.form-page-block--width-320
             .form-page-block__column100
                 +dropdown({ placeholder:"Сколько гостей", opened: true, value: "3 гостя", labelLeft: "Dropdown", type: "text"})
                     +increase-form({type: "guests", variant: "md", hasSubmit: true, list: [{title: "взрослые", value: 2, minValue: 0, maxValue: 5, step: 1}, {title: "дети", value: 1, minValue: 0, maxValue: 5, step: 1}, {title: "младенцы", value: 0, minValue: 0, maxValue: 5, step: 1}]})
-                div(style="height: 158px")
+                .form-page-block__fake-block--md
