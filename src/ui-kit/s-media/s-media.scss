@@ -4,9 +4,6 @@
         display: flex;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-
-        margin-left: -11px;
-        margin-right: -11px;
     }
 
     &--align-center {
@@ -18,10 +15,18 @@
         flex: 0 0 auto;
         width: auto;
         max-width: 100%;
+        line-height: 1px;
+    }
 
+    .ui-smedia__column-auto {
         padding-left: 11px;
         padding-right: 11px;
 
-        line-height: 1px;
+        &:first-child {
+            padding-left: 0;
+        }
+        &:last-child {
+            padding-right: 0;
+        }
     }
 }
