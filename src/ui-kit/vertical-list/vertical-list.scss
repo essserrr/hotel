@@ -23,10 +23,10 @@
     }
 
     &__entry {
+        margin-top: 10px;
         &:first-child {
             margin-top: 0;
         }
-        margin-top: 10px;
 
         &--with-bullet {
             position: relative;
@@ -39,7 +39,7 @@
                 display: block;
                 position: absolute;
 
-                top: 5px;
+                top: 6px;
                 left: 0px;
 
                 width: 10px;
@@ -48,10 +48,6 @@
                 border-radius: 50%;
 
                 background: $color-dark-shade25;
-            }
-
-            &:first-of-type {
-                margin-top: -2px;
             }
         }
     }
