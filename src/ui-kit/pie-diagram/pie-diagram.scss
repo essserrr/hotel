@@ -104,7 +104,7 @@
 
     &__legend {
         align-self: flex-end;
-
+        //cannot be pushed to bottom without negative margins; design error?
         margin-left: 30px;
         margin-top: 0px;
         margin-bottom: -3px;
