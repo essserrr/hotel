@@ -1,9 +1,6 @@
 .ui-calculate-price {
     line-height: 24px;
-
     margin-left: 1px;
-    margin-top: -1px;
-    padding-bottom: 1px;
 
     &__column100 {
         -ms-flex: 0 0 100%;
@@ -41,6 +38,7 @@
     &__price {
         text-align: right;
 
+        //price shited to the right, design error?
         &-overall {
             margin-right: -9px;
         }
