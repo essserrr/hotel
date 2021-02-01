@@ -75,15 +75,15 @@
             }
         }
 
-        .bx-next {
+        a.bx-next {
+            right: 8px;
             &::after {
-                margin-left: 2px;
                 border-width: 2px 2px 0px 0px;
             }
         }
-        .bx-prev {
+        a.bx-prev {
+            left: 8px;
             &::after {
-                margin-left: -3px;
                 border-width: 0px 0px 2px 2px;
             }
         }

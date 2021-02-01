@@ -86,6 +86,7 @@
     }
 
     &__votes {
+        //cannot be centered without negative margins; design error?
         margin-top: -5px;
         margin-left: -1px;
 
