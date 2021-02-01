@@ -20,14 +20,18 @@
         align-items: center;
     }
 
-    &--row-margin {
-        margin-left: -10px;
-        margin-right: -10px;
-    }
+    &--spacing {
+        > .ui-header__item {
+            padding-left: 10px;
+            padding-right: 10px;
 
-    &__item {
-        padding-left: 10px;
-        padding-right: 10px;
+            &:first-child {
+                padding-left: 0px;
+            }
+            &:last-child {
+                padding-right: 0px;
+            }
+        }
     }
 
     &__name {
@@ -68,13 +72,18 @@
 @media (max-width: 576px) {
     .ui-header {
         padding: 0px 20px 0px 20px;
-        &--row-margin {
-            margin-left: -5px;
-            margin-right: -5px;
-        }
-        &__item {
-            padding-left: 5px;
-            padding-right: 5px;
+        &--spacing {
+            > .ui-header__item {
+                padding-left: 5px;
+                padding-right: 5px;
+
+                &:first-child {
+                    padding-left: 0px;
+                }
+                &:last-child {
+                    padding-right: 0px;
+                }
+            }
         }
         &__name {
             margin-left: 5px;

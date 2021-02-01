@@ -10,7 +10,10 @@ mixin header(props)
     article.ui-header.ui-header__row.ui-header--align-center
         section.ui-header__row
             +toxin-logo
-        section.ui-header__row.ui-header--row-margin.ui-header--align-center
+        section.ui-header__row.ui-header--spacing.ui-header--align-center
+            .ui-header__item.ui-header__hide-md
+                +nav-dropdown({root: {node: "a", title: "О нас", href: "/urlunset", style: "bold"},})
+
             .ui-header__item.ui-header__show-md
                 +nav-dropdown({root: {node: "m-button"}, hasBlock: true})
                     li.ui-nav-dropdown__list-item
@@ -25,8 +28,6 @@ mixin header(props)
                         +nav-dropdown({root: {node: "div", title: "Соглашения"}, list: [{title: "Category One", href: "/urlunset"}, {title: "Category Two", href: "/urlunset"},{title: "Category Three", href: "/urlunset"}]})
 
             .ui-header__item.ui-header__hide-md
-                +nav-dropdown({root: {node: "a", title: "О нас", href: "/urlunset", style: "bold"},})
-            .ui-header__item.ui-header__hide-md
                 +nav-dropdown({root: {node: "div", title: "Услуги"}, list: [{title: "Category One", href: "/urlunset"}, {title: "Category Two", href: "/urlunset"},{title: "Category Three", href: "/urlunset"}]})
             .ui-header__item.ui-header__hide-md
                 +nav-dropdown({root: {node: "a", title: "Вакансии", href: "/urlunset"},})
@@ -38,13 +39,13 @@ mixin header(props)
                 when true
                     .ui-header__item.ui-header__name #{name}
                 when false
-                    .ui-header__item.ui-header__hide-xs
-                        +button({label: "войти", variant: "outlined", size: "sm"})
-                    .ui-header__item.ui-header__hide-xs
-                        +button({label: "зарегистрироваться", size: "sm"})
                     .ui-header__item.ui-header__show-xs
                         +button({variant: "nofill", icon: true})
                             +login
                     .ui-header__item.ui-header__show-xs
                         +button({variant: "nofill", icon: true})
                             +logout
+                    .ui-header__item.ui-header__hide-xs
+                        +button({label: "войти", variant: "outlined", size: "sm"})
+                    .ui-header__item.ui-header__hide-xs
+                        +button({label: "зарегистрироваться", size: "sm"})
