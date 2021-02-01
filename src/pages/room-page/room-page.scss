@@ -2,8 +2,24 @@
     box-sizing: border-box;
     border-bottom: 1px solid rgba(31, 32, 65, 0.25);
 
-    &--max-width1440 {
-        max-width: 1440px !important;
+    &__row {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    &__column-auto {
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
+    }
+
+    &__column100 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 
     &__main-image {
@@ -43,11 +59,15 @@
         justify-content: space-between;
     }
 
+    &--max-width1440 {
+        max-width: 1440px;
+    }
+
     &__description-column {
-        max-width: 711px !important;
+        max-width: 711px;
     }
     &__book-column {
-        max-width: 380px !important;
+        max-width: 380px;
         margin-top: -1px;
     }
 
@@ -67,7 +87,7 @@
 
     &__rating {
         &-column {
-            max-width: 311px !important;
+            max-width: 311px;
             padding-right: 39px;
         }
 
@@ -79,7 +99,7 @@
 
     &__rules {
         &-column {
-            max-width: 280px !important;
+            max-width: 280px;
             margin-left: -2px;
         }
         &-title {
@@ -89,29 +109,9 @@
 
     &__cancel {
         &-column {
-            max-width: 341px !important;
+            max-width: 341px;
             padding-right: 9px;
         }
-    }
-
-    &__row {
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    }
-
-    &__column-auto {
-        -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
-        width: auto;
-        max-width: 100%;
-    }
-
-    &__column100 {
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-        max-width: 100%;
     }
 
     &--justify {
@@ -188,7 +188,7 @@
         }
 
         &__description-column {
-            max-width: 100% !important;
+            max-width: 100%;
         }
         &__book-column {
             margin-top: 40px;
@@ -234,7 +234,7 @@
     .room-page {
         &__rules {
             &-column {
-                max-width: 100% !important;
+                max-width: 100%;
             }
         }
         &__cancel {
@@ -252,7 +252,7 @@
             padding: 30px 20px;
         }
         &__book-column {
-            max-width: 280px !important;
+            max-width: 280px;
         }
     }
 }
