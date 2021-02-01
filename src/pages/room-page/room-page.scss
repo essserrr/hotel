@@ -54,7 +54,7 @@
     }
 
     &__room-block {
-        padding: 70px 140px;
+        padding: 69px 140px 70px 140px;
 
         justify-content: space-between;
     }
@@ -64,16 +64,19 @@
     }
 
     &__description-column {
-        max-width: 711px;
+        padding-top: 1px;
+        max-width: 713px;
+    }
+    &__features-column {
+        margin-left: 2px;
     }
     &__book-column {
         max-width: 380px;
-        margin-top: -1px;
     }
 
     &__review {
         &-column {
-            margin-left: -1px;
+            margin-left: 1px;
         }
         &-amount {
             margin-top: 7px;
@@ -100,7 +103,6 @@
     &__rules {
         &-column {
             max-width: 280px;
-            margin-left: -2px;
         }
         &-title {
             padding-left: 21px;
