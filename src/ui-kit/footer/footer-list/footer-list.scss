@@ -25,7 +25,10 @@
         &--subscribe {
             line-height: 24px;
             margin-top: 18px;
-            margin-bottom: -4px;
         }
+    }
+
+    .ui-footer-list__item.ui-footer-list__item--margin-sm {
+        margin-top: 17px;
     }
 }
