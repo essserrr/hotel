@@ -7,11 +7,11 @@ mixin s-media(props)
 
     .ui-smedia.ui-smedia__row.ui-smedia--align-center
         if twitter
-            .ui-smedia__column-auto(style="padding-top: 3px")
+            .ui-smedia__column-auto.ui-smedia--margin-sm
                 +twitter
         if facebook
             .ui-smedia__column-auto
                 +facebook
         if instagram
-            .ui-smedia__column-auto(style="padding-top: 4px")
+            .ui-smedia__column-auto.ui-smedia--margin-md
                 +instagram

@@ -29,4 +29,13 @@
             padding-right: 0;
         }
     }
+
+    &--margin {
+        &-sm {
+            padding-top: 3px;
+        }
+        &-md {
+            padding-top: 4px;
+        }
+    }
 }
