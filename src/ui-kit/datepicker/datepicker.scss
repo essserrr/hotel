@@ -127,7 +127,7 @@
                     &.in-range {
                         color: $color-dark-shade50;
                         &::before {
-                            content: "";
+                            content: '';
                             display: block;
                             position: absolute;
 
@@ -144,7 +144,7 @@
 
                     &.start-date {
                         &::before {
-                            content: "";
+                            content: '';
                             display: block;
                             position: absolute;
 

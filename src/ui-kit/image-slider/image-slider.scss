@@ -21,7 +21,7 @@
         .bx-viewport {
             &::after,
             &::before {
-                content: "";
+                content: '';
                 display: block;
                 position: absolute;
 
@@ -58,7 +58,7 @@
             background: none;
 
             &::after {
-                content: "";
+                content: '';
                 display: block;
                 box-sizing: border-box;
 

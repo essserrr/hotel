@@ -45,7 +45,7 @@
 
         &:after,
         &:before {
-            content: "";
+            content: '';
             position: absolute;
 
             height: 100%;
@@ -119,7 +119,7 @@
             line-height: 24px;
 
             &::before {
-                content: "";
+                content: '';
                 position: absolute;
                 display: block;
 
