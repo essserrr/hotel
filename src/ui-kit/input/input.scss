@@ -2,12 +2,6 @@
     position: relative;
     width: 100%;
 
-    &--submitable {
-        .ui-text-input__input {
-            padding-right: 44px !important;
-        }
-    }
-
     .ui-text-input__input {
         width: 100%;
         max-height: 44px;
@@ -49,6 +43,12 @@
 
         &--force-hover {
             border: 1px solid $color-dark-shade50;
+        }
+    }
+
+    &--submitable {
+        .ui-text-input__input {
+            padding-right: 44px;
         }
     }
     .ui-text-input__icon {
