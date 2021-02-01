@@ -1,16 +1,16 @@
 .ui-image-slider {
-    &--no-buttons {
+    &.ui-image-slider--no-buttons {
         .bx-wrapper {
             .bx-viewport {
                 &::after,
                 &::before {
-                    display: none !important;
+                    display: none;
                 }
             }
 
             .bx-next,
             .bx-prev {
-                display: none !important;
+                display: none;
             }
         }
     }
@@ -43,8 +43,8 @@
             }
         }
 
-        .bx-next,
-        .bx-prev {
+        a.bx-next,
+        a.bx-prev {
             display: flex;
             display: -ms-flexbox;
 
@@ -52,8 +52,8 @@
             justify-content: center;
             line-height: 0px;
 
-            top: calc(50% - 16px) !important;
-            margin-top: 0 !important;
+            top: calc(50% - 16px);
+            margin-top: 0;
 
             background: none;
 
