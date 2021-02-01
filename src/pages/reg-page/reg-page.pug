@@ -23,8 +23,9 @@ block navigation
     +header({})
 block content
     .auth-page.auth-page--reg-variant.auth-page__row.auth-page--justify-center.auth-page--align-center
-        .auth-page__column-auto.auth-page__card
-            include ../../ui-kit/prebuild-cards/reg/reg.pug
+        .auth-page__column-auto
+            .auth-page__card
+                include ../../ui-kit/prebuild-cards/reg/reg.pug
 
 block footer
     +footer({})
