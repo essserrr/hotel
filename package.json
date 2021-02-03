@@ -1,7 +1,7 @@
 {
     "scripts": {
         "start": "webpack-dev-server --history-api-fallback --inline --progress",
-        "build": "webpack --mode production ./src/js/index.js --output ./build/main.js",
+        "build": "webpack --mode production",
         "eslint": "eslint"
     },
     "devDependencies": {
