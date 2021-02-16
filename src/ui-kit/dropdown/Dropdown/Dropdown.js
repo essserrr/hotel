@@ -9,11 +9,8 @@ class Dropdown {
         this.getDropdownNodes = this.getDropdownNodes.bind(this);
         this.getLabelParameters = this.getLabelParameters.bind(this);
         this.setElementPosition = this.setElementPosition.bind(this);
-
         this.show = this.show.bind(this);
-
         this.closeDropHandler = this.closeDropHandler.bind(this);
-
         this.onShow = this.onShow.bind(this);
         this.close = this.close.bind(this);
         this.setValue = this.setValue.bind(this);

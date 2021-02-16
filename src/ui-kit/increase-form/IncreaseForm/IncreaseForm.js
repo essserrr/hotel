@@ -1,5 +1,21 @@
 import { IncreaseBlock } from './IncreaseBlock/IncreaseBlock';
 
+class View {
+    constructor() {
+        this.nodeClicked;
+        this.incForm;
+        this.incFormElements;
+        this.incFormClearButton;
+        this.incFormApplyButton;
+    }
+}
+
+class Model {
+    constructor() {
+        this.currentState = [];
+    }
+}
+
 class IncreaseForm {
     constructor({
         formStateReducer,
@@ -10,16 +26,8 @@ class IncreaseForm {
         this._formStateReducer = formStateReducer;
         this._hasSubmit = hasSubmit;
 
-        this._view = {
-            nodeClicked: null,
-            incForm: null,
-            incFormElements: null,
-            incFormClearButton: null,
-            incFormApplyButton: null,
-        };
-        this._model = {
-            currentState: [],
-        };
+        this._view = new View();
+        this._model = new Model();
 
         this._onSubmit = this._onSubmit.bind(this);
         this._onClear = this._onClear.bind(this);
@@ -27,7 +35,7 @@ class IncreaseForm {
         this.setHandlers = this.setHandlers.bind(this);
     }
 
-    _createView(event) {
+    _initView(event) {
         this._view.nodeClicked = $(event.currentTarget);
         this._view.incForm = this._view.nodeClicked.closest('.increase-form');
         this._view.incFormElements = this._view.incForm.find(
@@ -44,7 +52,7 @@ class IncreaseForm {
         }
     }
 
-    _createModel(formElements) {
+    _initModel(formElements) {
         let newState = [];
         formElements.map((...element) => {
             const title = $(element[1])
@@ -71,8 +79,8 @@ class IncreaseForm {
     }
 
     _onSubmit(event) {
-        this._createView(event);
-        this._createModel(this._view.incFormElements);
+        this._initView(event);
+        this._initModel(this._view.incFormElements);
         this._submit(event);
     }
 
@@ -84,7 +92,7 @@ class IncreaseForm {
     }
 
     _onClear(event) {
-        this._createView(event);
+        this._initView(event);
         this._viewClearView();
         $.uiDropdown.setValue('');
     }
@@ -112,8 +120,8 @@ class IncreaseForm {
         template.onChange(event.currentTarget);
 
         if (this._hasSubmit || this._updateOnChange) {
-            this._createView(event);
-            this._createModel(this._view.incFormElements);
+            this._initView(event);
+            this._initModel(this._view.incFormElements);
         }
 
         if (this._hasSubmit) {

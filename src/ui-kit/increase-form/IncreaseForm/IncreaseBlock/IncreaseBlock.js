@@ -3,28 +3,36 @@ const CONSTANTS = {
     INC: 'inc',
 };
 
+class View {
+    constructor() {
+        this.nodeClicked;
+        this.buttonBlock;
+        this.increaseButton;
+        this.decreaseButton;
+        this.valueLabel;
+    }
+}
+
+class Model {
+    constructor() {
+        this.min;
+        this.max;
+        this.step;
+        this.currentValue;
+        this.sign;
+    }
+}
+
 class IncreaseBlock {
     constructor() {
-        this._view = {
-            nodeClicked: null,
-            buttonBlock: null,
-            increaseButton: null,
-            decreaseButton: null,
-            valueLabel: null,
-        };
-        this._model = {
-            min: null,
-            max: null,
-            step: null,
-            currentValue: null,
-            sign: null,
-        };
+        this._view = new View();
+        this._model = new Model();
 
         this.onChange = this.onChange.bind(this);
         this.onReset = this.onReset.bind(this);
     }
 
-    _createView(target) {
+    _initView(target) {
         this._view.nodeClicked = $(target);
 
         this._view.buttonBlock = this._view.nodeClicked
@@ -42,7 +50,7 @@ class IncreaseBlock {
         );
     }
 
-    _createModel(view) {
+    _initModel(view) {
         this._model.min = Number(view.buttonBlock.attr('data-min-value'));
         this._model.max = Number(view.buttonBlock.attr('data-max-value'));
         this._model.step = Number(view.buttonBlock.attr('data-step'));
@@ -82,8 +90,8 @@ class IncreaseBlock {
     }
 
     onChange(target) {
-        this._createView(target);
-        this._createModel(this._view);
+        this._initView(target);
+        this._initModel(this._view);
         this._modelChangeValue();
         this._viewUpdate(
             this._model.currentValue,
@@ -93,8 +101,8 @@ class IncreaseBlock {
     }
 
     onReset(target) {
-        this._createView(target);
-        this._createModel(this._view);
+        this._initView(target);
+        this._initModel(this._view);
         this._nullifyModel();
         this._nullifyView();
         this._viewUpdate(
