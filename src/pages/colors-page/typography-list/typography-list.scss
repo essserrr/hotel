@@ -8,6 +8,12 @@
     &__entry:first-of-type {
         margin-top: 0px;
     }
+    &__entry:nth-child(3) {
+        margin-top: 52px;
+    }
+    &__entry:last-of-type {
+        margin-top: 48px;
+    }
     &__entry {
         margin-top: 51px;
     }
