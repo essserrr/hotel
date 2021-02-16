@@ -18,24 +18,30 @@
         line-height: 1px;
     }
 
-    .ui-smedia__column-auto {
-        padding-left: 11px;
-        padding-right: 11px;
+    &__button {
+        border: none;
+        padding: 0;
+        background-color: transparent;
+        cursor: pointer;
+    }
 
-        &:first-child {
-            padding-left: 0;
-        }
-        &:last-child {
-            padding-right: 0;
+    &--spacing {
+        > .ui-smedia__column-auto {
+            padding-left: 11px;
+            padding-right: 11px;
+
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
         }
     }
 
-    &--margin {
+    &--padding {
         &-sm {
             padding-top: 3px;
-        }
-        &-md {
-            padding-top: 4px;
         }
     }
 }

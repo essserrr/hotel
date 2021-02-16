@@ -5,13 +5,16 @@ include ../icons/instagram/instagram.pug
 mixin s-media(props)
     - const { twitter, facebook, instagram } = props;
 
-    .ui-smedia.ui-smedia__row.ui-smedia--align-center
+    .ui-smedia.ui-smedia__row.ui-smedia--align-center.ui-smedia--spacing.ui-smedia--padding-sm
         if twitter
-            .ui-smedia__column-auto.ui-smedia--margin-sm
-                +twitter
+            .ui-smedia__column-auto
+                button.ui-smedia__button
+                    +twitter
         if facebook
             .ui-smedia__column-auto
-                +facebook
+                button.ui-smedia__button
+                    +facebook
         if instagram
-            .ui-smedia__column-auto.ui-smedia--margin-md
-                +instagram
+            .ui-smedia__column-auto
+                button.ui-smedia__button
+                    +instagram
