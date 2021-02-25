@@ -8,13 +8,13 @@ mixin s-media(props)
     .ui-smedia.ui-smedia__row.ui-smedia--align-center.ui-smedia--spacing.ui-smedia--padding-sm
         if twitter
             .ui-smedia__column-auto
-                button.ui-smedia__button
+                a.ui-smedia__button(href='https://www.twitter.com/urlunset')
                     +twitter
         if facebook
             .ui-smedia__column-auto
-                button.ui-smedia__button
+                a.ui-smedia__button(href='https://www.facebook.com/urlunset')
                     +facebook
         if instagram
             .ui-smedia__column-auto
-                button.ui-smedia__button
+                a.ui-smedia__button(href='https://www.instagram.com/urlunset')
                     +instagram
